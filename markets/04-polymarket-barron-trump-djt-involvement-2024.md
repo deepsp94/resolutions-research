@@ -2,24 +2,32 @@
 
 ## Bottom line
 
-**Finding: Polymarket made a clear resolution-system and disclosure error. The available public record does not establish that UMA's No result was factually wrong. Confidence: high on the platform failure; medium on the substantive outcome assessment.**
+**Finding: This was a real Polymarket resolution-governance and transparency failure, but it is not proven that the market paid the wrong side under its written rules. Confidence: high on the platform-level failure; low on any conclusive factual answer about Barron's involvement.**
 
 The market asked whether a preponderance of evidence suggested that Barron Trump was involved in the **creation** of the Solana token `$DJT`. Its rules expressly assigned that determination to UMA, using evidence available by 12 p.m. ET on June 23, 2024.[^market]
 
-UMA produced No twice, each proposal was disputed, and the final result was No.[^market] Polymarket then publicly said UMA was wrong and later called Barron's involvement "conclusive." It did not disclose the evidence supporting that conclusion. Its statement also said only that Barron was involved "in some way," which was broader and less precise than the market's creation criterion.[^wrong-statement][^refund-statement][^coindesk-final]
+The oracle process received two `No` proposals, both of which were disputed. UMA's final disputed resolution was `No`, and the market settled that way.[^market] Calling this "UMA deciding No twice" would be inaccurate: the first two entries were optimistic-oracle proposals, while the final disputed answer came through UMA's adjudication process.
 
-Polymarket left the official No payout in place and separately reimbursed Yes holders. It did not reverse the market or pay Yes shares as winning shares. Although its announcement did not disclose the calculation, the reimbursement transaction shows that recipients received amounts broadly related to money at risk, not $1 for every Yes share.[^refund-statement][^refund-transaction]
+After finalization, Polymarket publicly said UMA was wrong and later said it was conclusive that Barron had been involved "in some way." It disclosed neither the supporting evidence nor how that broader phrase satisfied the narrower contractual requirement of involvement in **creation**.[^wrong-statement][^refund-statement][^coindesk-final]
 
-This sequence conclusively demonstrates a failure in Polymarket's resolution design:
+That contradiction is the established failure. Polymarket had:
 
-- the venue disavowed the answer produced by the resolver it had made authoritative;
-- it supplied no auditable basis for its competing answer;
-- it used an ad hoc payment to compensate one losing side while the official result remained No; and
-- it promised to improve its oracle and resolution methodology afterward.[^refund-statement]
+- written a broad title but a narrower operative criterion;
+- listed a question whose decisive evidence was likely private, anonymous, or difficult for tokenholders to authenticate;
+- made UMA the named decision-maker;
+- finalized the market to UMA's answer; and
+- then asserted a different factual answer without publishing evidence tied to the exact rule and cutoff.
 
-That failure does **not** prove that Yes was the correct contractual answer. Before the cutoff, the public had allegations from Martin Shkreli and Pirate Wires, an unauthenticated screenshot attributed to a contact named `BT`, and Mike Solana's confidence in undisclosed sources. There was no confirmation from Barron, no verified wallet attribution to him, and no disclosed independent evidence establishing his role in creating the token.[^dlnews-vote][^coindesk-june24]
+The public record does not establish that UMA's `No` was wrong. The `Yes` case included relevant first-person and source-based claims, but their independence, authenticity, and precise connection to token creation were not publicly verifiable. The `No` case therefore had a rational basis. Conversely, a preponderance standard does not require official confirmation or definitive proof, so the absence of a Barron statement or verified wallet does not make `No` conclusively correct.
 
-On the record that UMA voters could inspect, No was a defensible result and probably the better-supported one. A conclusive Yes finding would require the evidence Polymarket said existed but never published.
+Polymarket left the official `No` payout in place and separately reimbursed `Yes` holders. That reimbursement was a reasonable loss-mitigation measure, not itself the failure. It was not a reversal or a $1-per-share `Yes` payout, and Polymarket did not publicly explain the exact calculation.[^refund-statement][^refund-transaction]
+
+The most defensible final characterization is therefore:
+
+- **Contractual misresolution:** not established.
+- **Factual answer:** indeterminate from the public record.
+- **Oracle corruption or manipulation:** not established.
+- **Platform failure:** established, because Polymarket's market design and later unsupported repudiation of its own designated resolver produced two incompatible official accounts of what the market was supposed to mean and whether it had resolved truthfully.
 
 ## Market details
 
@@ -41,7 +49,7 @@ The Polymarket page records this resolution sequence:
 4. Disputed
 5. Final outcome: No
 
-The page and API continue to record No as the official outcome.[^market][^api]
+The first and third entries were proposals submitted to the optimistic oracle, not two final UMA rulings. After the disputes, UMA's adjudication produced the final `No` answer. The page and API continue to record `No` as the official outcome.[^market][^api][^adapter]
 
 ## The rule
 
@@ -50,6 +58,8 @@ The operative test was whether:
 > a preponderance of evidence suggests that Barron Trump was involved in the creation
 
 of `$DJT`. The rule otherwise required No. It said UMA would make the determination using all evidence available as of noon ET on June 23.[^market]
+
+The title, `Was Barron involved in $DJT?`, was broader than that operative test. A trader reading only the title could reasonably understand later promotion, distribution, advice, or wallet activity as sufficient. Under the detailed rule, those acts mattered only if they established involvement in **creation**. The detailed rule controlled the settlement, but the mismatch became material when Polymarket later defended `Yes` by saying Barron was involved merely "in some way."[^refund-statement]
 
 This was not a market requiring:
 
@@ -66,10 +76,10 @@ It was a more-likely-than-not evidentiary test. But the rule left several decisi
 - Did anonymous reporting count, and with what weight?
 - Could private evidence unavailable to UMA voters count?
 - How should screenshots be authenticated?
-- What happened if Polymarket disagreed with UMA after a final vote?
-- Was there any appeal or invalid-market outcome?
 
 These omissions were material because almost every disputed fact depended on anonymous sources, interested participants, or screenshots whose identities could not be publicly verified.
+
+Not every omitted evidentiary detail was necessarily a drafting defect. The rule deliberately delegated judgment to UMA, and open-textured standards normally require a fact-finder to weigh credibility. The deeper design problem was using that standard for a question where the best evidence was likely private while providing no transparent way to reconcile private platform knowledge with public oracle adjudication.
 
 ## A separate Barron market
 
@@ -177,7 +187,7 @@ Polymarket's June 28 assertion that involvement was conclusive was also after th
 
 ## UMA's decision and defense
 
-UMA returned No after two disputed No proposals.[^market]
+The optimistic oracle received two `No` proposals, and each was disputed. The final adjudicated answer was `No`.[^market] The distinction matters: proposers initially assert an answer; they are not themselves "UMA decisions." The disputed process is what supplied the final authoritative result.
 
 UMA founder Hart Lambur told DL News that he believed voters acted honestly and that No was the "least bad answer" to an ambiguous question. He identified two separate interpretive problems:
 
@@ -186,11 +196,13 @@ UMA founder Hart Lambur told DL News that he believed voters acted honestly and 
 
 The UMA discussion reflected the central distinction in the case. One participant reportedly believed there was enough evidence that key people had been in contact with Barron, but not enough that Barron had participated in **creating** the token.[^dlnews-vote]
 
-That is a coherent defense of No. The contract did not ask whether Barron knew the creators, discussed the token, promoted it, or became involved later. It asked whether the evidence more likely than not showed involvement in creation.
+That is a coherent defense of `No`. The contract did not ask whether Barron knew the creators, discussed the token, promoted it, or became involved later. It asked whether the evidence more likely than not showed involvement in creation.
+
+There is no sourced basis in this case for alleging a governance attack, corrupt vote, or whale manipulation. Disagreement with the evidentiary judgment is not evidence that the oracle process was compromised.
 
 ## The allegation against Polymarket
 
-### 1. Polymarket repudiated the resolver it made authoritative
+### 1. Polymarket's official positions became irreconcilable
 
 The rule expressly said UMA would determine whether Barron was involved. After UMA returned No, Polymarket publicly said:
 
@@ -198,13 +210,13 @@ The rule expressly said UMA would determine whether Barron was involved. After U
 
 It promised a near-term solution in order to uphold market integrity and pricing.[^wrong-statement]
 
-This is a direct admission that Polymarket believed its specified resolution process had produced the wrong answer.
+This is direct evidence that Polymarket believed its specified resolution process had produced the wrong factual answer. It is not, by itself, proof that UMA misapplied the written rule.
 
-### 2. Polymarket supplied no evidence for its competing conclusion
+### 2. Polymarket did not substantiate its competing conclusion
 
 Two days later, Polymarket called Barron's involvement conclusive but did not publish evidence supporting that conclusion.[^refund-statement][^coindesk-final]
 
-That omission was decisive. The market was explicitly an evidence-weighing exercise. A platform cannot demonstrate that an evidence-based resolution was wrong merely by announcing a different conclusion.
+That omission prevents an independent finding that the market should have resolved `Yes`. The market was explicitly an evidence-weighing exercise. Announcing a different conclusion does not demonstrate that an evidence-based resolution was wrong.
 
 Without the material Polymarket relied on, traders could not assess:
 
@@ -213,7 +225,7 @@ Without the material Polymarket relied on, traders could not assess:
 - whether it concerned creation rather than later involvement; or
 - whether it outweighed the weaknesses in the public Yes case.
 
-### 3. Polymarket's statement used a broader criterion than the rule
+### 3. Polymarket's explanation did not match the operative criterion
 
 The final statement said it was conclusive that Barron was involved "in some way."[^refund-statement]
 
@@ -221,7 +233,7 @@ The contract required involvement in the **creation** of `$DJT`. "In some way" c
 
 Polymarket may have intended its statement as shorthand for creation involvement. Because it did not identify the conduct or evidence, the statement did not establish that the market's narrower test was met.
 
-### 4. The remedy was ad hoc and asymmetric
+### 4. The reimbursement mitigated losses but did not resolve the contradiction
 
 Polymarket did not replace the official No result with Yes. No shares remained the winning shares, while Polymarket separately said it would refund Yes holders.[^market][^refund-statement]
 
@@ -239,9 +251,9 @@ The reimbursement was distributed in a separate USDC transaction totaling approx
 
 The payments therefore reimbursed some measure of purchase cost or loss rather than treating Yes as the winner. The examples do not prove that every eligible holder received a complete return of principal. Small differences from recorded purchase cost, along with lower payments to some late buyers, suggest that Polymarket applied an eligibility snapshot, netting, fees, or another adjustment that it did not publicly explain.
 
-The payment mitigated harm to Yes holders. It did not produce a coherent answer to the market or explain how similar cases would be treated.
+The payment mitigated harm to Yes holders and was not itself an improper act. Its relevance is evidentiary: it confirms that Polymarket lacked confidence in the official result. The remaining criticism is narrower. Polymarket did not disclose the remedy's formula or explain a general policy for comparable cases.
 
-### 5. The rule lacked a disagreement and appeal mechanism
+### 5. The resolution architecture did not produce one authoritative public answer
 
 Polymarket had made UMA authoritative but evidently retained a substantive view of the correct answer. The rule did not say what would happen when those judgments diverged.
 
@@ -251,22 +263,25 @@ The result was three incompatible messages:
 - UMA and the market page said No; and
 - Polymarket said Yes was conclusive enough to compensate losing Yes holders.
 
-That is a resolution-design failure even if Polymarket privately possessed reliable evidence.
+That is a resolution-governance failure even if Polymarket privately possessed reliable evidence. A prediction market can intentionally make an oracle final, or it can reserve a transparent review power. The failure here was not simply the absence of an appeal. It was that the venue publicly repudiated the final answer without supplying either auditable evidence or a pre-announced framework that explained the status of its contrary judgment.
+
+The verified UMA adapter also included emergency administrative controls before final CTF resolution.[^adapter] The public record does not show that Polymarket had reached its contrary conclusion in time to use them, so it would be speculative to accuse Polymarket of knowingly allowing a result it already considered wrong to finalize. By the time Polymarket publicly objected, the market had already finalized.[^market][^wrong-statement]
 
 ## Polymarket's defense
 
 ### Explicit defense
 
-Polymarket's public defense was that prediction markets must resolve to truth by the best means available, even when the answer is unpopular. It said Barron's involvement was conclusive, refunded Yes holders, and said it was improving its oracle and resolution methodology.[^refund-statement]
+Polymarket did not defend the official `No` result. Its public position was that UMA had resolved the market incorrectly, that prediction markets must resolve to truth by the best means available, and that Barron's involvement was conclusive. It reimbursed `Yes` holders and said it was improving its oracle and resolution methodology.[^wrong-statement][^refund-statement]
 
-The strongest reading of this defense is:
+The strongest defense of Polymarket's conduct, as distinct from its substantive `Yes` claim, is:
 
 1. Polymarket possessed or trusted information unavailable to UMA voters.
-2. It considered factual truth more important than blindly accepting an oracle error.
-3. Because the UMA result had already finalized, compensating Yes holders was the practical remedy.
-4. Improving the process was preferable to concealing the disagreement.
+2. The rules had transparently designated UMA, whose final answer became the contractual settlement.
+3. By the time Polymarket publicly objected, the on-chain result had finalized.
+4. Reimbursing `Yes` holders mitigated the harm without taking the ordinary `No` payout away from traders who had relied on the written process.
+5. Publicly acknowledging the disagreement and promising process improvements was more transparent than concealing it.
 
-The third point is an inference from Polymarket's conduct; its statement did not explain the technical or contractual reason it left No in place.
+The first, third, and fourth points are inferences from the sequence and the remedy; Polymarket did not publish a full technical explanation. The adapter had emergency controls before final resolution, but there is no evidence that Polymarket had reached its contrary view before those controls ceased to be useful.[^adapter]
 
 ### Strongest substantive defense of Yes
 
@@ -279,7 +294,7 @@ Yes was not baseless. Before the cutoff:
 
 The market required a preponderance, not definitive proof. A fact-finder could reasonably give enough weight to these mutually reinforcing claims to choose Yes.
 
-### Why the defense remains insufficient
+### Why the substantive defense remains insufficient
 
 The evidence was not demonstrably independent or authenticated:
 
@@ -290,7 +305,7 @@ The evidence was not demonstrably independent or authenticated:
 - The alleged 1,000 pieces of evidence were not released.
 - Polymarket never identified what made the case conclusive.
 
-Most importantly, Polymarket's private confidence could not retroactively become evidence available to UMA voters by the cutoff.
+Polymarket's private confidence therefore cannot establish, for outside reviewers, that `Yes` was the required contractual answer. To do so, it would need to disclose evidence that existed by the cutoff and showed involvement in creation, or at least explain enough about that evidence to make the conclusion auditable.
 
 ## Assessment
 
@@ -300,7 +315,7 @@ Most importantly, Polymarket's private confidence could not retroactively become
 
 The public Yes case was substantial enough to create a genuine dispute, but it remained a collection of source assertions and unauthenticated screenshots. Shkreli's proven knowledge of the project made his testimony relevant; it did not make every additional assertion more likely than not true.
 
-No was a reasonable application of the creation criterion to the evidence voters could inspect.
+`No` was a reasonable application of the creation criterion to the evidence voters could inspect. That does not prove it was the only reasonable application.
 
 ### Was No clearly the factual truth?
 
@@ -308,7 +323,7 @@ No was a reasonable application of the creation criterion to the evidence voters
 
 Shkreli and Solana may have had genuine first-hand or source-based knowledge. The `BT` exchange, if authentic and correctly attributed, would support operational involvement. The missing evidence may exist.
 
-The record supports uncertainty, not a conclusive finding that Barron had no involvement.
+The record supports uncertainty, not a conclusive finding that Barron had no involvement. Nor does the lack of official confirmation defeat `Yes`: a preponderance can be established through credible testimony and circumstantial evidence.
 
 ### Did Polymarket establish that Yes was correct?
 
@@ -318,45 +333,70 @@ Polymarket announced a conclusion without publishing its basis. It also describe
 
 Its statement is evidence of Polymarket's belief. It is not evidence sufficient to audit or prove the market outcome.
 
-### Did Polymarket make a resolution-process error?
+### Did the oracle process violate the written market procedure?
 
-**Yes, conclusively.**
+**Not on the evidence available.**
 
-Polymarket:
+The rules designated UMA to make the evidentiary determination. The market received proposals and disputes, UMA supplied the final answer, and the CTF market settled to that answer. No evidence establishes vote manipulation, corruption, or departure from the encoded process.
 
-- made UMA the named decision-maker;
-- allowed No to become final;
-- publicly declared that decision wrong;
-- asserted a competing result without evidence;
-- paid the losing side outside the stated resolution mechanism; and
-- acknowledged the need to improve that mechanism.[^market][^refund-statement]
+This is why it is too strong to describe the case as a proven "wrong payout." Under the contract as written, `No` was the authoritative result.
 
-### Did Polymarket make a rule-drafting error?
+### Did Polymarket nevertheless make a platform-level resolution error?
 
 **Yes.**
 
-The rule combined a vague evidentiary threshold with an undefined conduct test and no source hierarchy, authentication standard, appeal path, or invalid outcome.
+The confirmed error was in market and resolution governance:
 
-The phrase "preponderance of evidence suggests" was especially poor drafting. "Preponderance" ordinarily asks whether a fact is more likely than not; "suggests" can imply a weaker threshold. The rule did not resolve that tension.
+- The broad title and narrower creation criterion invited different understandings of the question.
+- The market depended heavily on private or anonymously sourced evidence that a public token-holder vote could not readily authenticate.
+- Polymarket later repudiated its designated resolver but did not publish evidence satisfying the exact creation criterion and cutoff.
+- It left the official `No` result in place while publicly telling users that the truth was effectively `Yes`.
 
-### Was the refund itself a full reversal?
+From a trader's perspective, UMA was part of Polymarket's chosen resolution stack. Outsourcing adjudication does not remove Polymarket's responsibility for designing a market that its chosen stack can resolve credibly. At the same time, Polymarket's disagreement does not retroactively prove that the oracle answer was contractually wrong.
+
+### Was the rule itself defective?
+
+**Materially weak, but not every ambiguity was an error.**
+
+The phrase "preponderance of evidence suggests" was imprecise, "involved in creation" was undefined, and the title was broader than the rule. The rule also gave no guidance on anonymous sources or authentication even though those issues were predictable for this question.
+
+However, a rule need not contain a complete evidence code, and designating UMA to exercise judgment was itself a disclosed term. The strongest criticism is not simply that the rule was subjective or lacked an appeal. It is that Polymarket chose an evidence-weighing oracle for a question whose decisive information was likely private, then relied on undisclosed information to reject that oracle's conclusion.
+
+### Was the reimbursement itself a failure or a full reversal?
 
 **No.**
 
-The official market remained No. Polymarket reimbursed Yes holders separately rather than paying their shares as winners. There is no sourced basis for describing this as a two-sided market cancellation. The on-chain payments establish that the remedy was cost- or loss-related, but the accessible public record does not establish its exact formula.
+The official market remained `No`. Polymarket reimbursed `Yes` holders separately rather than paying their shares as winners. There is no sourced basis for describing this as a two-sided market cancellation. The reimbursement was a defensible mitigation once Polymarket had lost confidence in the outcome. The narrower transparency problem is that the accessible public record does not establish its exact formula or eligibility policy.
 
 ### Overall classification
 
-- **Resolution-system failure:** Yes
+- **Wrong contractual payout:** Not established
+- **Wrong factual answer:** Indeterminate
+- **Oracle corruption or manipulation:** Not established
+- **Encoded oracle procedure followed:** Yes, on the available record
+- **Resolution-governance failure:** Yes
 - **Platform/oracle contradiction:** Yes
-- **Unsupported platform override claim:** Yes
-- **Rule-drafting failure:** Yes
-- **Final on-chain outcome error:** Not established; No was defensible
-- **Conclusive factual answer:** No
-- **Ad hoc remediation:** Yes
+- **Unsupported post-final platform claim:** Yes
+- **Material title/rule mismatch:** Yes
+- **Rule and market-design weakness:** Yes
+- **Reimbursement as mitigation:** Reasonable, but formula not publicly explained
 - **Refund of both sides:** No; Yes holders were separately reimbursed after No won
 - **Yes paid as winner:** No; payments were far below $1 per Yes share
-- **Confidence:** High on platform failure; medium on No being the best-supported cutoff answer
+- **Confidence:** High on the platform-level contradiction and design failure; low on a conclusive `Yes` or `No` factual answer
+
+## Final assessment
+
+Polymarket made a real mistake, but the mistake must be described precisely.
+
+It is **not established** that UMA violated the rule, that `Yes` was the required answer, or that `No` holders were paid contrary to the disclosed contract. The final `No` was produced by the decision-maker named in the rule, through the expected dispute process, and had a rational evidentiary basis.
+
+The established failure was that Polymarket created a market its chosen resolver could not resolve to the venue's own satisfaction, then publicly declared the resolver wrong without supplying auditable evidence that met the market's narrower creation criterion and cutoff. The venue's official settlement remained `No`, while the venue's public statement said the underlying truth was conclusively on the other side. That is a serious failure of resolution design, rule communication, and post-resolution transparency even though a substantive misresolution cannot be proven.
+
+The refund should be treated as remediation, not as part of the offense. It reduced the loss to `Yes` holders while preserving the contractual payout to `No` holders. Its unexplained calculation is a secondary transparency issue.
+
+For a public tracker, the concise verdict should be:
+
+> **Confirmed platform-level resolution-governance failure; unproven wrong contractual outcome.** Polymarket's broad title, narrower rule, unsuitable evidence environment, and unsupported post-final repudiation of UMA created an irreconcilable split between the official result and the platform's stated view of the truth. The public record is insufficient to determine conclusively whether Barron was involved in creating `$DJT`.
 
 ## Precise blocker to a conclusive factual finding
 
@@ -382,6 +422,8 @@ The public record does not disclose the exact eligibility snapshot, formula, or 
 [^market]: Polymarket, [“Was Barron involved in $DJT?”][market]. Contains the rule, two No proposals, two disputes, final No outcome, and resolution time.
 
 [^api]: Polymarket Gamma API, [market metadata for event `was-barron-involved-in-djt`][api]. Records market ID `502710`, approximately $1.14 million in volume, final prices, contract identifiers, and the No result.
+
+[^adapter]: Polygon Blockscout, [verified `UmaCtfAdapter` contract used by Polymarket][adapter]. The published source includes `pause`, `flag`, and time-delayed `emergencyResolve` functions available before ordinary CTF finalization.
 
 [^wrong-statement]: Polymarket, [X statement saying UMA's resolution was wrong][wrong-statement], June 26, 2024.
 
@@ -423,6 +465,7 @@ The public record does not disclose the exact eligibility snapshot, formula, or 
 
 [market]: https://polymarket.com/event/was-barron-involved-in-djt
 [api]: https://gamma-api.polymarket.com/events?slug=was-barron-involved-in-djt
+[adapter]: https://polygon.blockscout.com/address/0x6A9D222616C90FcA5754cd1333cFD9b7fb6a4F74?tab=contract
 [wrong-statement]: https://x.com/Polymarket/status/1805998648788173006
 [refund-statement]: https://x.com/Polymarket/status/1806479362377814378
 [refund-transaction]: https://polygon.blockscout.com/tx/0x8037705f9ecfb375bb114318fed11aede3c8d001eabccbc5d66ae711b7479ac1
