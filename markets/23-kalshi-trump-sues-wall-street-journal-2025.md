@@ -6,7 +6,7 @@
 
 Kalshi resolved a market on whether Donald Trump would sue The Wall Street Journal before September as **Yes**. A Reddit user objected that the actual defendants were Dow Jones, News Corp, Rupert Murdoch, Robert Thomson, and individual Journal reporters, rather than an entity named "The Wall Street Journal."[^reddit]
 
-The strongest defense is that the market's resolution sources were news outlets, and major news reports described the action in ordinary language as Trump suing The Wall Street Journal.[^reddit][^reuters][^nypost]
+The strongest defense is that the market's resolution sources were news outlets, and major news reports described the action in ordinary language as Trump suing The Wall Street Journal.[^reddit][^ap][^guardian]
 
 ## Market details
 
@@ -19,7 +19,7 @@ The strongest defense is that the market's resolution sources were news outlets,
 
 The Reddit thread states that Kalshi resolved the market Yes. The poster then listed the defendants as Rupert Murdoch, Dow Jones & Company, News Corporation, Robert Thomson, and two WSJ reporters, and argued that the contract specifically required a lawsuit against The Wall Street Journal.[^reddit]
 
-Reuters reported that Trump sued the Wall Street Journal's publisher Dow Jones, parent News Corp, Murdoch, two reporters, and others over an Epstein-related article.[^reuters] The New York Post similarly described the lawsuit as Trump suing the publisher of The Wall Street Journal, while naming News Corp, Dow Jones, Murdoch, Thomson, and the reporters as defendants.[^nypost]
+The Associated Press reported that Trump filed a $10 billion lawsuit against The Wall Street Journal and Rupert Murdoch, while explaining that the suit accused the paper and its reporters.[^ap] The Guardian likewise reported that the lawsuit targeted Rupert Murdoch, two Wall Street Journal reporters, Dow Jones, and News Corp.[^guardian]
 
 A commenter in the Reddit thread argued that the resolution sources were news outlets rather than the legal documents and that those outlets plainly reported that Trump sued the Journal.[^reddit]
 
@@ -33,17 +33,17 @@ Under a strict legal-entity reading, the objection has force: a newspaper brand,
 
 The strongest defense is the source standard and ordinary-language reporting.
 
-If the contract resolved by reference to specified news sources, then the relevant question may not have been whether "The Wall Street Journal" appeared as a captioned defendant. It may have been whether credible reporting described Trump as suing the Journal. Reuters and other outlets did exactly that while explaining the actual named defendants.[^reuters][^nypost]
+If the contract resolved by reference to specified news sources, then the relevant question may not have been whether "The Wall Street Journal" appeared as a captioned defendant. It may have been whether credible reporting described Trump as suing the Journal. AP and the Guardian did exactly that while also explaining the actual named defendants.[^ap][^guardian]
 
 ## Assessment
 
 ### Did Trump sue entities and individuals associated with the Journal?
 
-**Yes.** Reuters and the New York Post report that the lawsuit named Dow Jones, News Corp, Murdoch, Thomson, and Journal reporters.[^reuters][^nypost]
+**Yes.** AP and the Guardian report that the lawsuit targeted The Wall Street Journal or its associated publisher/reporters while naming Dow Jones, News Corp, Murdoch, and Journal reporters.[^ap][^guardian]
 
 ### Did major reporting describe that as Trump suing the Wall Street Journal?
 
-**Yes.** The coverage used that ordinary-language framing while identifying the defendants.[^reuters][^nypost]
+**Yes.** The coverage used that ordinary-language framing while identifying the defendants.[^ap][^guardian]
 
 ### Was Kalshi's Yes outcome clearly wrong?
 
@@ -68,10 +68,10 @@ The missing evidence is the exact Kalshi contract PDF and all listed resolution 
 
 [^reddit]: Reddit, r/Kalshi, ["Can someone help me understand Kalshi's resolution of the Trump vs WSJ lawsuit market?"][reddit], July 2025. Identifies the market, reported Yes resolution, legal-entity objection, and source-based counterargument.
 
-[^reuters]: Reuters, ["Trump sues Wall Street Journal over Epstein report, seeks $10 billion"][reuters], July 19, 2025. Reports the lawsuit and named defendants.
+[^ap]: Associated Press, ["Trump sues Wall Street Journal and media mogul Rupert Murdoch over reporting on Epstein ties"][ap], July 18, 2025. Reports the lawsuit and describes the paper, Murdoch, and reporters as targets.
 
-[^nypost]: New York Post, ["Trump sues Wall Street Journal for $10B after lewd Epstein letter report"][nypost], July 19, 2025. Reports the lawsuit and named defendants.
+[^guardian]: The Guardian, ["Trump sues Wall Street Journal and Rupert Murdoch over Epstein report"][guardian], July 18, 2025. Reports that the lawsuit targeted Murdoch, Wall Street Journal reporters, Dow Jones, and News Corp.
 
 [reddit]: https://www.reddit.com/r/Kalshi/comments/1m6t4qr/can_someone_help_me_understand_kalshis_resolution/
-[reuters]: https://www.reuters.com/world/us/trump-sues-wall-street-journal-over-epstein-report-seeks-10-billion-2025-07-19/
-[nypost]: https://nypost.com/2025/07/19/us-news/trump-sues-wall-street-journal-for-10-billion-after-lewd-epstein-letter-story/
+[ap]: https://apnews.com/article/trump-jeffrey-epstein-grand-jury-justice-department-ece8a837f9bd179771f801a765e242e4
+[guardian]: https://www.theguardian.com/us-news/2025/jul/18/trump-libel-lawsuit-wsj-dow-jones-rupert-murdoch

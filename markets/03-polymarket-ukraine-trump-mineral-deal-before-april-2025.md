@@ -27,7 +27,7 @@ The strongest conclusion is therefore not simply that a token whale changed a tr
 - **Finalized:** March 25, 2025
 - **Reported volume:** approximately $7.08 million
 - **Market page:** [Polymarket][market]
-- **Primary metadata:** [Polymarket Gamma API][api]
+- **Primary metadata:** [Polymarket Gamma API][api][^api]
 - **On-chain resolution transaction:** [PolygonScan][onchain-resolution]
 
 The market page records two Yes proposals, two disputes, and a final Yes outcome.[^market] The resolution transaction paid the first outcome slot, corresponding to Yes, on March 25 at 00:21 UTC.[^onchain-resolution]
