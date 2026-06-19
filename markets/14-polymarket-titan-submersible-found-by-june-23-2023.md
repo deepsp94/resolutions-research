@@ -2,11 +2,13 @@
 
 ## Bottom line
 
-**Finding: This was a real resolution controversy and likely a written-rule failure. Confidence: medium-high.**
+**Finding: This was a clear rule-drafting failure and a real resolution controversy. Confidence: high on the drafting failure; medium-high on the written-rule/resolution conflict.**
 
 Polymarket asked whether the missing OceanGate vessel exploring the Titanic wreck would be found by June 23, 2023. The market resolved **Yes** after a debris field from the Titan was located and officials concluded the vessel had suffered a catastrophic implosion.[^polymarket-api][^dlnews][^axios]
 
-The problem is that Polymarket's own rule tried to narrow what "found" meant. It said the vessel did not need to be rescued or physically recovered, but it also said that if pieces were located without the cabin containing the passengers, that would not suffice for Yes.[^polymarket-api]
+The problem is that Polymarket's own rule tried to narrow what "found" meant in a way that was poorly matched to the likely facts. It said the vessel did not need to be rescued or physically recovered, but it also said that if pieces were located without the cabin containing the passengers, that would not suffice for Yes.[^polymarket-api]
+
+That caveat was a bad rule for a deep-sea implosion scenario. If Titan catastrophically imploded at Titanic depth, the passenger cabin or pressure chamber might be destroyed rather than found intact. A trader who correctly anticipated that searchers would locate debris and identify the vessel's fate, but would not find an intact passenger cabin, could price the caveat as No and still lose when UMA resolved Yes on the broader ordinary-language view.
 
 The public evidence available at the time centered on debris, pieces, and catastrophic loss of the pressure chamber. DL News reported that No holders pointed to the fine print, while UMA voters resolved Yes. UMA founder Hart Lambur defended the outcome on the ground that ordinary people would say the sub had been found.[^dlnews]
 
@@ -52,6 +54,8 @@ The public facts cited by DL News, Axios, and Wired were debris, pieces, and pre
 
 On a literal reading, that is exactly the scenario the caveat was designed to handle. Finding pieces of a destroyed vessel is not the same as finding the passenger cabin.
 
+The deeper drafting problem is that this caveat made the market hinge on a condition that may have been physically unrealistic once catastrophic implosion was the likely event. It tried to distinguish "wreckage found" from "submarine found," but used the passenger cabin as the decisive marker even though the cabin/pressure chamber was the part most likely to be obliterated by pressure.
+
 ### 2. The resolution rewarded ordinary-language "found" despite narrower drafting
 
 There was a strong ordinary-language reason for Yes. The search had located Titan's debris field, identified the vessel's fate, and ended the search-and-rescue uncertainty. But Polymarket's caveat made the market more specific than the title.
@@ -63,6 +67,8 @@ If the resolver wanted to follow ordinary language, the caveat should not have b
 The title asked a simple question: was the submarine found? The fine print asked a more technical one: were the right parts found?
 
 That mismatch created the failure. Traders who priced the title and news outcome saw Yes; traders who priced the caveat saw No.
+
+The caveat therefore did not reduce ambiguity; it created a trap. It gave sophisticated traders a textual reason to believe pieces/debris would not count, while the eventual resolution followed the common-sense view that locating the debris field meant the missing sub had been found.
 
 ## Polymarket/UMA's defense
 
@@ -115,12 +121,15 @@ The caveat appears to exclude a Yes outcome based only on pieces unless the cabi
 
 This is a good example of a market where the visible title, public news reality, and detailed resolution caveat pointed in different directions. The platform's resolution process appears to have favored the broad spirit of the question over the literal limiting language.
 
+It is also a clear drafting failure because the pieces/cabin caveat was not a robust way to resolve a likely implosion outcome. The rule should have specified whether identifying a debris field or pressure-hull wreckage would count, rather than making the result turn on locating a passenger cabin that might no longer exist as an identifiable cabin.
+
 ### Overall classification
 
 - **Operational settlement error:** Not established
 - **Semantic ambiguity:** Yes
 - **Title/rules mismatch:** Yes
-- **Likely written-rule mismatch:** Yes
+- **Clear rule-drafting failure:** Yes
+- **Likely written-rule/resolution mismatch:** Yes
 - **Best public verdict:** Yes was understandable as ordinary truth; No was stronger under the specific pieces/cabin caveat
 
 ## Precise blocker to a stronger finding
