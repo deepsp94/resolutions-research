@@ -2,25 +2,23 @@
 
 ## Bottom line
 
-**Finding: This was a real semantic controversy, but Polymarket's Yes resolution had a strong legal and factual basis. Confidence: medium-high.**
+**Finding: This should not be classified as a Polymarket resolution failure. Confidence: high.**
 
-Polymarket's market asked whether TikTok would be banned in the United States before May 2025. It resolved **Yes** after the federal divest-or-ban law took effect on January 19, 2025, and TikTok became unavailable to U.S. users for a short period.[^tradingview][^supreme-court][^white-house]
+Polymarket asked whether TikTok would be banned in the United States before May 2025. The located market rules make the Yes resolution stronger than the earlier file suggested: the market resolved Yes if TikTok was banned for download and/or use by the majority of Americans in the United States by April 30, 2025, 11:59 PM ET, and if the ban was mandated by U.S. federal law, policy, or the court system and went into effect within the timeframe.[^polymarket]
 
-The backlash came because TikTok service resumed quickly after Donald Trump said he would delay enforcement and then signed an executive order instructing the Department of Justice not to enforce the Act for 75 days.[^tradingview][^white-house]
+That happened. The federal divest-or-ban law's prohibitions took effect on January 19, 2025, the Supreme Court upheld the law two days earlier, and TikTok became unavailable to U.S. users for a short period.[^supreme-court][^tradingview] Trump later signed an executive order instructing the Department of Justice not to enforce the Act for 75 days, but the order itself stated that the Act's prohibitions had become effective on January 19.[^white-house]
 
-The strongest No-side argument is practical: if TikTok was working for most Americans soon after, users could reasonably say it had not been "banned" in the ordinary consumer sense. The strongest Yes-side argument is legal: the statute's prohibitions became effective on January 19, TikTok did go dark, and the market title did not require a permanent or continuously enforced ban.
-
-This belongs in the tracker as an **under-specified legal-versus-practical-status market**, not as a proven Polymarket misresolution.
+The market did not require a permanent ban, a minimum duration, continued inaccessibility through May, or sustained enforcement. A short-lived legal ban and service outage were enough under the actual rule.
 
 ## Market details
 
 - **Venue:** Polymarket
 - **Question:** `TikTok banned in the US before May 2025?`
-- **Reported volume:** approximately $120 million
-- **Reported resolution:** Yes on January 20, 2025
-- **Disputed fact:** whether a temporary legal ban and short service outage counted as "banned"
-
-I could not recover the Polymarket market page or full market rules during this pass. Cointelegraph's report, republished by TradingView, identifies the title, volume, resolution, and controversy.[^tradingview]
+- **Market page:** [Polymarket market page][polymarket]
+- **Rule:** Yes if TikTok was banned for download and/or use by the majority of Americans in the U.S. by April 30, 2025, 11:59 PM ET.
+- **Mandate requirement:** The ban had to be mandated by U.S. federal law, policy, or the court system and go into effect within the timeframe.
+- **Final result shown on Polymarket:** Yes.[^polymarket]
+- **Reported volume:** approximately $120 million.[^tradingview]
 
 ## Legal and factual background
 
@@ -30,50 +28,30 @@ Cointelegraph reported that on January 19 the ban went into effect and TikTok di
 
 On January 20, Trump signed an executive order stating that the Act's prohibitions had become effective on January 19 but instructing the Attorney General not to enforce the Act for 75 days. The order also directed that no penalties be imposed for conduct during that period or from the effective date until the order was issued.[^white-house]
 
-That sequence created the ambiguity:
-
-- **Legal status:** the statutory prohibitions took effect.
-- **Practical status:** TikTok resumed service quickly after enforcement was delayed.
-
 ## What happened on Polymarket
 
 Cointelegraph reported that the Polymarket market resolved Yes on January 20 after the Supreme Court upheld the law and after TikTok briefly became unavailable in the United States.[^tradingview]
 
-Users objected that TikTok was still operational for most Americans after Trump's intervention. Other users defended Yes because the law had taken effect and the market did not specify that temporary extensions or non-enforcement would negate the ban.[^tradingview]
-
-Cointelegraph reported that Polymarket did not respond to its request for comment before publication.[^tradingview]
+Users objected because TikTok service resumed quickly after Trump's intervention. The objection was understandable as a consumer-expectation complaint, but it does not defeat the market rule: the rule required the ban to go into effect before the deadline, not to remain in force or keep TikTok inaccessible for any specified period.[^polymarket][^white-house]
 
 ## The allegation against Polymarket
 
-### 1. "Banned" can mean practical unavailability
+The No-side objection was that TikTok was not meaningfully or durably banned because the service resumed quickly. In ordinary speech, some users may expect "banned" to mean sustained practical unavailability.
 
-For ordinary users, an app is "banned" if they cannot use it, download it, or access it in a meaningful and sustained way. TikTok's quick restoration cut against that ordinary understanding.
+That objection would have been stronger if the market had required TikTok to remain unavailable, to be removed from app stores for a minimum period, or to stay banned through May 1. It did not.
 
-On that view, the market should not have resolved Yes merely because a legal prohibition briefly took effect if the service remained practically available for most users before May 2025.
-
-### 2. The market did not specify duration or enforcement
-
-The question was not "Does the TikTok divest-or-ban law take effect before May 2025?" or "Will TikTok be unavailable for at least 24 hours?" It used the broad word "banned."
-
-That was the drafting problem. A ban can refer to a statute, an enforcement action, app-store removal, service outage, ISP blocking, or sustained user inaccessibility.
-
-### 3. The outcome was economically important
-
-The reported trading volume was about $120 million, so the ambiguity had substantial financial consequences.[^tradingview]
+The rule expressly covered download and/or use and required a federal-law/policy/court mandate that went into effect within the timeframe.[^polymarket] The January 19 legal and practical events satisfied that test.
 
 ## Polymarket's defense
 
-Polymarket does not appear in the reviewed source to have issued a detailed public defense. The strongest defense is implicit in the legal timeline and the Yes-side user argument reported by Cointelegraph.
+Polymarket's defense is the actual rule and the public legal timeline:
 
-First, the Supreme Court upheld the law on January 17, and the law's prohibitions became effective on January 19.[^supreme-court]
+- The federal law's prohibitions became effective January 19, 2025.[^supreme-court][^white-house]
+- TikTok became unavailable to U.S. users when the deadline arrived, at least temporarily.[^tradingview]
+- The rule required the ban to go into effect by April 30, 2025; it did not require permanence or minimum duration.[^polymarket]
+- Trump's executive order delayed enforcement but did not say the prohibitions had never taken effect.[^white-house]
 
-Second, TikTok did become unavailable in the United States when the deadline arrived, at least temporarily.[^tradingview]
-
-Third, Trump's executive order did not repeal the law or say the prohibitions had never taken effect. It instructed non-enforcement for 75 days and expressly referred to the Act's effective date as January 19.[^white-house]
-
-Fourth, the market title apparently did not require the ban to last through May, to be permanently enforced, or to keep TikTok inaccessible for a minimum period.[^tradingview]
-
-Under that interpretation, Yes was not manipulation or an obvious misgrade. It was a legally grounded reading of a loosely worded title.
+Under those facts, Yes was the correct resolution.
 
 ## Assessment
 
@@ -89,37 +67,38 @@ The Supreme Court described the relevant prohibitions as effective January 19, 2
 
 Cointelegraph reported that TikTok displayed an inaccessibility message on January 19.[^tradingview]
 
-### Did TikTok remain practically banned in the sustained consumer sense?
-
-**No, not based on the available evidence.**
-
-Trump's intervention and enforcement delay allowed the service to remain or become accessible again quickly.[^tradingview][^white-house]
-
-### Was Polymarket's Yes resolution clearly wrong?
+### Did the market require the ban to last for any minimum duration?
 
 **No.**
 
-Yes was defensible if "banned" meant the legal prohibition took effect or the service was blocked even briefly. No was defensible if "banned" meant sustained practical unavailability. The market failed to specify which one controlled.
+The located Polymarket rule required the ban to be mandated and to go into effect within the timeframe. It did not require continuous enforcement, permanence, or a minimum number of hours or days.[^polymarket]
+
+### Was Polymarket's Yes resolution wrong?
+
+**No.**
+
+Yes was supported by both the legal trigger and the actual temporary outage. The later enforcement pause did not undo the fact that the ban had gone into effect.
 
 ### Was this a real failure for the tracker?
 
-**Yes, as a wording failure.**
+**No.**
 
-The market used a politically and legally loaded term without specifying whether it meant legal status, enforcement, app-store availability, service availability, or duration. That is enough to include it, but not enough to call the final Yes resolution an established platform error.
+This is best treated as a controversial but correct resolution. The frustration came from the ban's brevity, not from Polymarket ignoring the rule or writing a rule that failed to cover the decisive fact.
 
 ### Overall classification
 
-- **Operational settlement error:** Not established
-- **Semantic/legal ambiguity:** Yes
-- **Final Yes outcome legally defensible:** Yes
-- **Practical-user mismatch:** Yes
-- **Best public verdict:** Defensible Yes under legal-status reading; poor market wording
+- **Resolution failure:** No
+- **Rule ambiguity:** Low once the market page is considered
+- **Final Yes outcome:** Correct under the rule
+- **Best public verdict:** No failure; brief ban still qualified because the rule did not require duration
 
 ## Precise blocker to a stronger finding
 
-The missing evidence is the original Polymarket rules and resolution source language. If the rules defined "banned" as legal enactment or temporary unavailability, Yes becomes stronger. If they required sustained practical inaccessibility, No becomes stronger. Without the original rule text, the assessment rests on the reported market title and public legal timeline.
+No material blocker remains for the final-resolution question. A stronger archival record could preserve the exact page text as rendered at settlement time, but the current Polymarket page supplies the relevant rule and final outcome.
 
 ## Sources
+
+[^polymarket]: Polymarket, ["TikTok banned in the US before May 2025?"][polymarket]. Shows the market rule, mandate requirement, timeframe, and final Yes outcome.
 
 [^tradingview]: Cointelegraph via TradingView, ["Polymarket faces backlash over TikTok ban prediction resolution"][tradingview], January 2025. Reports the market title, volume, Yes resolution, user backlash, temporary TikTok inaccessibility, and competing user interpretations.
 
@@ -127,6 +106,7 @@ The missing evidence is the original Polymarket rules and resolution source lang
 
 [^white-house]: The White House, ["Application of Protecting Americans from Foreign Adversary Controlled Applications Act to TikTok"][white-house], January 20, 2025. States that the Act's prohibitions became effective January 19 and instructs DOJ not to enforce the Act for 75 days.
 
+[polymarket]: https://polymarket.com/event/tiktok-banned-in-the-us-before-may-2025
 [tradingview]: https://www.tradingview.com/news/cointelegraph%3A3f4adad24094b%3A0-polymarket-faces-backlash-over-tiktok-ban-prediction-resolution/
 [supreme-court]: https://www.supremecourt.gov/opinions/24pdf/604us1r07_k536.pdf
 [white-house]: https://www.whitehouse.gov/presidential-actions/2025/01/application-of-protecting-americans-from-foreign-adversary-controlled-applications-act-to-tiktok/
