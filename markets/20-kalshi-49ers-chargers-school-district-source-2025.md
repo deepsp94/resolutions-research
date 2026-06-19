@@ -2,11 +2,11 @@
 
 ## Bottom line
 
-**Finding: This was a real frontend/source-display error, but not a demonstrated final resolution error. Confidence: high.**
+**Finding: This was a real but minor frontend/source-display error, not a demonstrated final resolution error. Confidence: high.**
 
 Kalshi displayed the San Francisco Unified School District as the source for verifying a 49ers vs. Chargers football market. Event Horizon captured the issue and quoted Kalshi saying it was a frontend copy error, not an error in the CFTC-filed contract.[^eventhorizon]
 
-This belongs in the tracker as a rules/source-presentation failure. It should not be described as a wrong payout unless later evidence shows that the market settled incorrectly.
+This belongs in the tracker as **Failure (minor)**: a live market displayed a nonsensical source, but available reporting does not show user losses, a wrong final payout, or any practical repercussion beyond the frontend correction.
 
 ## Market details
 
@@ -55,18 +55,19 @@ That means the error likely did not change the legally controlling settlement ru
 
 ### Was this a real failure for the tracker?
 
-**Yes, but only as a presentation/source-control failure.**
+**Yes, but only as a minor presentation/source-control failure.** The market-facing source field was wrong, which matters for users reading the live market, but the available evidence points to a frontend copy error rather than a broken filed rule or final misresolution.
 
 ### Overall classification
 
 - **Frontend/source-display error:** Yes
 - **Filed-rule error:** Not established
 - **Final misresolution:** Not established
-- **Best public verdict:** Real display failure; no proven settlement error
+- **Reported user harm:** Not established
+- **Best public verdict:** Failure (minor); no proven settlement error
 
 ## Precise blocker to a stronger finding
 
-The missing evidence is a final settlement record showing that the erroneous displayed source affected payout. Without that, the case should stay framed as a live-market source-display failure.
+The missing evidence is a final settlement record showing that the erroneous displayed source affected payout or caused user losses. Without that, the case should stay framed as a minor live-market source-display failure.
 
 ## Sources
 
