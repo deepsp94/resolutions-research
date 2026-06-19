@@ -2,13 +2,13 @@
 
 ## Bottom line
 
-**Finding: This appears to be a real but temporary Kalshi operational settlement error. Confidence: medium, because the public record is thin and rests mainly on one contemporaneous report.**
+**Finding: This appears to be a real temporary market-state error, but not a practical resolution failure. Confidence: medium, because the public record is thin and rests mainly on one contemporaneous report.**
 
 Event Horizon reported that Kalshi resolved two NBA preseason game markets before the games had ended and initially showed the wrong winners. The games were **Boston vs. Toronto** and **Orlando vs. Philadelphia**, both played on Saturday, October 11, 2025 according to the report.[^event-horizon]
 
 Kalshi then moved the affected markets back to "to be determined," and a Kalshi staffer reportedly said the issue was being reviewed and that there would be "no losses" on the outcomes.[^event-horizon]
 
-This should be tracked as a **temporary operational-resolution failure**. The available evidence does not show a final wrong payout.
+This should be tracked as a **temporary operational glitch**, not as a practical resolution failure. The available evidence does not show a final wrong payout or lasting user loss.
 
 ## Market details
 
@@ -62,7 +62,7 @@ That supports a limited defense:
 - users were reportedly told they would not be harmed by the erroneous determinations; and
 - no final wrong payout is documented in the public source.
 
-The defense does not eliminate the initial error. It just changes the classification from final mispayment to temporary operational failure.
+The defense does not eliminate the initial erroneous display/state. It does, however, change the practical classification: the available record shows a temporary market-state problem that Kalshi reportedly corrected before final harm.
 
 ## Assessment
 
@@ -84,19 +84,20 @@ The article says the markets showed as "to be determined" after the issue and th
 
 The report does not show that users ultimately lost money after Kalshi reviewed the issue.
 
-### Was this a real failure for the tracker?
+### Was this a practical resolution failure?
 
-**Yes, with a scope caveat.**
+**No, not on the available record.**
 
-This is a real resolution-process failure if Event Horizon's account is accurate. But it is smaller and less conclusive than the NFL win-total case because the evidence does not show final settlement harm and no second detailed source was located.
+Event Horizon's account supports a temporary early/wrong market state. But the same account says Kalshi moved the outcomes back to "to be determined" and that users would have no losses. Without evidence of final mispayment or lasting loss, this should not be classified as a practical resolution failure.
 
 ### Overall classification
 
-- **Operational settlement error:** Yes, temporary
+- **Operational settlement error:** Not established as final
+- **Temporary market-state error:** Yes
 - **Final mispayment:** Not established
 - **Rule ambiguity:** No
 - **Corrected by venue:** Reportedly yes
-- **Best public verdict:** Premature/wrong market state, apparently remediated before final harm
+- **Best public verdict:** No practical failure; temporary premature/wrong market state apparently remediated before final harm
 
 ## Precise blocker to a stronger finding
 
