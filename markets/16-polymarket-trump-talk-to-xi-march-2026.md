@@ -2,103 +2,125 @@
 
 ## Bottom line
 
-**Finding: This was a real resolution-process controversy, but not a proven Polymarket misresolution. Confidence: medium-high.**
+**Finding: This should be classified as a Polymarket rule/source-standard failure. Confidence: medium.**
 
-Polymarket's March 2026 "Who will Trump talk to?" market included an outcome for Xi Jinping. The rule required a consensus of credible reporting that Xi and Donald Trump had talked during March 2026. The final outcome for Xi was **No**.[^polymarket-api]
+Polymarket's March 2026 `Who will Trump talk to in March?` market included an outcome for Xi Jinping. The rule required a consensus of credible reporting that Xi and Donald Trump had talked during March 2026. The market resolved **No**.[^polymarket]
 
-PredictionNews reported that Trump said he had spoken with Xi, but China did not confirm the call and there was no clear independent reporting consensus. It also reported that Polymarket clarified that the credible-reporting threshold had not been met, pushing back against UMA activity that had moved toward Yes.[^predictionnews]
+Additional sources make the failure clearer. PredictionNews reported that Trump and Karoline Leavitt said Trump had spoken with Xi, but China did not confirm the call.[^predictionnews-controversy] Barron's later reported the same core source problem: Trump's public confirmation was deemed insufficient because there was no corroboration, and Chinese state media, which often reports calls involving Xi, never confirmed a March discussion.[^barrons]
 
-The strongest criticism is not that the final No was wrong. It is that the market's resolution process exposed tension between UMA voting and Polymarket's centralized clarification role. The strongest defense is that Polymarket applied the stated source requirement and prevented an unsupported Yes resolution.
+The problem is that "independent corroboration" is a strange standard for a diplomatic-call market unless the rule says so explicitly. In most cases, reporters know whether leaders spoke because one or both participants, or their representatives, say so. If Trump and the White House said the call happened, and China did not deny it, then Yes had a strong real-world basis. The market did not explain whether a one-sided official statement could satisfy "consensus of credible reporting," whether silence from the other party defeated it, or whether affirmative confirmation from both governments was required.[^polymarket]
+
+Polymarket resolved No after clarifying that the credible-reporting threshold had not been met.[^predictionnews-clarification] That was defensible under a strict corroboration standard, but the standard was not spelled out before the dispute. This belongs in the tracker because Polymarket effectively required more than an official U.S. participant-side claim without clearly saying that the other side or independent reporting had to corroborate the call.
 
 ## Market details
 
 - **Venue:** Polymarket
 - **Event:** `Who will Trump talk to in March?`
 - **Outcome:** `Will Trump talk to Xi Jinping in March?`
+- **Market page:** [Polymarket market page][polymarket]
 - **Rule:** Yes if the listed individual talked with Donald Trump between March 1 and March 31, 2026, 11:59 PM ET.
 - **Definition of talk:** any interaction between the listed individual and Donald Trump, either in person or through verbal communication by phone or video call.
 - **Resolution source:** consensus of credible reporting.
-- **Volume for Xi outcome in Polymarket API:** about $12.36 million.
-- **Final result:** No.[^polymarket-api]
+- **Volume for Xi outcome shown on Polymarket page:** about $12.36 million.
+- **Final result:** No.[^polymarket]
+
+The Polymarket page shows the Xi outcome as No and displays `Outcome proposed: No`, `No dispute`, and `Final outcome: No` for the selected outcome.[^polymarket] That current page display sits somewhat awkwardly beside contemporaneous reporting that described UMA voter activity and a dispute-like process, so the page should be treated as the best source for final state, not a full history of every intermediate market movement.
 
 ## What happened
 
-PredictionNews reported that Trump announced he had spoken with Chinese President Xi Jinping over the weekend, but China did not confirm the call. The article said there was no clear evidence that the two leaders had spoken.[^predictionnews]
+PredictionNews reported on March 30 that odds of Trump speaking with Xi rose from about 24% to about 79% after Trump announced that a call had taken place. The same report said China did not confirm the call, after which odds fell to about 16%. It then described a large UMA voter switching from No to Yes, pushing the price up near 94%.[^predictionnews-controversy]
 
-PredictionNews also reported that the odds rose again after a UMA voter changed their vote to Yes and the market went into dispute. Polymarket then clarified that there was not a consensus of credible reporting that Trump had spoken to Xi in March.[^predictionnews]
+PredictionNews followed up on March 31, reporting that Polymarket clarified there was not a consensus of credible reporting that Trump had spoken to Xi in March.[^predictionnews-clarification]
 
-The Polymarket API now records the Xi outcome prices as `0` for Yes and `1` for No, with the market resolved.[^polymarket-api]
+Barron's later gave a broader account. It reported that Trump was asked whether he had spoken with Xi about the Iran conflict and answered yes, but that Polymarket did not treat that public confirmation as enough. Barron's also reported that Chinese state media did not confirm a March discussion, that odds briefly topped 96% after a UMA voter controlling roughly 10% of the vote announced a Yes vote, and that after Polymarket clarified the market, many UMA voters switched and the market resolved No.[^barrons]
+
+The current Polymarket page's own market context likewise says no verified contact occurred with Xi despite heavy betting volume.[^polymarket]
 
 ## The allegation against Polymarket
 
-### 1. A party statement may have been enough under a looser rule
+The strongest criticism is that the rule did not say how to treat official participant-side claims.
 
-If the market had simply asked whether Trump claimed to have spoken with Xi, or whether one party publicly asserted the call occurred, Yes would have had a much stronger case.
+Traders saw Trump and Leavitt say a call occurred. A major UMA voter's announced Yes vote moved prices sharply. Then Polymarket's clarification changed the direction of the market and, according to Barron's, dozens of UMA voters switched after the clarification.[^predictionnews-controversy][^predictionnews-clarification][^barrons]
 
-The difficulty was that the market asked whether the talk happened, and selected consensus of credible reporting as the source.[^polymarket-api]
+The merits issue is not simply "Trump claimed it, therefore Yes." Trump could lie. Xi could lie. Both sides could lie. But for leader-call markets, official statements from participants are usually the evidence credible reporters rely on. If the market required Chinese confirmation, affirmative reporting from both sides, or independent corroboration beyond the U.S. side's official statement, it should have said that.
 
-### 2. Polymarket intervened against an oracle path
-
-PredictionNews framed the controversy as Polymarket overruling or refuting UMA voters. That matters because Polymarket presents UMA as part of its decentralized resolution stack. A centralized clarification during a live dispute can look like platform discretion overriding oracle participants.[^predictionnews]
-
-### 3. The rule did not specify how to handle one-sided claims
-
-The March rule, as archived in Polymarket's API, required consensus of credible reporting. It did not spell out whether statements by Trump, Xi, or official representatives could count in the absence of independent confirmation.[^polymarket-api]
-
-That gap later appears to have been addressed in a more detailed June "speak to" rule, which explicitly described how statements by specified individuals or representatives would be treated and how contradiction/non-confirmation would affect resolution.[^polymarket-june-api] That later wording is useful context: the March rule was simpler and left more room for dispute.
+The process issue compounds the rule problem. Polymarket markets can be affected by a mixture of UMA voter signals, centralized platform clarification, and voters who may have financial positions in the outcome. Barron's specifically reported that two UMA voters on this market also had Polymarket positions that would pay if the market resolved No, and that both voted No.[^barrons]
 
 ## Polymarket's defense
 
-Polymarket's strongest defense is the written source requirement.
+Polymarket's defense is straightforward:
 
-The March market required a consensus of credible reporting.[^polymarket-api] PredictionNews reported that China did not confirm the call and that Polymarket clarified there was not a consensus of credible reporting.[^predictionnews]
+- The written rule required consensus of credible reporting.[^polymarket]
+- Trump and Leavitt's statements were one-sided claims, not a reporting consensus.[^predictionnews-controversy]
+- China did not confirm the call, though the reviewed sources do not show China denied it.[^predictionnews-controversy][^barrons]
+- Barron's reported that Chinese state media, which frequently reports Xi calls, did not confirm a March discussion.[^barrons]
+- Polymarket clarified that the required consensus did not exist.[^predictionnews-clarification]
 
-Under that interpretation, Polymarket did not change the rules. It applied the rule's source threshold and prevented a Yes outcome based on an unconfirmed claim.
+Under that strict reading, No was defensible. The weakness is that the strict reading was not made explicit in the original rule.
 
 ## Assessment
 
-### Did Trump claim he spoke with Xi in March?
+### Did Trump or the White House claim Trump spoke with Xi in March?
 
-**Yes, according to PredictionNews.**[^predictionnews]
+**Yes.**
+
+PredictionNews reported that Trump and Karoline Leavitt said the call happened. Barron's reported that Trump publicly confirmed it when asked by reporters.[^predictionnews-controversy][^barrons]
+
+### Did China confirm the call?
+
+**No, not on the reviewed record.**
+
+PredictionNews reported that China did not confirm the call, and Barron's reported that Chinese state media never confirmed a March discussion.[^predictionnews-controversy][^barrons]
+
+### Did China deny the call?
+
+**Not on the reviewed record.**
+
+The sources reviewed here support non-confirmation, not an affirmative denial.
 
 ### Was there a consensus of credible reporting confirming a qualifying talk?
 
-**Not on the reviewed evidence.**
+**Disputed.**
 
-PredictionNews reports the opposite: China did not confirm the call and Polymarket said the credible-reporting threshold had not been met.[^predictionnews]
+Under Polymarket's clarification, no. But the rule did not define whether credible reporting of an official U.S. statement by Trump and the White House counted as a sufficient credible-reporting basis when the other party did not deny the call.
 
-### Was the final No outcome clearly wrong?
+### Was the final No outcome wrong?
 
-**No.**
+**Probably yes under the ordinary evidence standard for leader calls; defensible only under a stricter corroboration standard.**
 
-The market's source rule supports No if the only evidence was Trump's statement without confirmation or independent reporting consensus.
+If Trump and Leavitt said the call happened, and China did not deny it, the ordinary inference is that the call likely happened. Polymarket's No resolution required treating lack of Chinese confirmation as enough to defeat the U.S. side's official claim. That may be a valid rule, but it was not clearly stated.
 
-### Was this still a real failure for the tracker?
+### Was this a platform failure?
 
-**Yes, but as a process/clarification case.**
+**Yes.**
 
-The market exposed a gap in the March rule: it did not say how to treat statements by one party when the other party did not confirm. It also exposed governance tension between UMA's dispute process and Polymarket's ability to issue clarifications during resolution.
+The failure was the source standard. Polymarket did not specify how official claims by one participant should be treated, then resolved No as though independent or bilateral corroboration was required.
 
 ### Overall classification
 
-- **Operational settlement error:** Not established
-- **Semantic/source-threshold ambiguity:** Yes
-- **Centralized clarification during dispute:** Yes
-- **Final No defensible under written rule:** Yes
-- **Best public verdict:** Polymarket likely prevented an unsupported Yes; March rule could have been clearer
+- **Resolution failure:** Yes
+- **Final No outcome:** Likely wrong under ordinary participant-statement evidence; defensible only under a stricter corroboration rule
+- **Rule clarity:** Insufficient
+- **Governance/process concern:** Yes, because UMA voter signals and platform clarification moved the market
+- **Best public verdict:** Failure; Polymarket required unclear corroboration beyond official U.S. participant-side statements
 
 ## Precise blocker to a stronger finding
 
-The missing evidence is the full UMA vote record and Polymarket's exact clarification text outside PredictionNews's summary. Without those, the case supports a process controversy and under-specified source rule, not a proven resolution error.
+The blocker is the rule's undefined source standard. The reviewed sources show U.S. participant-side confirmation and no Chinese denial, but no Chinese confirmation. If Polymarket intended to require bilateral confirmation or independent corroboration, that should have been in the rule.
+
+The remaining transparency gap is procedural: a complete UMA vote record, Discord debate archive, and exact Polymarket clarification screenshot would better document how the market moved before final No.
 
 ## Sources
 
-[^polymarket-api]: Polymarket Gamma API, [`who-will-trump-talk-to-in-march` event][polymarket-api]. Archives the event rule, Xi Jinping outcome, source requirement, volume, and final No result.
+[^polymarket]: Polymarket, [`Who will Trump talk to in March?`][polymarket]. Shows the event rule, Xi Jinping outcome, source requirement, volume, outcome proposed No, no dispute, and final No result.
 
-[^predictionnews]: Chris Gerlacher, PredictionNews, ["Polymarket Overrules UMA Voters in Trump-Xi Call Market"][predictionnews], March 31, 2026. Reports Trump's claim, lack of Chinese confirmation, UMA activity, Polymarket clarification, and trader reaction.
+[^predictionnews-controversy]: Chris Gerlacher, PredictionNews, ["Polymarket Faces New UMA Controversy Amid Industry Skepticism"][predictionnews-controversy], March 30, 2026. Reports the price movement, Trump and Karoline Leavitt's claims, lack of Chinese confirmation, and a major UMA voter switching from No to Yes.
 
-[^polymarket-june-api]: Polymarket Gamma API, [`who-will-trump-speak-to-in-june` event][polymarket-june-api]. Later rule text explicitly addressed statements by the specified individuals or representatives and post-timeframe confirmation, illustrating the kind of clarification missing from the March rule.
+[^predictionnews-clarification]: Chris Gerlacher, PredictionNews, ["Polymarket Overrules UMA Voters in Trump-Xi Call Market"][predictionnews-clarification], March 31, 2026. Reports Polymarket's clarification that there was not a consensus of credible reporting that Trump had spoken to Xi in March.
 
-[polymarket-api]: https://gamma-api.polymarket.com/events?slug=who-will-trump-talk-to-in-march
-[predictionnews]: https://predictionnews.com/news/polymarket-overrules-uma-voters-in-trump-xi-call-market
-[polymarket-june-api]: https://gamma-api.polymarket.com/events?slug=who-will-trump-speak-to-in-june
+[^barrons]: Nick Devor, Barron's, ["Polymarket's Most Contentious Debates Are Being Decided by Anonymous Crypto Votes"][barrons], May 12, 2026. Reports Trump's public confirmation, lack of Chinese state-media confirmation, UMA voter activity, financial-conflict concerns, Polymarket's UMA defense, and the final No result.
+
+[polymarket]: https://polymarket.com/event/who-will-trump-talk-to-in-march
+[predictionnews-controversy]: https://predictionnews.com/news/polymarket-faces-new-uma-controversy-amid-industry-skepticism/
+[predictionnews-clarification]: https://predictionnews.com/news/polymarket-overrules-uma-voters-in-trump-xi-call-market
+[barrons]: https://www.barrons.com/articles/polymarket-prediction-market-disputes-uma-crypto-e3eae345
