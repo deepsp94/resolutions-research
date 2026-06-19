@@ -2,11 +2,13 @@
 
 ## Bottom line
 
-**Finding: This was a real operational resolution failure that Polymarket reportedly remedied. Confidence: medium-high.**
+**Finding: This was a real operational resolution failure that Polymarket reportedly resolved by making affected users whole. Confidence: high that the failure occurred; medium-high on the exact remediation mechanics.**
 
-The Astros beat the Dodgers 18-1 on July 4, 2025. A Polymarket sports market for Astros vs. Dodgers nevertheless initially resolved to Dodgers, according to the PolymarketGuide archive.[^pmg] That is not a semantic edge case: the wrong team was paid, at least initially.
+The Astros beat the Dodgers 18-1 on July 4, 2025. Polymarket's current sports page for that game shows the same final score.[^polymarket-page] A Polymarket sports market for Astros vs. Dodgers nevertheless initially resolved to Dodgers, according to the PolymarketGuide archive.[^pmg] That is not a semantic edge case: the wrong team was paid, at least initially.
 
-The main limitation is source depth. The clearest resolution-failure account is a PolymarketGuide case-study stub, not a fully independent newsroom reconstruction. But it links Polymarket's own public statement on X and says affected users were refunded or paid after the mistake.[^pmg]
+The remediation record is also stronger than a vague rumor. PolymarketGuide says Polymarket issued refunds through an official X statement, and its refund-precedent page identifies Astros vs. Dodgers as a rare case where a wrong resolution led to affected shares being redeemable for $1.[^pmg][^refunds]
+
+This should be marked **Failure (resolved)**: Polymarket made an objective settlement error, but reportedly made affected users whole afterward.
 
 ## Market details
 
@@ -15,15 +17,17 @@ The main limitation is source depth. The clearest resolution-failure account is 
 - **Real-world game:** Houston Astros at Los Angeles Dodgers, July 4, 2025.
 - **Actual result:** Astros 18, Dodgers 1.
 - **Alleged initial market result:** Dodgers.
-- **Reported remediation:** Polymarket said affected Astros holders were paid or refunded.[^pmg]
+- **Reported remediation:** affected users/shares were made whole or allowed to redeem at $1.[^pmg][^refunds]
 
 ## What happened
 
 PolymarketGuide states that on July 5, 2025, the Astros vs. Dodgers market resolved incorrectly: Houston had defeated Los Angeles 18-1, but the market resolved to the Dodgers.[^pmg]
 
-The sports result is independently corroborated. The Houston Chronicle reported an Astros 18-1 win at Dodger Stadium, and contemporaneous Dodgers coverage also records July 4 as Astros 18, Dodgers 1.[^chronicle][^trueblue]
+The sports result is independently corroborated. The Houston Chronicle reported an Astros 18-1 win at Dodger Stadium, contemporaneous Dodgers coverage records July 4 as Astros 18, Dodgers 1, and Polymarket's current sports page shows the same final score.[^chronicle][^trueblue][^polymarket-page]
 
 PolymarketGuide describes the case as an objective market with no ambiguity and says the wrong resolution caused losses totaling more than $217,000 before Polymarket issued refunds to affected users through an official X statement.[^pmg]
+
+PolymarketGuide's refund-precedent page separately describes Astros vs. Dodgers as a rare wrong-resolution case where affected shares could be redeemed for $1.[^refunds]
 
 ## The allegation against Polymarket
 
@@ -35,7 +39,7 @@ Unlike cases involving "suit," "invasion," "approved," or "withdraw," there was 
 
 The strongest implicit defense is remediation.
 
-PolymarketGuide says Polymarket issued an official statement and that affected users were refunded after the bad resolution.[^pmg] That does not erase the initial failure, but it matters: this looks like an operational/oracle-path mistake that the venue later corrected economically rather than a defended interpretation of ambiguous rules.
+PolymarketGuide says Polymarket issued an official statement and that affected users were refunded after the bad resolution.[^pmg] Its refund-precedent page says the case was handled by making affected shares redeemable for $1.[^refunds] That does not erase the initial failure, but it matters: this was an operational/oracle-path mistake that the venue later corrected economically rather than a defended interpretation of ambiguous rules.
 
 ## Assessment
 
@@ -49,7 +53,7 @@ PolymarketGuide says Polymarket issued an official statement and that affected u
 
 ### Did Polymarket reportedly remedy the harm?
 
-**Yes, according to PolymarketGuide.** It says Polymarket issued refunds to affected users through an official X statement.[^pmg]
+**Yes, according to PolymarketGuide.** It says Polymarket issued refunds to affected users through an official X statement, and the refund-precedent page says affected shares were redeemable for $1.[^pmg][^refunds]
 
 ### Was this a real failure for the tracker?
 
@@ -60,20 +64,26 @@ PolymarketGuide says Polymarket issued an official statement and that affected u
 - **Operational settlement error:** Yes
 - **Semantic ambiguity:** No
 - **Reported remediation:** Yes
-- **Best public verdict:** Real misresolution, later economically remedied
+- **Best public verdict:** Failure (resolved): real misresolution, later economically remedied
 
 ## Precise blocker to a stronger finding
 
-The missing evidence is a complete archived transaction/resolution record and readable copy of Polymarket's X statement. The public evidence is enough to include the case, but not enough to reconstruct every affected wallet, payout, or refund amount independently.
+The missing evidence is a complete archived transaction/resolution record and a readable copy of Polymarket's X statement. The public evidence is enough to classify the case as **Failure (resolved)**, but not enough to reconstruct every affected wallet, payout, or refund amount independently.
 
 ## Sources
 
 [^pmg]: PolymarketGuide Archive, ["Astros vs. Dodgers"][pmg]. Reports the wrong Dodgers resolution, Astros 18-1 win, estimated losses above $217,000, and Polymarket's official statement/refund response.
+
+[^refunds]: PolymarketGuide Archive, ["Refunds"][refunds]. Describes Astros vs. Dodgers as a rare wrong-resolution case where affected shares were made redeemable for $1.
+
+[^polymarket-page]: Polymarket, ["Dodgers vs. Astros Odds & Predictions (Jul. 4, 2025)"][polymarket-page]. Current sports page showing the final Astros 18, Dodgers 1 score and market volume.
 
 [^chronicle]: Matt Kawahara, Houston Chronicle, ["Astros hand Los Angeles worst loss in history of Dodger Stadium in 18-1 drubbing"][chronicle], July 4, 2025. Reports the Astros' 18-1 win.
 
 [^trueblue]: True Blue LA, ["July 4: Astros 18, Dodgers 1"][trueblue], July 5, 2025. Records the Dodgers' 18-1 home loss to Houston.
 
 [pmg]: https://polymarketguide.gitbook.io/polymarketguide-archive/case-studies/astros-vs.-dodgers
+[refunds]: https://polymarketguide.gitbook.io/polymarketguide-archive/precedents/polymarket/refunds
+[polymarket-page]: https://polymarket.com/event/mlb-hou-lad-2025-07-04
 [chronicle]: https://www.houstonchronicle.com/sports/astros/article/houston-la-dodgers-score-20422537.php
 [trueblue]: https://www.truebluela.com/2025/7/5/24462021/dodgers-astros-july-4
