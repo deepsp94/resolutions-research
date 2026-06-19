@@ -2,18 +2,13 @@
 
 ## Bottom line
 
-**Finding: This was a real geopolitical-definition controversy, but not a proven Polymarket misresolution. Confidence: high on ambiguity; medium-high that No was defensible under the written rule.**
+**Finding: This should not be classified as a Polymarket resolution failure. Confidence: high.**
 
-Polymarket's title asked whether Israel would invade Lebanon in September 2024. Israel began ground operations in southern Lebanon around the deadline, and much public reporting used invasion or incursion language.[^predictionnews][^axios]
+Polymarket's market asked whether Israel would invade Lebanon in September 2024. The detailed rule did not resolve on ordinary media use of the word "invasion" or on ground entry alone. It required Israel to commence a military offensive **intended to establish control over any portion of Lebanon** between September 17 and September 30, 2024.[^polymarket]
 
-But the detailed rule was narrower than the title. It required Israel to commence a military offensive **intended to establish control over any portion of Lebanon** between September 17 and September 30, 2024. After disputed Yes and No proposals, the final outcome was **No**.[^polymarket]
+That intent-to-control condition was not established. Israel began ground operations in southern Lebanon around the deadline, and some reporting used invasion or incursion language.[^predictionnews][^axios] But Axios reported that the IDF described the operation as limited, localized, targeted raids against Hezbollah targets, and that Israeli officials said the operation was not intended to occupy southern Lebanon.[^axios]
 
-That creates the core issue:
-
-- **Yes:** Israeli troops entered Lebanon in a ground operation, and many credible sources described it as an invasion.
-- **No:** the market did not merely ask whether troops crossed the border; it required intent to establish control, while Israel and Axios sources described the operation as limited, localized, targeted, and not intended to occupy southern Lebanon.[^polymarket][^axios]
-
-This belongs in the tracker as a **title/rules mismatch and intent-proof problem**, not as a clean case of Polymarket paying the wrong side.
+The final No resolution was fair under the actual rule. A short title cannot capture every condition; that is why the detailed rules exist. The rule's control-intent requirement was a legitimate narrowing condition, and the reviewed official/credible reporting did not confirm it.
 
 ## Market details
 
@@ -31,7 +26,9 @@ On September 30, 2024 U.S. time, Israel began a ground operation in southern Leb
 
 Axios also reported that two Israeli officials said the security-cabinet decision emphasized the operation was targeted and limited in time and scope, and was not intended to occupy southern Lebanon.[^axios]
 
-At the same time, the ordinary-language and media picture was less narrow. PredictionNews reported that major media outlets used terms such as invasion and incursion, and that Yes shares surged as traders reacted to those descriptions and to statements from Israeli officials suggesting escalation.[^predictionnews]
+PredictionNews reported that major media outlets used invasion or incursion language and that Yes shares surged as traders reacted to those descriptions and to statements from Israeli officials suggesting escalation.[^predictionnews]
+
+Those facts explain why the dispute existed. They do not satisfy the market's stated intent-to-control requirement.
 
 ## What happened on Polymarket
 
@@ -43,36 +40,22 @@ The Polymarket page now shows the resolution path: a Yes outcome was proposed an
 
 ## The allegation against Polymarket
 
-### 1. The market title invited an ordinary invasion reading
+The user-facing complaint was understandable: Israeli troops entered Lebanon and many outlets used invasion/incursion language.[^predictionnews][^axios] A trader reading only the short title could have expected Yes.
 
-The headline question was "Will Israel invade Lebanon in September?" For many traders, the answer looked like Yes once Israeli ground forces entered Lebanon and many outlets framed the operation as an invasion or incursion.[^predictionnews][^axios]
+But that is not enough to establish a platform failure. The detailed rule controlled, and it required intent to establish control. Titles are short labels; they do not need to repeat every condition in the rules.
 
-If the market was meant to capture ordinary geopolitical language, No looked counterintuitive.
-
-### 2. Credible reporting did use invasion-style language
-
-PredictionNews documented the core frustration: media language was not uniform, and many sources described Israel's actions in terms that sounded like invasion.[^predictionnews]
-
-Because Polymarket allowed credible-reporting consensus as a source, traders could reasonably ask why broad reporting did not suffice.
-
-### 3. The controlling rule made subjective intent decisive
-
-The rule did not define an invasion as crossing the border. It required intent to establish control.[^polymarket]
-
-That is difficult to prove because the actor conducting the operation has strong incentives to frame the action as limited, targeted, temporary, or defensive. PredictionNews identified this as a structural problem: proving intent in geopolitical markets is inherently messy.[^predictionnews]
+The strongest Yes argument would need to show that one of the specified official sources, or a credible-reporting consensus, confirmed that Israel intended to establish control over part of Lebanon. The reviewed record does not show that.
 
 ## Polymarket's defense
 
-I did not find a separate public Polymarket explanation beyond the final market page. The strongest defense is the written rule and the official/reported characterization of Israel's operation.
-
-That defense is:
+Polymarket's defense is the written rule and the source record:
 
 - The rule required intent to establish control over part of Lebanon, not merely entry by ground troops.[^polymarket]
 - Axios reported that Israeli officials described the operation as targeted, limited, and not intended to occupy southern Lebanon.[^axios]
 - The IDF framed the operation as limited raids against Hezbollah targets near the border, not as a campaign to govern or hold Lebanese territory.[^axios]
-- PredictionNews itself recognized that the official Israeli position directly conflicted with a Yes resolution under Polymarket's control-intent criterion.[^predictionnews]
+- PredictionNews recognized that the official Israeli position conflicted with a Yes resolution under Polymarket's control-intent criterion.[^predictionnews]
 
-Under that interpretation, No was a defensible application of the detailed rule, even if the title and some reporting made Yes intuitively attractive.
+Under that rule, No was a fair result.
 
 ## Assessment
 
@@ -94,33 +77,34 @@ PredictionNews reported that major outlets used invasion or incursion descriptio
 
 The Polymarket rule required a military offensive intended to establish control over any portion of Lebanon.[^polymarket]
 
-### Was that control-intent requirement clearly satisfied?
+### Was that control-intent requirement satisfied?
 
-**Not on the reviewed evidence.**
+**No, not on the reviewed evidence.**
 
-The reviewed sources show a ground operation, but also official and sourced claims that it was limited, targeted, and not intended to occupy southern Lebanon.[^axios][^predictionnews]
+The reviewed sources show a ground operation, but official and sourced reporting described it as limited, targeted, and not intended to occupy southern Lebanon.[^axios][^predictionnews]
 
-### Was Polymarket's final No clearly wrong?
+### Was Polymarket's final No fair?
 
-**No.**
+**Yes.**
 
-No was defensible under the detailed rule because the evidence did not cleanly prove intent to establish control.
+No was a fair application of the detailed rule because the necessary intent to establish control was not confirmed.
 
 ### Was this a real failure for the tracker?
 
-**Yes, as a title/rules and intent-definition failure.**
+**No.**
 
-The market title used a broad geopolitical word, but the rule embedded a narrower and subjective intent test. That mismatch created a predictable dispute when real-world events fell between "cross-border raid" and "occupation."
+This was a disputed geopolitical market, but not a demonstrated resolution or rule-writing failure. The rule's intent-to-control condition was clear enough and outcome-determinative.
 
 ### Overall classification
 
-- **Operational settlement error:** Not established
-- **Semantic/geopolitical ambiguity:** Yes
-- **Title/rules mismatch:** Yes
-- **Final No defensible under detailed rule:** Yes
-- **Best public verdict:** Real drafting problem; not proven wrong final outcome
+- **Resolution failure:** No
+- **Rule ambiguity:** Low to moderate, but not enough to make the settlement unfair
+- **Ground entry:** Yes
+- **Intent to establish control:** Not established
+- **Final No outcome:** Fair under the rule
+- **Best public verdict:** No failure
 
-## Precise blocker to a stronger finding
+## Precise blocker to a stronger contrary finding
 
 To prove Polymarket made a resolution error, the evidence would need to show that Israel's September 2024 operation was intended to establish control over part of Lebanon within the market window, despite official and reported statements that it was limited and not intended as an occupation. The reviewed sources do not establish that.
 
