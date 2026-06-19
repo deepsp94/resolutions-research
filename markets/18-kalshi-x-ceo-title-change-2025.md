@@ -2,13 +2,13 @@
 
 ## Bottom line
 
-**Finding: This was a real market-title/rules mismatch and live-title-change problem. Confidence: high.**
+**Finding: This was a serious market-presentation problem, but whether it rises to a platform failure is inconclusive. Confidence: high on the title/rules mismatch; medium on the failure classification.**
 
 Kalshi initially displayed a market title saying "Linda Yaccarino leaves X this year?" After Yaccarino announced she was leaving X, Yes traded up near 99% and Kalshi itself posted about the market. But the detailed rules did not simply ask whether she left; they required that X have, or announce it would have, a new CEO by the specified date.[^eventhorizon][^terms]
 
 Kalshi later changed the displayed title to "Linda Yaccarino replaced as X CEO in 2025?" or substantially similar replacement language.[^kalshi][^eventhorizon]
 
-This belongs in the tracker even if no final wrong payout is shown. The problem was that the visible market title communicated one trigger, the binding rule used a different trigger, and the venue changed the live title only after substantial trading.
+This belongs in the tracker even if no final wrong payout is shown. The visible title and binding rule described materially different triggers: an executive **leaving** and an executive **being replaced** are not the same event. At the same time, users are responsible for reading the rules, and the filed/binding terms did contain the new-CEO condition. The best classification is therefore not a clean failure, but an inconclusive case with strong evidence of poor market presentation.
 
 ## Market details
 
@@ -32,17 +32,19 @@ Event Horizon then reported that Kalshi changed the market title to replacement 
 
 ## The allegation against Kalshi
 
-### 1. The original title communicated the wrong trigger
+### 1. The original title communicated a materially different trigger
 
 "Linda Yaccarino leaves X this year?" is naturally satisfied by Yaccarino announcing her departure. It does not require a successor to be named.
 
 The contract terms, however, required a new CEO condition.[^terms] That is a materially different event.
 
+This was not a minor title compression issue. A title cannot include every edge case or condition, and users still need to read the rules. But "leaves" versus "is replaced" changes the core event being traded. It is much larger than a normal short-title simplification.
+
 ### 2. Kalshi's own social post amplified the title-level reading
 
 Event Horizon reported that Kalshi tweeted in a way that made it seem like Yaccarino had left and showed the market at 99%.[^eventhorizon]
 
-That matters because many users price the visible title and platform presentation, not only the contract PDF.
+That matters because many users price the visible title and platform presentation, not only the contract PDF. It does not excuse users from reading the rules, but it makes Kalshi's presentation poor form.
 
 ### 3. The live title change came after trading
 
@@ -84,21 +86,23 @@ The documented failure is presentation and rule clarity, not an already-proven f
 
 ### Was this a real failure for the tracker?
 
-**Yes.**
+**Inconclusive.**
 
-A prediction market's visible title is economically important. Here, the title and rules diverged on the central trigger, and the title was changed only after market-moving news.
+A prediction market's visible title is economically important. Here, the title and rules diverged on the central trigger, and the title was changed only after market-moving news. That is strong evidence of poor presentation.
+
+But the binding terms did state the new-CEO condition, and users had a duty to consider the full rule set. Without proof of a final wrong payout, a concealed rule, or a rule change after trading, this should not be called a conclusive resolution failure.
 
 ### Overall classification
 
 - **Operational settlement error:** Not established
-- **Title/rules mismatch:** Yes
+- **Material title/rules mismatch:** Yes
 - **Live clarification/title change:** Yes
 - **Binding-rule defense:** Strong
-- **Best public verdict:** Real presentation/rules failure; no proven final misresolution
+- **Best public verdict:** Inconclusive failure classification; clear poor form and serious presentation problem
 
 ## Precise blocker to a stronger finding
 
-The missing evidence is the final settlement outcome and a complete archived record of every title/rule version as displayed to users at each moment. The available evidence is enough to establish a title/rules mismatch and live-title correction, but not enough to prove final settlement harm.
+The missing evidence is the final settlement outcome and a complete archived record of every title/rule version as displayed to users at each moment. The available evidence is enough to establish a serious title/rules mismatch and live-title correction, but not enough to prove final settlement harm or that Kalshi violated the binding terms.
 
 ## Sources
 
