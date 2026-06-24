@@ -1,174 +1,101 @@
-# Kalshi: 2025 Oscars viewership
+# Kalshi: 2025 Oscars viewership and a next-day upward revision
 
 ## Bottom line
 
-**Finding: This was a real customer-facing resolution controversy and a weak market-design choice, but not a proven Kalshi settlement error. Confidence: high.**
+**Finding: No failure. Kalshi settled its 2025 Oscars viewership market on the viewer count documented by the source agencies at the contract's expiration — an initial ~18.07 million figure that put the audience below the 19.5-million strike, so that strike resolved No. Nielsen/ABC revised the count up to ~19.69 million the next day, which would have made the strike Yes, but the governing contract expressly excluded revisions made after expiration. Kalshi applied the written rule. Confidence: high. Failure-resolved: N/A.**
 
-Kalshi offered contracts on 2025 Oscars viewership, including whether the audience would exceed **19.5 million** viewers. The contracts resolved using the initially reported figure of roughly **18.1 million**, so the 19.5-million threshold resolved **No**.[^predictionnews-ufc][^predictionnews-resolutions]
+This looks at first like a clean misresolution: the figure now reported for the 2025 Oscars is **~19.7 million**, above Kalshi's **19.5-million** strike, yet that strike settled **No**.[^thewrap][^variety] The settlement instead used the **initial ~18.07 million** count.[^guardian][^thewrap]
 
-Later reporting put the audience at about **19.7 million** after Nielsen/ABC included additional viewing on phones, tablets, and computers. That later figure would have made the 19.5-million threshold **Yes**.[^washington-post][^ap]
+The decisive question is *which value the contract bound to*. The governing rules — certified to the CFTC on **February 28, 2025** (listed March 1, 2025), days before the March 2 ceremony — define the Underlying as the reported viewer count and state verbatim that "**Revisions to the Underlying made after Expiration will not be accounted for in determining the Expiration Value**," with the Expiration Value taken "as documented by the Source Agency on the Expiration Date at the Expiration time" of **10:00 AM ET**.[^cert] The initial report (~18.07M, March 3) was below 19.5M; the ~19.69M figure was a March 4 upward revision adding digital viewing.[^thewrap][^variety] Under the rule that governed, the post-expiration revision was excluded, and No was the correct application of the written terms.
 
-The apparent contradiction is real: a user asking "how many people watched the Oscars?" would now usually see the 19.7-million figure, while Kalshi paid the contract using the lower initial figure. But Kalshi's written contract terms expressly said that revisions to the underlying made after expiration would not count, and PredictionNews reports that Kalshi defended the settlement on that basis.[^contract-terms][^predictionnews-resolutions]
-
-The best classification is therefore:
-
-- **Wrong final-real-world proxy:** yes, if the market is understood as final Oscars viewership.
-- **Wrong settlement under the written rule:** not established.
-- **Platform mistake:** yes, but mainly in product design and user communication, not in ignoring its own rule.
+The episode is a genuine user-facing controversy and a weak product design — a "viewership" market that locks in an early count and excludes a same-week fuller measure can pay an answer that looks false to ordinary users — but applying a written post-expiration-exclusion rule as drafted is not a settlement error.
 
 ## Market details
 
 - **Venue:** Kalshi
-- **Market family:** 2025 Oscars viewership contracts
-- **Relevant threshold:** above 19.5 million viewers
-- **Event:** 97th Academy Awards, held March 2, 2025
-- **Initial figure used for settlement:** approximately 18.1 million / "just over 18m"
-- **Later expanded figure:** approximately 19.7 million / 19.69 million
-- **Result for 19.5-million threshold:** No
-- **Primary contract terms:** [Kalshi `OSCARVIEWER` contract terms][contract-terms]
+- **Market:** "How many people will watch the Oscars?" (In 2025) — series `KXOSCARSVIEWER`, event `KXOSCARSVIEWER-25`.[^series]
+- **Relevant strike:** above 19.5 million viewers.[^predictionnews-resolutions]
+- **Event:** 97th Academy Awards, March 2, 2025.
+- **Governing contract:** the Oscars-viewership terms, CFTC-certified February 28, 2025 (listed March 1, 2025).[^cert]
+- **Binding sources (priority order):** The New York Times, Deadline, Variety, CBS News, The Guardian, the Associated Press, The Washington Post, the Hollywood Reporter, Nielsen.[^cert]
+- **Governing rule:** Expiration Value "as documented by the Source Agency on the Expiration Date at the Expiration time"; Expiration time 10:00 AM ET; "Revisions to the Underlying made after Expiration will not be accounted for."[^cert]
+- **Value used at settlement:** initial ~18.07 million (below 19.5M).[^guardian][^thewrap]
+- **Later revised value:** ~19.69 million (≈19.7M).[^thewrap][^variety]
+- **Result for the 19.5-million strike:** No.[^predictionnews-resolutions]
 
-I was not able to recover the live Kalshi market page or ticker from Kalshi's current public markets API. The full contract-terms PDF is available from Kalshi's public document store, and PredictionNews preserves the relevant threshold, result, and Kalshi's stated rationale.[^contract-terms][^predictionnews-resolutions]
-
-## The rule
-
-The Kalshi contract terms defined the underlying as the reported viewer count for the Academy Awards telecast in the specified year.
-
-The decisive sentence was:
-
-> Revisions to the Underlying made after Expiration will not be accounted for in determining the Expiration Value.
-
-The source agencies were listed in priority order: The New York Times, Deadline, Variety, CBS News, The Guardian, the Associated Press, The Washington Post, the Hollywood Reporter, and Nielsen.[^contract-terms]
-
-The Expiration Value was the underlying value documented by the source agency on the expiration date at the expiration time.[^contract-terms]
-
-That rule did **not** ask for the final, most complete Nielsen number. It asked for a reported number at a specified time and excluded later revisions.
+I could not recover the live 2025 strike grid or per-strike settled results from Kalshi's public API: the `KXOSCARSVIEWER-25` event still resolves but its markets have been pruned from the markets endpoint, and the only Wayback snapshot of the live market page is a client-rendered shell with no embedded data.[^series] The strike (above 19.5M) and the No outcome are documented by PredictionNews.[^predictionnews-resolutions]
 
 ## What happened
 
-### Initial reporting showed about 18.1 million
+The contract's Underlying is the reported number of viewers the Academy Awards telecast drew, with the Expiration Value taken at 10:00 AM ET on the Expiration Date and post-expiration revisions excluded.[^cert] The reported figure moved as follows:
 
-Early Nielsen "Fast Nationals" reported about **18.1 million** viewers. The Guardian, relying on Nielsen figures, reported that viewership had slipped to "just over 18m" across ABC and Hulu.[^guardian]
+| Reported | Viewer count | Basis |
+|---|---|---|
+| March 3, 2025 | **~18.07 million** (ABC + Hulu) | Initial Nielsen Fast Nationals; The Guardian: "just over 18m," down 7%[^guardian][^thewrap] |
+| March 4, 2025 | **~19.69 million** (≈19.7M) | Updated Nielsen figures adding digital viewing on mobile, PCs, tablets — a gain of ~1.645 million[^thewrap][^variety] |
 
-PredictionNews reports that The New York Times initially reported about **18 million** viewers and that Kalshi's contracts above **19.5 million** resolved **No**.[^predictionnews-resolutions][^predictionnews-ufc]
-
-### Later reporting showed about 19.7 million
-
-The Washington Post later reported that Nielsen's first numbers counted only viewers watching the ABC telecast or Hulu livestream on televisions, while the final total included viewers watching on phones, tablets, and computers. The updated figure was around **19.7 million**.[^washington-post]
-
-The Associated Press likewise reported that ABC's Tuesday figures showed an estimated **19.7 million** viewers, the biggest Oscars audience in five years.[^ap]
-
-For a contract asking simply whether Oscars viewership exceeded 19.5 million, that later number looks like a Yes.
+The ~1.645-million upward revision came from counting digital-device viewing not in the first release — a category that mattered in 2025 because the ceremony was livestreamed on Hulu — and made the 2025 audience the biggest in five years.[^thewrap][^variety] The 19.5-million strike, settled on the initial ~18.07M figure, resolved No.[^predictionnews-resolutions]
 
 ## The allegation against Kalshi
 
-### 1. The settlement no longer matches the commonly reported event fact
-
-After the updated Nielsen/ABC figure, the ordinary answer to "how many people watched the 2025 Oscars?" became about **19.7 million**. Kalshi's 19.5-million threshold remained settled **No**.
-
-This is the core user-facing problem. The market's settled answer became misleading as a reference for final Oscars viewership.
-
-### 2. The initial figure was not just a normal final revision
-
-The gap was not a trivial rounding change. The initial number excluded categories of streaming viewers that mattered in 2025 because the Oscars were streamed live on Hulu for the first time. The Washington Post specifically attributed the difference to the first report counting television viewing only, while the later total included mobile and computer streams.[^washington-post]
-
-That means the contract selected a narrower early measurement of the audience rather than the eventual fuller measure of the same event.
-
-### 3. The product framing invited a broader interpretation than the rule
-
-The market was understood publicly as an Oscars viewership market. In ordinary media usage, the 19.7-million figure became the reported viewership for the 2025 Oscars.
-
-Kalshi's detailed rule, however, effectively made the contract about the first qualifying published viewership number by the expiration time. That is a legitimate settlement design, but it is not the same informational product as final viewership.
+Traders alleged the settlement no longer matched the commonly reported event fact: the ordinary answer to "how many watched the 2025 Oscars?" became ~19.7 million, above the 19.5-million strike, yet the strike stayed No.[^predictionnews-resolutions] The factual premise is correct — the strike did settle No on the ~18M figure while the later best-known count exceeded 19.5M. The question is whether that violated the governing contract.
 
 ## Kalshi's defense
 
-### Explicit / reported defense
+The defense is that the contract froze the value at expiration and excluded later revisions.
 
-PredictionNews reports that Kalshi did not change the resolution because the market rules stated that the initial release would count and future revisions would not. It also quotes a Kalshi operations-team member as saying the market was "determined correctly" while acknowledging that it was unfortunate the market did not account for data revisions.[^predictionnews-resolutions]
+The governing terms, certified to the CFTC on February 28, 2025, provide: the Expiration Value is "the value of the Underlying as documented by the Source Agency on the Expiration Date at the Expiration time," the Expiration time is 10:00 AM ET, and "Revisions to the Underlying made after Expiration will not be accounted for in determining the Expiration Value."[^cert] PredictionNews reports that Kalshi did not change the resolution because the rules stated the initial release would count and future revisions would not, and quotes a Kalshi operations-team member saying the market was "determined correctly" while acknowledging it was unfortunate the market did not account for data revisions.[^predictionnews-resolutions]
 
-That defense is strongly supported by Kalshi's contract terms. The terms expressly exclude revisions to the underlying after expiration.[^contract-terms]
-
-### Strongest rule-based defense
-
-Kalshi's strongest defense is straightforward:
-
-1. The written contract selected a measurement as documented by named source agencies at expiration.
-2. It expressly excluded later revisions.
-3. The initial report was below 19.5 million.
-4. The later 19.7-million figure was a revision or expanded release after the initial report.
-5. Therefore the 19.5-million contract should remain No under the written rule.
-
-This is not a case where the venue appears to have ignored its own source hierarchy or secretly changed the rule after trading.
-
-### Why that defense is incomplete
-
-The rule was clear in a narrow legal sense, but it was a poor proxy for the thing many traders likely thought they were forecasting.
-
-The 2025 Oscars had a new distribution feature: live streaming on Hulu. The first reported number missed meaningful categories of streaming viewers, while the later number became the more complete public audience figure.[^washington-post] A market that advertises itself as viewership but mechanically excludes a same-week expanded count can pay an answer that looks false to ordinary users.
-
-Kalshi could have avoided the controversy by stating more prominently that the contract was about the **initial reported viewership figure**, not final viewership, or by waiting for a fuller Nielsen/ABC release.
+The value documented at the 10:00 AM ET expiration was the initial ~18.07-million count, below 19.5 million; the ~19.69-million figure was a March 4 upward revision arriving after expiration and was excluded. On the governing contract, the sub-19.5M value was the Expiration Value.
 
 ## Assessment
 
-### Did Kalshi pay the wrong side under the contract?
+### Which contract version governed in March 2025?
 
-**Not established.**
+**The February 28, 2025 certification.** It was self-certified to the CFTC days before the March 2 ceremony (signed by Kalshi's Head of Markets and listed March 1, 2025), and its Appendix A terms match the current public terms PDF in substance — same Underlying definition, same post-expiration-revision exclusion, same 10:00 AM ET Expiration time, and the same nine-agency priority list.[^cert][^series] This is not a today's-version proxy: the dated certification is the version in force at the event.
 
-The available evidence indicates Kalshi followed the written rule. The rule excluded post-expiration revisions, and the lower initial figure was below 19.5 million.[^contract-terms][^predictionnews-resolutions]
+### Under the governing rule, was the sub-19.5M figure the right Expiration Value?
 
-### Did Kalshi's settlement contradict the later best-known viewership number?
+**Yes.** The Expiration Value was the count documented by the source agencies at the 10:00 AM ET expiration, which was the initial ~18.07-million figure; the ~19.69-million figure was a next-day upward revision the contract excluded.[^cert][^guardian][^thewrap] The 19.5-million strike therefore resolved No.
 
-**Yes.**
+### So was this a resolution failure?
 
-The later figure of about 19.7 million exceeded the 19.5-million threshold. That is why traders who treated the market as final Oscars viewership saw the No resolution as wrong.[^washington-post][^predictionnews-ufc]
+**No — it was a rule applied as written.** This mirrors the Miami high-temperature case, where Kalshi settled on the value documented at expiration and excluded a later correction; following a written post-expiration-exclusion rule is not a settlement error even when a later revision would change the number.
 
-### Was the rule badly designed?
+### Is there a fair criticism of Kalshi?
 
-**Yes, materially.**
-
-Using an initial report can make sense for administrative finality. But here the initial number differed materially from the later fuller number because of how streaming viewers were counted. The contract was easy to settle but did not robustly measure final viewership.
-
-### Was this a real failure for the tracker?
-
-**Yes, but it should be classified carefully.**
-
-This is not an operational misgrade like paying the wrong winner. It is a rule-design failure: Kalshi wrote and applied a rule that prioritized quick finality over the most complete eventual measurement of the event. The result was contractually defensible but publicly misleading.
+**Yes, but it is a design and communication criticism, not a failure.** A "viewership" market that locks in an early reported count and mechanically excludes a same-week, fuller release — newly material in 2025 because Hulu streaming and digital-device viewing shifted ~1.645 million viewers into the revised total — pays an answer that looks false to users who treated the market as final Oscars viewership.[^thewrap][^variety] Kalshi could have avoided the controversy by framing the contract as the initial reported figure or by keying settlement to a fuller release. That weakness does not make the settlement a violation of the written rule.
 
 ### Overall classification
 
-- **Operational settlement error:** Not established
-- **Rule followed as written:** Yes, on available evidence
-- **Final-real-world mismatch:** Yes
-- **Rule-design weakness:** Yes
-- **Transparency / user-expectation problem:** Yes
-- **Best public verdict:** Contractually defensible settlement; poor market design for final viewership
+- **Settlement consistent with the governing written rule:** Yes
+- **Misapplication of the rules:** No
+- **Final-real-world mismatch:** Yes (later best-known count exceeded the strike)
+- **Weak contract design / user-expectation problem:** Yes
+- **Best public verdict:** No failure
 
 ## Precise blocker to a stronger finding
 
-The remaining blocker is not the final audience number. That is well supported at roughly 19.7 million.
-
-The missing piece is the exact live Kalshi market page or ticker showing every listed threshold, final settlement value, expiration timestamp, and user-facing title as displayed during trading. The full contract terms and PredictionNews reporting are enough to classify the incident, but the archived live page would make the market-details section more complete.
+None material to the verdict. The decisive facts are verified from primary sources: the dated February 28, 2025 CFTC certification showing the governing post-expiration-exclusion rule and the 10:00 AM ET expiration, the correct series ticker (`KXOSCARSVIEWER`), the initial ~18.07-million count, and the ~19.69-million March 4 revision. The only residual is that the live 2025 strike grid and per-strike settled results could not be pulled from Kalshi's API (the event's markets are pruned) or from the archived live page (a client-rendered shell); the strike and No outcome rest on PredictionNews. An archived rendered market page would complete the market-details section but does not change the classification.
 
 ## Sources
 
-### Primary / platform
+[^cert]: KalshiEX LLC, CFTC Regulation 40.2(a) product certification, "Will <above/below/between/exactly/at least> <count> persons watch the <year> Academy Awards?", signed by the Head of Markets and dated February 28, 2025 (listed March 1, 2025). Appendix A defines the Underlying as the reported viewer count; states "Revisions to the Underlying made after Expiration will not be accounted for in determining the Expiration Value"; sets the Expiration Value "as documented by the Source Agency on the Expiration Date at the Expiration time"; sets the Expiration time at 10:00 AM ET; and lists the Source Agencies in priority order (The New York Times, Deadline, Variety, CBS News, The Guardian, the Associated Press, The Washington Post, the Hollywood Reporter, Nielsen). [Cert][cert] (Substantively identical current terms PDF: [Terms][terms].)
 
-[^contract-terms]: Kalshi, [`OSCARVIEWER` contract terms][contract-terms]. Defines the underlying, source agencies, expiration value, and exclusion of post-expiration revisions.
+[^series]: Kalshi trade API, series `KXOSCARSVIEWER` and event `KXOSCARSVIEWER-25`, "How many people will watch the Oscars?" / "In 2025." The event resolves but its markets are pruned from the public markets endpoint; the contract-terms and certification URLs are provided in the series metadata. [API][series]
 
-### Contemporaneous and industry reporting
+[^guardian]: The Guardian, "Oscars telecast ratings fall 7% to 18m viewers," March 4, 2025. Reports the initial Nielsen figure as "just over 18m" across ABC and Hulu, down 7%. [Article][guardian]
 
-[^guardian]: The Guardian, ["Oscars telecast ratings fall 7% to 18m viewers"][guardian], March 4, 2025. Reports the initial Nielsen figure as "just over 18m" across ABC and Hulu.
+[^thewrap]: TheWrap, "2025 Oscar Ratings Tick Up to 19.7 Million Viewers, Biggest in 5 Years." Reports the initial 18.07-million count (March 3) and the revised 19.69-million total (March 4), a gain of 1.645 million from adding digital viewing on mobile, PCs, and tablets. [Article][thewrap]
 
-[^washington-post]: The Washington Post, ["Turns out the 2025 Oscars ratings saw some improvement"][washington-post], updated March 4, 2025. Explains the difference between the initial Fast Nationals and later 19.7-million figure.
+[^variety]: Variety, "Oscars Ratings 2025: 19.7 Million Viewers." Reports the revised ~19.69-million total as the biggest Oscars audience in five years. [Article][variety]
 
-[^ap]: Associated Press, ["The Oscars get their biggest audience in 5 years despite dominance of 'Anora' and other small films"][ap], March 4, 2025. Reports ABC's estimated 19.7-million figure.
+[^predictionnews-resolutions]: PredictionNews, "Prediction Market Resolutions: The Good, Bad, and Ugly." Describes the Kalshi Oscars controversy: the above-19.5-million strike resolving No on the initial figure, the later ~19.7-million revision, the rule excluding post-expiration revisions, and Kalshi's stated rationale that it determined the market correctly. [Article][predictionnews-resolutions]
 
-[^predictionnews-resolutions]: PredictionNews, ["Prediction Market Resolutions: The Good, Bad, and Ugly"][predictionnews-resolutions], updated August 8, 2025. Describes the Kalshi Oscars controversy, the initial and revised figures, the rule excluding revisions, and Kalshi's reported defense.
-
-[^predictionnews-ufc]: PredictionNews, ["Kalshi UFC Resolution Echoes 2025 Oscars Viewership Market"][predictionnews-ufc], April 13, 2026. Summarizes the Oscars viewership controversy while comparing it to another initial-result-versus-correction settlement.
-
-[contract-terms]: https://kalshi-public-docs.s3.amazonaws.com/contract_terms/OSCARSVIEWER.pdf
+[cert]: https://kalshi-public-docs.s3.us-east-1.amazonaws.com/regulatory/product-certifications/OSCARSVIEWER.pdf
+[terms]: https://kalshi-public-docs.s3.amazonaws.com/contract_terms/OSCARSVIEWER.pdf
+[series]: https://api.elections.kalshi.com/trade-api/v2/series/KXOSCARSVIEWER
 [guardian]: https://www.theguardian.com/film/2025/mar/04/oscars-telecast-ratings-fall-7-to-18m-viewers
-[washington-post]: https://www.washingtonpost.com/style/2025/03/04/oscars-ratings-decline-97th-academy-awards/
-[ap]: https://apnews.com/article/9d82cd9ea1afa4675ca1cf797c483684
+[thewrap]: https://www.thewrap.com/2025-oscars-ratings-viewership-abc-hulu/
+[variety]: https://variety.com/2025/tv/news/oscars-ratings-2025-viewers-1236326364/
 [predictionnews-resolutions]: https://predictionnews.com/learn/resolutions/
-[predictionnews-ufc]: https://predictionnews.com/news/kalshi-ufc-resolution-echoes-2025-oscars-viewership-market

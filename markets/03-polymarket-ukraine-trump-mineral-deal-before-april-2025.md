@@ -1,302 +1,146 @@
-# Polymarket: Ukraine agrees to Trump mineral deal before April?
+# Polymarket: Ukraine agrees to Trump mineral deal before April
 
 ## Bottom line
 
-**Finding: Polymarket made a clear resolution-process and market-drafting error. It is not conclusive that the final Yes outcome was factually wrong under the published rule. Confidence: high on the process failure; medium on the outcome assessment.**
+**Finding: Failure. Polymarket published an ambiguous "agree to any deal" test, applied it inconsistently across two materially identical contracts (the sister Feb 25-28 market resolved No on the same February facts that this market later treated as Yes), issued a dispositive "too early / not yet Yes" clarification roughly two minutes before the UMA vote-commit window closed, and then allowed the contrary result to finalize Yes. Polymarket acknowledged the result contradicted its clarification but denied refunds because it was "not a market failure." The process, drafting, and cross-market consistency failures are conclusive; whether Yes was substantively wrong is indeterminate because the rule never defined when negotiations become a "deal." Confidence: high on the process/drafting/inconsistency failure; medium on outcome-correctness. Failure-resolved: Unresolved.**
 
-The original allegation is commonly summarized as: Polymarket resolved the market Yes even though the United States and Ukraine did not sign a minerals agreement until April 30, 2025. That summary omits a decisive part of the rule. The market did not require signature or enactment. It said that an **announcement of a deal would qualify regardless of whether or when it was enacted**.[^market]
+Gamma confirms the before-April market resolved **Yes** (`outcomePrices ["1","0"]`, `umaResolutionStatus: resolved`), and the on-chain resolution transaction paid the Yes slot (`payoutNumerators [1,0]`) at 2025-03-25 00:21:27 UTC.[^api][^onchain-resolution] The materially identical sister market resolved **No** (`outcomePrices ["0","1"]`).[^friday-api] Polymarket's own representative stated the market "resolved against the expectations of our users and our clarification" but that "because this wasn't a market failure, we are not able to issue refunds."[^polymarket-response][^wu-post]
 
-There was a substantial textual basis for Yes. On February 25, Bloomberg and The Washington Post reported that the parties had agreed to a framework. On February 26, the Ukrainian Cabinet officially approved the draft bilateral agreement and authorized two ministers to sign it.[^bloomberg][^washington-post][^cabinet-order] Those facts could reasonably satisfy a rule asking whether the parties had "agree[d] to any deal."
-
-The process nevertheless failed:
-
-- An almost identical Polymarket contract covering February 25-28 resolved No, even though the February framework was already public.[^friday-market]
-- Polymarket waited until approximately two minutes before the UMA voting commitment period ended to clarify that the broader market was too early to resolve and was not yet Yes.[^tenadome][^domah]
-- The market then finalized Yes on March 25, before its March 31 deadline and contrary to that clarification.[^market][^onchain-resolution]
-- Polymarket publicly acknowledged that the result contradicted its clarification, called the event unprecedented, promised new monitoring and clarification systems, but denied refunds because it said this was not a "market failure."[^polymarket-response][^wu-post]
-
-The strongest conclusion is therefore not simply that a token whale changed a true No into a false Yes. The more firmly supported conclusion is that Polymarket published an ambiguous event test, applied that test inconsistently across related markets, issued a dispositive clarification too late for voters to respond normally, allowed the contrary result to finalize, and then declined to remedy it.
+The common summary — that Polymarket resolved Yes even though the U.S.-Ukraine minerals agreement was not signed until April 30, 2025 — omits a decisive part of the rule. The market did not require signature or enactment; it said an **announcement of a deal would qualify regardless of if/when the deal is enacted.**[^api] So the failure here is not simply a true No converted to a false Yes. It is a venue that drafted an under-specified event test, applied it inconsistently across related markets, clarified too late for voters to respond normally, let the contrary result finalize, and then declined to remedy it.
 
 ## Market details
 
 - **Venue:** Polymarket
-- **Question:** `Ukraine agrees to Trump mineral deal before April?`
-- **Market opened:** February 3, 2025
-- **Stated event window:** February 2 through March 31, 2025 at 11:59 p.m. ET
-- **Final resolution:** Yes
-- **Finalized:** March 25, 2025
-- **Reported volume:** approximately $7.08 million
-- **Market page:** [Polymarket][market]
-- **Primary metadata:** [Polymarket Gamma API][api][^api]
-- **On-chain resolution transaction:** [PolygonScan][onchain-resolution]
-
-The market page records two Yes proposals, two disputes, and a final Yes outcome.[^market] The resolution transaction paid the first outcome slot, corresponding to Yes, on March 25 at 00:21 UTC.[^onchain-resolution]
-
-## The rule
-
-The operative clause said:
-
-> This market will resolve to "Yes" if the United States and Ukraine agree to any deal between February 2 and March 31, 2025, 11:59 PM ET, that explicitly involves Ukrainian rare earth elements.
-
-The rule included exchanges involving U.S. aid, partnerships, future resource rights, mining rights, and other forms of rare-earth cooperation. It then added:
-
-> An announcement of a deal will qualify regardless of if/when the deal is enacted.
-
-The stated resolution source was official information from the U.S. and Ukrainian governments.[^market]
-
-The rule did **not** require:
-
-- a signature;
-- legal enactment;
-- ratification;
-- completion of all implementation details; or
-- performance of the agreement.
-
-It also did not define:
-
-- whether a preliminary or framework agreement was a "deal";
-- whether unilateral government approval of a negotiated draft proved bilateral agreement;
-- whether a deal that later collapsed still qualified;
-- whether the market could resolve before March 31 if the alleged agreement remained disputed; or
-- what degree of official confirmation was required from each government.
+- **Question:** "Ukraine agrees to Trump mineral deal before April?" — gamma event id 17740, market id 521607.[^api]
+- **Slug:** `ukraine-agrees-to-give-trump-rare-earth-metals-before-april`
+- **Sister market:** `ukraine-agrees-to-trump-mineral-deal-by-friday`, "Ukraine agrees to Trump mineral deal by Friday?" (Feb 25-28 window).[^friday-api]
+- **Stated event window:** February 2 through March 31, 2025, 11:59 PM ET (`endDate` 2025-03-31T12:00:00Z).[^api]
+- **conditionId:** `0x1663edea3eba0d1ae8f064276dd426cb0497a19bb5188dae48a2f8fa8ea34da8`; **questionID:** `0x96bfe57cfa7b5373eaf8fd307993960738a1824a87943ea2e953540c5e263822`.[^api]
+- **Resolver contract:** Polymarket UMA CTF Adapter V2, `0x6A9D222616C90FcA5754cd1333cFD9b7fb6a4F74`.[^onchain-resolution]
+- **Final resolution:** Yes; finalized 2025-03-25 00:21:27 UTC (`closedTime`, `umaEndDate`); `umaResolutionStatus: resolved`.[^api]
+- **Reported volume:** approximately $7.08 million.[^api]
 
 ## What happened
 
-### February 25-26: a framework was reported as agreed
+### The rule (verbatim)
 
-Bloomberg reported on February 25 that Ukraine had agreed with the United States to jointly develop natural resources. It described the instrument as a framework agreement and said Ukraine's cabinet was expected to recommend that it be signed.[^bloomberg]
+The before-April market's binding description read:
 
-The Washington Post separately reported that Ukraine and the United States had agreed to a framework for a minerals deal, citing a Ukrainian official and another person familiar with the matter.[^washington-post]
+> This market will resolve to "Yes" if the United States and Ukraine agree to any deal between February 2 and March 31, 2025, 11:59 PM ET, that explicitly involves Ukrainian rare earth elements. Otherwise this market will resolve to "No". … An announcement of a deal will qualify regardless of if/when the deal is enacted. The resolution source for this market will be official information from the governments of the US and Ukraine.[^api]
 
-On February 26, Ukraine's Cabinet of Ministers issued an official order that:
+The rule did not require a signature, legal enactment, ratification, or performance. It also never defined whether a framework or approved draft was a "deal," whether unilateral approval proved bilateral agreement, or whether the market could resolve before March 31 while the alleged agreement remained disputed.
 
-1. approved the draft bilateral agreement establishing the rules and conditions of a reconstruction investment fund; and
-2. authorized First Deputy Prime Minister Yuliia Svyrydenko or Foreign Minister Andrii Sybiha to sign it.[^cabinet-order]
+### The sister market resolved No on the same facts
 
-This is the strongest evidence for Yes. It is official Ukrainian government information showing that a negotiated agreement text had advanced to approval and authorization for signature.
+Polymarket simultaneously ran "Ukraine agrees to Trump mineral deal by Friday?" (Feb 25-28). Its rule was verbatim materially identical — same "agree to any deal," the same clause that "An announcement of a deal will qualify regardless of if/when the deal is enacted," and the same "official information from the governments of the US and Ukraine" source (the only differences are the Feb 25-28 window and the phrase "rare earth elements or minerals").[^friday-api] That market resolved **No** (`outcomePrices ["0","1"]`, resolved 2025-03-01 08:00:07 UTC).[^friday-api]
 
-### February 28: the document was not signed
+This is a direct internal contradiction: the February framework evidence later used to support Yes in the before-April market was the same evidence available during the by-Friday market. The two contracts treated the same event under materially the same rule as both No and Yes.
 
-The planned White House signing did not occur after the contentious meeting between Donald Trump and Volodymyr Zelenskyy. The parties continued to describe a minerals agreement as something that remained to be signed.[^ap-oval-office]
+### A late Yes proposal and a last-minute clarification
 
-That fact supports No only if "agree to any deal" is interpreted to require a final, presently operative agreement. The written rule expressly said that signature and enactment were unnecessary, so absence of signature was not independently sufficient for No.
+Two contemporaneous participant reconstructions — Tenadome and `@Domahhhh` — report that a major Yes holder proposed Yes on Saturday evening, March 22, while the market was still open and trading at a low probability (around 15%). The proposal was disputed and escalated to a UMA token-holder vote.[^domah][^tenadome]
 
-### A related Polymarket market had already resolved No
+Both accounts report that Polymarket issued its clarification at approximately 11:58 PM UTC on March 23, roughly two minutes before the vote-commit period ended, and a second notice roughly two minutes before the reveal period ended on March 24 indicating it would allow the market to follow the UMA vote.[^tenadome][^domah] The accounts paraphrase the clarification as saying it was too early for the market to resolve and that the result was not yet Yes. **The exact verbatim clarification text is not preserved in any reachable primary source; both threads paraphrase it.**
 
-Polymarket also operated `Ukraine agrees to Trump mineral deal by Friday?`, covering February 25-28. Its substantive rule was nearly identical:
+UMA uses a commit-and-reveal process. Once votes are committed, voters cannot simply change them in response to a clarification; they can reveal or abstain.[^tenadome] A clarification delivered about two minutes before commit close therefore could not reliably guide already-committed votes.
 
-- the parties had to "agree to any deal";
-- an announcement qualified regardless of enactment; and
-- official U.S. and Ukrainian information controlled.
+### The contrary vote finalized Yes
 
-That market resolved No without a dispute.[^friday-market]
+The vote favored Yes, and the market finalized Yes at 2025-03-25 00:21:27 UTC. The on-chain resolution transaction recorded a Yes payout vector (`payoutNumerators [1,0]`).[^onchain-resolution][^api] Finalization occurred six days before the March 31 deadline; even if the February framework did not yet qualify, the market could have remained open through March 31 rather than converting an unresolved factual dispute into a final Yes.
 
-This creates a direct internal contradiction. The evidence later used to support Yes in the before-April market was the same February framework evidence available during the by-Friday market. The two contracts therefore treated the same event under materially the same rule as both No and Yes.
+### Polymarket acknowledged the breakdown
 
-### March 22-23: a late Yes proposal and a last-minute clarification
+A statement from a Polymarket representative ("Tanner"), reproduced by Wu Blockchain and crypto.news, read:
 
-A detailed contemporaneous reconstruction by trader `@Domahhhh` and a separate account by Tenadome report that a major Yes holder proposed Yes on March 22, when the market was still open and trading at a low probability. The proposal was disputed and escalated to an UMA token-holder vote.[^domah][^tenadome]
+> We are aware of the situation regarding the Ukrainian Rare Earth Market. This market resolved against the expectations of our users and our clarification. Unfortunately, because this wasn't a market failure, we are not able to issue refunds.[^polymarket-response][^wu-post]
 
-Both accounts report that Polymarket issued its clarification at 11:58 p.m. UTC on March 23, approximately two minutes before the vote commitment period ended. Tenadome summarizes the clarification as saying that it was too early for the market to resolve and that the result was not yet Yes.[^tenadome]
-
-This timing mattered. UMA uses a commit-and-reveal process. Once votes had been committed, voters could not simply change them in response to the clarification. They could reveal the committed votes or abstain from revealing.[^tenadome]
-
-### March 24-25: Polymarket allowed the contrary vote to finalize
-
-The same contemporaneous accounts report that shortly before the reveal period ended, Polymarket issued a further notice indicating that it would allow the market to resolve in line with the UMA vote. The vote favored Yes, and the market finalized Yes at 00:21 UTC on March 25.[^domah][^tenadome][^onchain-resolution]
-
-The finalization occurred six days before the stated event deadline. Even if the February framework did not qualify, Polymarket could have allowed the market to remain open through March 31 rather than converting an unresolved factual dispute into a final Yes.
-
-### March 26: Polymarket acknowledged the breakdown
-
-A screenshot published by Wu Blockchain preserves a statement from a Polymarket representative, Tanner:
-
-> This market resolved against the expectations of our users and our clarification. Unfortunately, because this wasn't a market failure, we are not able to issue refunds.
-
-The statement called the event unprecedented, said Polymarket and UMA had been working in internal "war rooms," and promised better systems, monitoring, clearer rules, and a more defined and timely clarification system.[^wu-post][^polymarket-response]
-
-That is an admission that the process produced a result Polymarket did not intend or expect. Calling it "not a market failure" appears to have been a classification used to deny refunds, not a substantive defense that the process worked correctly.
+Polymarket called the event unprecedented and promised collaboration with UMA, monitoring, and clearer rules.[^polymarket-response]
 
 ## The allegation against Polymarket
 
-### 1. The market resolved contrary to Polymarket's own clarification
+The allegation has four parts: (1) the market resolved Yes contrary to Polymarket's own clarification that it was too early; (2) the clarification was issued too late — about two minutes before the commit window closed — to guide committed UMA votes; (3) Polymarket applied materially identical rules inconsistently, with the sister market resolving No; and (4) concentrated UMA voting power overrode the venue's interpretation. Polymarket then acknowledged the contradiction but denied refunds.[^tenadome][^domah][^polymarket-response]
 
-Polymarket told voters the market was too early and was not yet Yes. The final result was Yes. Polymarket then expressly acknowledged that the outcome contradicted its clarification.[^tenadome][^polymarket-response]
+## Polymarket's defense
 
-This establishes a failure in the venue's resolution stack regardless of whether the underlying February framework ultimately should have qualified.
+Polymarket's public position had two parts: the result contradicted its clarification and was unprecedented, but it was not classified as a "market failure," so refunds were unavailable.[^polymarket-response] The implicit procedural defense is that the contract resolved through the published, binding UMA mechanism, and Polymarket's decision to let the result follow the UMA vote is consistent with that.[^tenadome] This explains the non-reversal but does not explain why a binding result contrary to the venue's own clarification should not count as a failure.
 
-### 2. Polymarket issued the clarification too late
+There is also a stronger substantive defense of Yes than most reporting acknowledges. The rule required agreement, not signature, and expressly said an announcement qualified regardless of enactment. On February 25, Bloomberg and The Washington Post reported the parties had agreed to a framework; on February 26, Ukraine's Cabinet officially approved the draft bilateral agreement and authorized two ministers to sign it.[^bloomberg][^washington-post][^cabinet-order] Proponents also cited a February 27 Bessent (Fox Business) interview and Trump's expectation that a deal would be signed soon.[^domah] On a literal, broad reading of "agree to any deal," the February framework could satisfy the rule even though the contemplated signing did not occur on February 28.[^ap-oval-office]
 
-A clarification delivered approximately two minutes before the end of a commit period cannot reliably guide votes already committed. Polymarket's later promise to build a more timely clarification system implicitly recognized that defect.[^tenadome][^wu-post]
-
-The timing also created severe informational asymmetry for traders. Market participants could see a platform clarification pointing away from Yes while the committed UMA vote was not yet visible.
-
-### 3. Polymarket applied materially identical rules inconsistently
-
-The February 25-28 market resolved No. The before-April market resolved Yes based on the February framework. Both rules said an announced deal qualified without enactment.[^market][^friday-market]
-
-This is not a subtle difference between market titles. It is an inconsistent answer to whether the February framework constituted an agreed deal.
-
-### 4. Concentrated oracle voting overrode the venue's interpretation
-
-Contemporaneous reports attributed a large share of voting power to a small number of UMA holders. The exact descriptions conflict:
-
-- Wu Blockchain reported five million tokens across three accounts, approximately 25% of votes.[^wu-post]
-- CoinDesk focused on `BornTooLate.eth`, reporting approximately 1.3 million UMA and describing the address as a top-five governance staker.[^coindesk]
-- Tenadome disputed the "governance attack" characterization and argued that ordinary recurring UMA voters ignored the clarification to avoid losses or slashing on already committed votes.[^tenadome]
-
-The evidence supports a concentration and incentive-design concern. It does not conclusively establish that one actor bought tokens specifically to corrupt this market, controlled every cited address, traded the underlying Polymarket contract, or made a substantial profit from the result.
-
-## Polymarket and UMA's defense
-
-### Polymarket's explicit defense
-
-Polymarket's public position had two parts:
-
-1. the result contradicted its clarification and was unprecedented; but
-2. it was not classified as a "market failure," so refunds were unavailable.[^polymarket-response]
-
-The implicit procedural defense is that the contract was resolved through the published UMA mechanism and that the final token-holder vote was binding. Polymarket's later decision to allow the result to follow the UMA vote is consistent with that position.[^tenadome]
-
-This explains why Polymarket did not reverse the payout. It does not explain why a binding result contrary to the venue's own clarification should not count as a failure.
-
-### The strongest substantive defense of Yes
-
-Yes has a stronger rule-based defense than most reporting about the controversy acknowledges:
-
-1. The rule required agreement, not signature.
-2. It expressly said an announcement qualified regardless of enactment.
-3. Major reporting on February 25 said the parties had agreed to a framework.
-4. Ukraine's Cabinet officially approved the draft and authorized its signature on February 26.[^bloomberg][^washington-post][^cabinet-order]
-
-On a literal and broad reading of "agree to any deal," the February framework could satisfy the market even though the contemplated signature did not occur.
-
-### The strongest substantive argument for No or Too Early
-
-The February document was described as a framework or draft. Implementation details remained to be negotiated, the planned signing failed, and the parties continued speaking as though an operative agreement had not yet been concluded.[^bloomberg][^ap-oval-office]
-
-Ukraine's Cabinet order proved that Ukraine approved a draft and authorized signature. It did not by itself prove that both governments regarded the draft as a concluded bilateral deal. Under this narrower interpretation, the correct result on March 23 was Too Early, followed by No if no qualifying agreement was reached by March 31.
-
-Polymarket adopted this narrower interpretation in its clarification, but too late to guide the committed UMA votes effectively.[^tenadome]
+Against that, the February document was described as a framework or draft; implementation details remained, the planned signing failed, and the parties kept speaking as though an operative agreement had not been concluded. Under that narrower reading — which Polymarket itself adopted in its clarification — the correct answer on March 23 was Too Early, then No if no qualifying agreement was reached by March 31.[^bloomberg][^ap-oval-office][^tenadome]
 
 ## Assessment
 
-### Was the final Yes outcome clearly false?
+### Did the venue resolve against its own clarification?
 
-**No.**
+**Yes.** Polymarket told voters the market was too early and not yet Yes; the final result was Yes; and Polymarket expressly acknowledged the contradiction.[^polymarket-response][^tenadome] This establishes a failure in the resolution stack regardless of whether the February framework ultimately should have qualified.
 
-The fact that the agreement was not signed until April 30 does not decide this market. Signature was expressly unnecessary. The February reporting and Ukrainian Cabinet order provide a serious basis for finding that the parties had agreed to a framework deal.[^market][^cabinet-order]
+### Was the clarification issued too late?
 
-Yes therefore cannot responsibly be described as having no factual or contractual support.
+**Yes.** Two independent participant accounts place the clarification at roughly two minutes before the commit window closed, after which committed UMA votes could not normally be changed.[^tenadome][^domah] Polymarket's later promise of a more timely clarification system implicitly conceded the defect.[^polymarket-response]
 
-### Was Yes clearly the correct outcome?
+### Were materially identical rules applied inconsistently?
 
-**No.**
+**Yes.** Gamma confirms verbatim that the sister Feb 25-28 market and the before-April market shared the operative "agree to any deal" and "announcement … qualify regardless of if/when enacted" language and the same government source. The sister market resolved No (`["0","1"]`); the before-April market resolved Yes (`["1","0"]`).[^api][^friday-api]
 
-The rule did not define whether an approved framework or draft constituted a completed "deal." The failed signing and subsequent negotiations support the view that the parties had not yet reached the kind of agreement the market intended to measure.
+### Was the final Yes outcome clearly wrong?
 
-Polymarket itself clarified that the market was too early and not yet Yes. Its almost identical by-Friday market had already resolved No.[^friday-market][^tenadome]
-
-### Did Polymarket make a resolution-process error?
-
-**Yes, conclusively.**
-
-The venue:
-
-- issued its interpretation too late for normal voter response;
-- allowed the opposite result to finalize;
-- produced inconsistent outcomes across materially identical rules;
-- acknowledged that the result contradicted its clarification;
-- called the situation unprecedented; and
-- promised systems intended to prevent recurrence.[^polymarket-response]
-
-### Did Polymarket make a rule-drafting error?
-
-**Yes.**
-
-The decisive phrase, "agree to any deal," did not distinguish:
-
-- political agreement from legal agreement;
-- a framework from a completed deal;
-- an approved draft from a bilaterally concluded instrument; or
-- a deal that later collapsed from one that remained in force.
-
-The no-signature clause broadened the trigger without supplying a substitute test for when negotiations became an agreement.
+**Indeterminate.** Signature was expressly unnecessary, and the February reporting plus the Ukrainian Cabinet order give Yes serious textual support; but the rule never defined whether an approved framework was a completed "deal," and the failed signing supports Too Early/No.[^api][^cabinet-order][^bloomberg][^ap-oval-office] Both readings had material support.
 
 ### Was this a proven governance attack?
 
-**Not conclusively.**
-
-Concentrated voting power and poor incentives clearly affected the process. Public sources disagree about the relevant wallets, token amounts, coordination, and motive. CoinDesk reported that no participant appeared to earn a large payoff relative to the alleged cost of accumulating the UMA position.[^coindesk]
-
-The documented failure does not depend on proving malicious manipulation. Negligence, untimely clarification, conflicting incentives, and an under-specified rule are sufficient to explain the outcome.
+**No, not conclusively.** CoinDesk reported `BornTooLate.eth` accumulated roughly 1.3 million UMA as a top-five governance staker, but found no profitable attack: building that position would have cost over $2 million, while the largest winner gained about $55,000 and the largest loser forfeited about $73,000.[^coindesk] crypto.news described five million tokens across three accounts (about 25% of votes).[^polymarket-response] Tenadome argued the deciding voters were ordinary recurring UMA whales protecting committed votes from slashing, not a coordinated attacker.[^tenadome] The economics cut against a profit-motivated attack; the documented failure does not depend on proving manipulation.
 
 ### Overall classification
 
-- **Resolution-process failure:** Yes
-- **Rule-drafting failure:** Yes
-- **Inconsistent related-market resolution:** Yes
-- **Untimely clarification:** Yes
-- **Final outcome error:** Indeterminate; Yes and Too Early/No each had material textual support
-- **Governance attack:** Alleged, not conclusively established
-- **Remediation failure:** Yes; Polymarket acknowledged the breakdown but denied refunds
-- **Confidence:** High on platform/process failure; medium on whether Yes was substantively wrong
+- **Resolution-process failure:** Yes (untimely clarification; contrary result finalized)
+- **Rule-drafting failure:** Yes ("agree to any deal" never defined when negotiations become a deal)
+- **Inconsistent related-market resolution:** Yes (sister No vs. this Yes, verbatim-identical rule)
+- **Final-outcome error:** Indeterminate — Yes and Too Early/No each had material textual support
+- **Governance attack:** Alleged, not established; CoinDesk economics cut against a profit motive
+- **Remediation:** Failure acknowledged but refunds denied
+- **Best public verdict:** Failure (process + drafting + inconsistency conclusive; final-outcome correctness indeterminate). Failure-resolved: Unresolved.
 
-## Precise blocker to a conclusive outcome finding
+## Precise blocker to a stronger finding
 
-The blocker is the rule's failure to define when negotiations become a "deal."
-
-The factual record is reasonably clear:
-
-- the parties negotiated a framework;
-- press reports said they had agreed to it;
-- Ukraine officially approved the draft and authorized signature;
-- the planned signature did not occur;
-- the parties continued negotiating; and
-- a later agreement was signed on April 30.[^cabinet-order][^ap-oval-office][^final-agreement]
-
-What is missing is a predetermined contractual rule assigning those facts to Yes, No, or Too Early. Polymarket attempted to supply that rule through a clarification only after votes had already been committed.
+The blocker to a conclusive *outcome* finding is the rule's failure to define when negotiations become a "deal." The factual record is reasonably clear — the parties negotiated a framework, press reports said they had agreed to it, Ukraine officially approved the draft and authorized signature, the planned signature did not occur, the parties continued negotiating, and a later agreement was signed on April 30.[^cabinet-order][^ap-oval-office][^final-agreement] What is missing is a predetermined contractual rule assigning those facts to Yes, No, or Too Early; Polymarket tried to supply that rule via a clarification only after votes were committed. Two further evidentiary blockers: the exact clarification wording is paraphrased in every reachable source (not a verified quote), and gamma's `umaResolutionStatuses` array is empty, so the often-cited "two proposals / two disputes" count rests on the market-page UI, not the API.[^api][^tenadome]
 
 ## Sources
 
 ### Primary
 
-[^market]: Polymarket, [“Ukraine agrees to Trump mineral deal before April?”][market]. Contains the original rule, proposal/dispute sequence, final Yes outcome, and current volume.
+[^api]: Polymarket Gamma API, [event record for the before-April market][api]. Preserves the verbatim rule, dates, volume, `conditionId`/`questionID`, `umaResolutionStatus: resolved`, `closedTime`/`umaEndDate` 2025-03-25 00:21:27 UTC, and final `outcomePrices ["1","0"]` (Yes). `umaResolutionStatuses` is empty.
 
-[^api]: Polymarket Gamma API, [event record for the before-April market][api]. Preserves the rule, dates, volume, contract identifiers, and final prices.
+[^friday-api]: Polymarket Gamma API, [event record for the by-Friday sister market][friday-api]. Verbatim materially identical rule (Feb 25-28 window); final `outcomePrices ["0","1"]` (No); resolved 2025-03-01 08:00:07 UTC.
 
-[^friday-market]: Polymarket, [“Ukraine agrees to Trump mineral deal by Friday?”][friday-market]. Contains the materially similar February 25-28 rule and final No outcome.
+[^onchain-resolution]: PolygonScan, [resolution transaction `0x0f0d…807ea`][onchain-resolution], 2025-03-25 00:21:27 UTC. Records a Yes payout vector (`payoutNumerators [1,0]`); resolver is the Polymarket UMA CTF Adapter V2 (`0x6A9D…4F74`).
 
-[^cabinet-order]: Cabinet of Ministers of Ukraine, [Order No. 164-r approving the draft bilateral agreement and authorizing signature][cabinet-order], February 26, 2025.
+[^cabinet-order]: Cabinet of Ministers of Ukraine, [Order approving the draft bilateral agreement and authorizing signature][cabinet-order], February 26, 2025.
 
-[^final-agreement]: Cabinet of Ministers of Ukraine, [“Ukraine and the United States sign Economic Partnership Agreement and establish the Reconstruction Investment Fund”][final-agreement], May 1, 2025. Records the April 30 signature.
+[^final-agreement]: Cabinet of Ministers of Ukraine, [Ukraine and the United States sign Economic Partnership Agreement][final-agreement], May 1, 2025. Records the April 30 signature.
 
-[^onchain-resolution]: PolygonScan, [resolution transaction for question `0x96bfe...3822`][onchain-resolution], March 25, 2025. The transaction records a Yes payout vector.
-
-[^wu-post]: Wu Blockchain, [X post reproducing Polymarket's Discord statement][wu-post], March 26, 2025. Its attached screenshot preserves Tanner's statement that the result contradicted Polymarket's clarification and describes planned remediation.
+[^wu-post]: Wu Blockchain, [X post reproducing Polymarket's Discord statement][wu-post], March 26, 2025. (Direct page access was paywalled at re-verification; quote corroborated via crypto.news.)
 
 ### Contemporaneous reporting and reconstruction
 
-[^bloomberg]: Bloomberg via BNN Bloomberg, [“Ukraine to Agree With US on Terms for Minerals Deal”][bloomberg], February 25, 2025. Reports that Ukraine agreed with the United States on a framework and that cabinet approval and signature were expected.
+[^bloomberg]: Bloomberg via BNN Bloomberg, [Ukraine to Agree With US on Terms for Minerals Deal][bloomberg], February 25, 2025.
 
-[^washington-post]: The Washington Post, [“Ukraine and U.S. agree to framework for minerals deal, Ukrainian official says”][washington-post], February 25, 2025.
+[^washington-post]: The Washington Post, [Ukraine and U.S. agree to framework for minerals deal][washington-post], February 25, 2025.
 
-[^ap-oval-office]: Associated Press, [“Zelenskyy leaves White House without signing minerals deal after Oval Office blowup”][ap-oval-office], February 28, 2025.
+[^ap-oval-office]: Associated Press, [Zelenskyy leaves White House without signing minerals deal after Oval Office blowup][ap-oval-office], February 28, 2025.
 
-[^polymarket-response]: crypto.news, [“Polymarket suffers governance attack due to UMA whale intervention”][polymarket-response], March 26, 2025. Reproduces Polymarket's Discord response and its no-refund position. The article's characterization of the incident as a proven attack is stronger than the evidence established here.
+[^polymarket-response]: crypto.news, [Polymarket suffers governance attack due to UMA whale intervention][polymarket-response], March 26, 2025. Reproduces the verbatim Tanner refund-denial statement and the five-million-tokens / three-accounts / ~25% figure. Its "proven attack" framing is stronger than the evidence supports.
 
-[^coindesk]: CoinDesk, [“A Contentious Ukraine Bet Leads to Clash Between Polymarket, UMA Communities”][coindesk], March 26-27, 2025. Reports UMA concentration, limited apparent trading profits, Polymarket's response, and competing characterizations of the incident.
+[^coindesk]: CoinDesk, [A Contentious Ukraine Bet Leads to Clash Between Polymarket, UMA Communities][coindesk], March 26-27, 2025. Reports `BornTooLate.eth` ~1.3M UMA / top-five staker, and that the position cost over $2M while the largest winner gained ~$55K and largest loser ~$73K — no profitable attack.
 
-[^tenadome]: Tenadome, [archived thread disputing the governance-attack characterization][tenadome], March 26, 2025. Provides the detailed commit/reveal and clarification timeline. This is a participant account, not an official record.
+[^tenadome]: Tenadome, [archived thread disputing the governance-attack characterization][tenadome], March 26, 2025. Provides the commit/reveal and clarification timeline (~11:58 PM UTC March 23, ~2 min before commit close). Participant account, not an official record.
 
-[^domah]: `@Domahhhh`, [archived investigation of the proposal and vote sequence][domah], March 27, 2025. Documents the sister-market inconsistency, reported clarification timing, and Yes argument. This is an advocacy-oriented trader reconstruction and is used cautiously.
+[^domah]: `@Domahhhh`, [archived investigation of the proposal and vote sequence][domah], March 27, 2025. Documents the Saturday March 22 ~15% proposal, the sister-market contradiction, the clarification timing, and the Yes argument (including the Feb 27 Bessent interview). Advocacy-oriented trader reconstruction, used cautiously.
 
-[market]: https://polymarket.com/event/ukraine-agrees-to-give-trump-rare-earth-metals-before-april
 [api]: https://gamma-api.polymarket.com/events?slug=ukraine-agrees-to-give-trump-rare-earth-metals-before-april
-[friday-market]: https://polymarket.com/event/ukraine-agrees-to-trump-mineral-deal-by-friday
+[friday-api]: https://gamma-api.polymarket.com/events?slug=ukraine-agrees-to-trump-mineral-deal-by-friday
+[onchain-resolution]: https://polygonscan.com/tx/0x0f0d0bd28dfae70d35269f883986e1780b58398fffe34f72a30aa3e998c807ea
 [cabinet-order]: https://www.kmu.gov.ua/npas/pro-pidpysannia-dvostoronnoi-uhody-pro-vstanovlennia-pravyl-ta-umov-investytsiinoho-fondu-t260225
 [final-agreement]: https://www.kmu.gov.ua/en/news/ukraina-i-ssha-pidpysaly-uhodu-pro-ekonomichne-partnerstvo-ta-stvorennia-investytsiinoho-fondu-vidbudovy
-[onchain-resolution]: https://polygonscan.com/tx/0x0f0d0bd28dfae70d35269f883986e1780b58398fffe34f72a30aa3e998c807ea
 [wu-post]: https://x.com/WuBlockchain/status/1904772495649235117
 [bloomberg]: https://www.bnnbloomberg.ca/investing/commodities/2025/02/25/ukraine-to-agree-with-us-on-terms-for-minerals-deal/
 [washington-post]: https://www.washingtonpost.com/politics/2025/02/25/ukraine-minerals-deal-trump-zelensky/

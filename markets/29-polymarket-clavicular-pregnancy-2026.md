@@ -1,97 +1,82 @@
-# Polymarket: Clavicular pregnancy in 2026
+# Polymarket: Clavicular pregnancy market
 
 ## Bottom line
 
-**Finding: This was a real disputed UMA resolution, and the public record gives substantial reason to question the final Yes. Confidence: medium.**
+**Finding: Failure. Polymarket finalized a Yes resolution on a Kick-streamer "pregnancy" market built entirely on material that the reputable-media consensus treated as a joke, stunt, or debunked rumor — exactly the category the market's own credibility/joke-exclusion clause was supposed to exclude — and the bad Yes now stands as a final, automatically resolved outcome. Confidence: Medium-high.**
 
-Polymarket's own market page for `Clavicular pregnancy in 2026?` says the market required Clavicular to announce that he and a partner were expecting a baby through pregnancy, and that only credible announcements would qualify.[^polymarket] The same page shows two Yes proposals, two disputes, and a final Yes outcome.[^polymarket]
-
-The problem is that contemporaneous entertainment reporting treated the viral pregnancy story as unconfirmed or false. The Times of India reported that there was no proof, no confirmed girlfriend, no medical update, and no statement from Clavicular confirming a pregnancy; it traced the confusion to a "pregnancy contest" / "I will be a dad" livestream claim and clips taken out of context.[^toi] That record makes the Yes resolution look questionable unless UMA had stronger primary evidence that is not visible in the reviewed public sources.
-
-This should be tracked as a possible bad-resolution / oracle-process failure, not merely as a generic dispute.
+The market for `clavicular-pregnancy-in-2026` required a *credible* pregnancy announcement and expressly disqualified jokes and non-credible statements.[^gamma] It settled Yes (outcomePrices `["1","0"]`), is closed and resolved, and resolved early on May 1, 2026 rather than running to its scheduled December 31, 2026 end.[^gamma] Yet the only real-world basis was an April 2026 "pregnancy contest" / "I'm gonna be a dad" livestream stunt plus a viral rumor that the streamer had gotten a 10-day girlfriend pregnant — material that contemporaneous fact-checks uniformly found to be unconfirmed or false.[^toi][^complex] No credible-media consensus of an actual pregnancy ever existed. This is a credibility-rule / oracle-process failure, and it is **Unresolved**: the bad Yes stands and No-holders were not made whole.
 
 ## Market details
 
 - **Venue:** Polymarket
-- **Market:** `Clavicular pregnancy in 2026?`
+- **Market:** `clavicular-pregnancy-in-2026` (event 400878 / market 2037907)
 - **Market URL:** https://polymarket.com/event/clavicular-pregnancy-in-2026
-- **Rule:** Yes if Clavicular announced that he and a partner were expecting a baby through pregnancy between market creation and December 31, 2026, 11:59 PM ET; non-credible announcements, including jokes, did not suffice.[^polymarket]
-- **Displayed volume on Polymarket page during this review:** about $13.9 million.[^polymarket]
-- **Reported volume in dispute coverage:** about $16.46 million, with about $4.5 million in 24-hour volume.[^bitget]
-- **Final displayed outcome:** Yes, after two disputed Yes proposals.[^polymarket]
+- **Subject:** "Clavicular" is Kick streamer Braden Eric Peters.
+- **Listed:** April 20, 2026; scheduled end December 31, 2026, 11:59 PM ET.
+- **Resolved early:** May 1, 2026 (`closedTime` / `umaEndDate` 2026-05-01), automatically resolved, `umaResolutionStatus` "resolved".[^gamma]
+- **Outcome:** Yes (`outcomePrices` `["1","0"]`), final — not in review.[^gamma]
+- **Dispute history:** two UMA proposal/dispute cycles (`umaResolutionStatuses` `["proposed","disputed","proposed","disputed"]`).[^gamma]
+- **Volume:** ~$13.9M on the Polymarket page; reported up to ~$16.46M in dispute coverage.[^gamma][^bitget]
 
 ## What happened
 
-The market opened on April 20, 2026. Polymarket's page shows the full rule, including the credibility requirement, statements from Clavicular or his representatives as the resolution source, and possible use of a definitive consensus of credible media reporting.[^polymarket]
+The market asked whether the Kick streamer Clavicular would credibly announce a pregnancy. The verbatim rule was: *"This market will resolve to 'Yes' if Clavicular announces that he and a partner are expecting a baby through pregnancy between market creation and December 31, 2026, 11:59 PM ET. Otherwise... 'No'. Only credible announcements will qualify. Pregnancy announcements that are not credible, for example jokes, will not suffice. This market will resolve based on the date of announcement... The resolution source will be statements from Clavicular or his representatives; however, a definitive consensus of credible media reporting may be considered."*[^gamma]
 
-By late April, the market had become a live dispute. Bitget/BlockBeats reported that the market had gone through two proposal/dispute cycles, that Yes shares were trading near 97 cents, and that critics argued the rule excluded joking or untrustworthy pregnancy statements.[^bitget] Coinlive similarly reported a disputed UMA process and trader criticism of UMA.[^coinlive]
+The real-world basis was thin. In April 2026 Clavicular ran a "pregnancy contest" / "I'm gonna be a dad" livestream stunt, and a viral rumor spread that he had gotten a girlfriend of about 10 days pregnant. Reputable fact-checks did not corroborate any pregnancy. The Times of India (via inkl) concluded the claim was "false and likely came from a mix of jokes, clips taken out of context," with "no video [confirming] a pregnancy" and no confirmed girlfriend.[^toi] Complex, Hindustan Times, and AOL framed the contest / "I'm gonna be a dad" material as a viral stunt or joke.[^complex] No credible-media consensus of an actual pregnancy existed through June 2026.
 
-The best public evidence against Yes is not just trader anger. The Times of India published a fact-check after the viral rumor and concluded that the pregnancy claim had no proof, no confirmed girlfriend, and no confirming statement from Clavicular. It said the rumor mixed a viral post, unrelated clips, and Clavicular's own controversial content style.[^toi]
-
-Hindustan Times separately reported the underlying "pregnancy contest" controversy: Clavicular proposed a contest involving 500 women and said he would be a father, which sparked backlash.[^ht] That supports the idea that there was a public pregnancy-related statement, but not necessarily a credible announcement that he and a partner were already expecting a baby.
+Despite that, the market went through two UMA proposal/dispute cycles and finalized Yes, resolving early on May 1, 2026.[^gamma] The case drew oracle-manipulation and conflict-of-interest criticism, with reporting that 60%+ of active UMA voters hold Polymarket positions and one outlet headlining an "Oracle Manipulation Controversy."[^kucoin][^bitget]
 
 ## The allegation against Polymarket
 
-The allegation is that UMA/Polymarket treated a provocative intent statement, viral rumor, or content stunt as a qualifying pregnancy announcement even though the written rule required a credible announcement that Clavicular and a partner were expecting a baby.
+The allegation is that UMA/Polymarket certified jokes and intent statements — not a credible announcement of an existing pregnancy — as a qualifying Yes. The statements at issue were stunt/contest material and a debunked rumor, which is precisely the "not credible, for example jokes" category the rule excludes. Critics further argued the oracle process was compromised: a large majority of active UMA voters reportedly hold Polymarket positions, creating a conflict of interest in a high-volume market, and at least one outlet framed the episode as oracle manipulation.[^kucoin][^bitget]
 
-If the resolution was based only on "I will be a dad" or the "pregnancy contest" material, the Yes outcome appears inconsistent with the rule. A future intent to become a father is not the same as announcing that a partner is pregnant.
+## Polymarket's / the resolver's defense
 
-This is exactly the sort of credibility-rule failure that can turn an influencer rumor market into an oracle-process problem: the rule contains a credibility filter, but the public record does not show how UMA applied it.
+No direct Polymarket statement defending this specific Yes was located. The implicit defense has two parts.
 
-## Polymarket's defense
+First, the market ran through the full UMA dispute process — proposed, disputed, proposed, disputed — and UMA voting "determined the announcement was compliant," finalizing Yes.[^gamma][^bitget] Some crypto outlets framed the underlying event as "the streamer announced his partner is pregnant," which, if a direct qualifying statement existed, would make Yes defensible.[^bitget]
 
-No direct Polymarket statement defending this specific final Yes was located.
-
-The strongest implicit defense has two parts.
-
-First, the market went through Polymarket's stated UMA dispute process: Yes was proposed, disputed, proposed again, disputed again, and the final outcome shown on Polymarket is Yes.[^polymarket] A normal-process path is not proof of correctness, but it is the platform's procedural defense.
-
-Second, the rule allowed statements from Clavicular or his representatives, and Polymarket's page describes repeated public claims by Clavicular about becoming a father by year-end.[^polymarket] If UMA voters saw a direct statement that he and a partner were expecting a baby, Yes could be defensible. The blocker is that the reviewed public reporting instead says no such confirmed pregnancy statement existed.
+Second, the rule named "statements from Clavicular or his representatives" as the resolution source, so a direct self-announcement by the streamer could in principle satisfy it without independent media confirmation. The weakness is that the reviewed reporting describes only stunt/contest/rumor material, not a credible announcement of an existing pregnancy.
 
 ## Assessment
 
-### Did the market and dispute exist?
+### Did the market finalize Yes, and is it final?
 
-**Yes.** The Polymarket page verifies the market, rule, final Yes, and two disputed Yes proposals.[^polymarket] Bitget/BlockBeats and Coinlive independently describe the dispute.[^bitget][^coinlive]
+**Yes.** The gamma API shows `outcomePrices` `["1","0"]`, closed and resolved, `automaticallyResolved`, resolved early on May 1, 2026 after two dispute cycles. It is final, not in review; aggregators showing "Active" or "In Review" are stale.[^gamma]
 
-### Does the public record support the final Yes?
+### Did the resolving material satisfy the credibility / joke-exclusion clause?
 
-**Not strongly.** The best accessible reporting says the viral pregnancy claim was unconfirmed or false, and that the underlying public statement was about wanting to become a father or running a "pregnancy contest," not necessarily announcing an existing pregnancy.[^toi][^ht]
+**No, on the public record.** The only material was an April 2026 "pregnancy contest" / "I'm gonna be a dad" stunt and a viral rumor that reputable fact-checks uniformly found unconfirmed or false — the exact "not credible, for example jokes" category the rule excludes.[^toi][^complex] No credible-media consensus of an actual pregnancy existed.
 
-### Is this a proven bad resolution?
+### Was the oracle process credibly contested?
 
-**Not conclusively.** The exact UMA evidence packet, voter rationale, and underlying announcement are not preserved in the current file. It remains possible that UMA relied on a primary statement not captured by the reviewed articles.
-
-### Was this a real failure for the tracker?
-
-**Yes.** At minimum, it is a serious credibility-rule and UMA-process failure candidate. The platform's final Yes is hard to reconcile with the public fact-check record unless additional decisive evidence exists.
+**Yes.** Two dispute cycles, plus reporting that 60%+ of active UMA voters hold Polymarket positions and explicit "Oracle Manipulation Controversy" framing.[^kucoin][^bitget]
 
 ### Overall classification
 
-- **UMA dispute:** Yes
-- **Final outcome:** Yes
-- **Public evidence against Yes:** Substantial
-- **Conclusive misresolution:** Not proven without UMA packet / primary announcement
-- **Best public verdict:** Strong possible bad resolution with an evidentiary blocker
+- **Credibility-rule violation:** Yes — Yes finalized on joke/stunt/debunked-rumor material the rule excludes.
+- **Operational/oracle-process failure:** Yes — disputed twice; conflict-of-interest criticism.
+- **Remediation:** None — bad Yes stands; No-holders not made whole.
+- **Best public verdict: Failure (Unresolved): the credibility/joke-exclusion clause was violated, the Yes is final, and affected holders were not made whole.**
 
-## Precise blocker to a conclusive finding
+## Precise blocker to a stronger finding
 
-The missing evidence is the exact UMA ancillary data, proposal/dispute transactions, final UMA vote details, voter rationale, and the specific Clavicular statement or representative statement that UMA treated as credible. Without that, the website should say the public record strongly questions the Yes outcome, but should not state as settled fact that Polymarket/UMA resolved it wrongly.
+The only residual gap is that the exact statement UMA voters certified as the "credible announcement" is not preserved in primary form. The uniform fact-check record (no confirmed pregnancy, no confirmed girlfriend, jokes/stunt/clips-out-of-context) makes the rule-violation judgment strong, but without the certified statement verbatim the analysis cannot fully reconstruct what voters claimed to rely on. This lowers confidence; it is not a blocker — the market is final and the credibility-rule violation is well-supported.
 
 ## Sources
 
-[^polymarket]: Polymarket, ["Clavicular pregnancy in 2026?"][polymarket]. Shows the market rule, credibility requirement, two disputed Yes proposals, final Yes outcome, and displayed volume.
+[^gamma]: Polymarket gamma API, event `clavicular-pregnancy-in-2026`. Verbatim resolution rule incl. credibility and joke-exclusion clauses; `outcomePrices` `["1","0"]` (Yes); closed/resolved, `automaticallyResolved`, `closedTime`/`umaEndDate` 2026-05-01; two dispute cycles (`["proposed","disputed","proposed","disputed"]`); volume ~$13.9M. [gamma-api][gamma]
 
-[^bitget]: Bitget News / BlockBeats, ["Polymarket Once Again Caught in Oracle Manipulation Controversy, as 'Anchor Pregnancy' Market Sees Trading Volume Exceed $16.46 Million"][bitget], May 1, 2026. Reports volume, dispute cycles, rule concern, position concentration, and UMA criticism.
+[^toi]: Times of India fact-check (inkl mirror). Concluded the pregnancy claim was "false and likely came from a mix of jokes, clips taken out of context," with no video confirming a pregnancy and no confirmed girlfriend. [Times of India / inkl][toi]
 
-[^coinlive]: Coinlive, ["Polymarket's Pregnancy Market Faces Dispute Over Resolution"][coinlive], April 2026. Reports the market title, volume, UMA dispute, rule about non-credible announcements, Yes pricing, and trader criticism.
+[^complex]: Complex. Framed the "pregnancy contest" / impregnation-competition material as a viral stunt; corroborates the joke/stunt nature of the underlying event (also reflected in Hindustan Times and AOL coverage). [Complex][complex]
 
-[^toi]: Times of India, ["Fact check: Is Clavicular really expecting his first child after 10 days relationship amid viral pregnancy contest rumor?"][toi], April 29, 2026. Reports that the viral pregnancy claim lacked proof, no confirmed girlfriend or statement from Clavicular confirmed it, and the rumor likely came from jokes and clips taken out of context.
+[^kucoin]: KuCoin. Reported UMA dispute-resolution scrutiny, including that 60%+ of active UMA voters hold Polymarket positions, raising conflict-of-interest/fraud concerns. [KuCoin][kucoin]
 
-[^ht]: Hindustan Times, ["Clavicular's bizarre 'pregnancy contest' claim sparks backlash on social media; 'I will be a dad...'"][ht], April 25, 2026. Reports the public "pregnancy contest" controversy and fatherhood statement.
+[^bitget]: Bitget / BlockBeats. "Oracle Manipulation Controversy" framing; ~$16.46M volume; UMA voting "determined the announcement was compliant"; pro-Yes framing that the streamer announced a pregnancy. [Bitget / BlockBeats][bitget]
 
-[polymarket]: https://polymarket.com/event/clavicular-pregnancy-in-2026
+[gamma]: https://gamma-api.polymarket.com/events?slug=clavicular-pregnancy-in-2026
+[toi]: https://www.inkl.com/news/fact-check-is-clavicular-really-expecting-his-first-child-after-10-days-relationship-amid-viral-pregnancy-contest-rumor
+[complex]: https://www.complex.com/pop-culture/a/tracewilliamcowen/clavicular-male-bonnie-blue-impregnation-competition
+[kucoin]: https://www.kucoin.com/news/flash/polymarket-dispute-resolution-system-under-scrutiny-as-uma-voting-raises-fraud-concerns
 [bitget]: https://www.bitgetapp.com/news/detail/12560605393170
-[coinlive]: https://www.coinlive.com/news-flash/1098030
-[toi]: https://timesofindia.indiatimes.com/world/us-streamers/fact-check-is-clavicular-really-expecting-his-first-child-after-10-days-relationship-amid-viral-pregnancy-contest-rumor/articleshow/130539375.cms
-[ht]: https://www.hindustantimes.com/world-news/us-news/claviculars-bizarre-pregnancy-contest-claim-sparks-backlash-on-social-media-i-will-be-a-dad-101776968389298.html

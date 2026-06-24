@@ -2,120 +2,99 @@
 
 ## Bottom line
 
-**Finding: This should not be classified as a Polymarket resolution failure. Confidence: high.**
+**Finding: No failure. Polymarket's market resolved Yes only if Israel "commences a military offensive intended to establish control over any portion of Lebanon" between September 17 and September 30, 2024. Israel's late-September operation was an entry of ground forces explicitly framed by the IDF and Israeli officials as limited, targeted raids not intended to occupy Lebanese territory; no official source or credible-reporting consensus confirmed the rule's intent-to-establish-control condition. The market resolved No, and that No was a correct application of the written rule. Confidence: high.**
 
-Polymarket's market asked whether Israel would invade Lebanon in September 2024. The detailed rule did not resolve on ordinary media use of the word "invasion" or on ground entry alone. It required Israel to commence a military offensive **intended to establish control over any portion of Lebanon** between September 17 and September 30, 2024.[^polymarket]
+This case looks at first like a clean misresolution: the market is titled "Will Israel invade Lebanon in September?", Israeli ground forces did cross into southern Lebanon around the deadline, and major outlets used "invasion" and "incursion" language.[^gamma][^toi][^wiki] But the binding rule did not resolve on the word "invasion" or on ground entry alone. It required a military offensive **intended to establish control over any portion of Lebanon**, with the resolution source being official confirmation by Lebanon, Israel, the United Nations, or a UN Security Council permanent member, or a consensus of credible reporting.[^gamma]
 
-That intent-to-control condition was not established. Israel began ground operations in southern Lebanon around the deadline, and some reporting used invasion or incursion language.[^predictionnews][^axios] But Axios reported that the IDF described the operation as limited, localized, targeted raids against Hezbollah targets, and that Israeli officials said the operation was not intended to occupy southern Lebanon.[^axios]
+That intent-to-control condition was not established. The IDF described the operation as "limited, localized, and targeted ground raids" against Hezbollah infrastructure near the border, and two Israeli officials said the security-cabinet decision emphasized the operation was limited in time and scope and was **not intended to occupy southern Lebanon**.[^toi][^lwj][^wiki] None of the four enumerated official sources confirmed control-intent, and the credible-reporting characterization matched the limited-raids framing.
 
-The final No resolution was fair under the actual rule. A short title cannot capture every condition; that is why the detailed rules exist. The rule's control-intent requirement was a legitimate narrowing condition, and the reviewed official/credible reporting did not confirm it.
+The decisive point is that the No resolution holds **independent of the timing question.** Whether or not ground entry fell inside the September 17–30 window, the binding control-intent condition failed on the official and reported record. The gamma API records the market resolved No (`outcomePrices ["0","1"]`) with `umaResolutionStatus: resolved`.[^gamma] Applying a written rule's narrowing condition as drafted is not a resolution failure.
 
 ## Market details
 
 - **Venue:** Polymarket
-- **Question:** `Will Israel invade Lebanon in September?`
-- **Date window:** September 17, 2024 through September 30, 2024, 11:59 PM ET
-- **Yes condition:** Israel had to commence a military offensive intended to establish control over any portion of Lebanon.
-- **Sources:** official confirmation by Lebanon, Israel, the United Nations, or a permanent member of the UN Security Council; credible-reporting consensus could also be used.
-- **Volume shown on Polymarket page:** about $13.8 million.
-- **Resolution history shown on Polymarket page:** Yes proposed, disputed; No proposed, disputed; final outcome No.[^polymarket]
+- **Market:** "Will Israel invade Lebanon in September?" — gamma event/market slug `will-israel-invade-lebanon-in-september` (event id 12681, market id 507417, conditionId `0xab66…4df5`).[^gamma]
+- **Date window:** September 17, 2024 through September 30, 2024, 11:59 PM ET.[^gamma]
+- **Payout criterion (verbatim):** "This market will resolve to 'Yes' if Israel commences a military offensive intended to establish control over any portion of Lebanon between September 17, 2024 and September 30, 2024, 11:59 PM ET. Otherwise, this market will resolve to 'No'."[^gamma]
+- **Resolution source (verbatim):** "official confirmation by Lebanon, Israel, the United Nations, or any permanent member of the UN Security Council, however a consensus of credible reporting will also be used."[^gamma]
+- **Volume:** about $13.8 million.[^gamma]
+- **Outcome:** No (`outcomePrices ["0","1"]`); `umaResolutionStatus: resolved`; closed/UMA-finalized October 8, 2024.[^gamma]
 
 ## What happened in the real world
 
-On September 30, 2024 U.S. time, Israel began a ground operation in southern Lebanon. Axios reported that the IDF said troops had begun limited, localized, and targeted raids against Hezbollah targets along the border area.[^axios]
+Israel began ground operations into southern Lebanon around the close of the market window — the operation began the evening of September 30 / into October 1, 2024 (Israel local time, UTC+3), and the IDF publicly confirmed it in the early hours of October 1 local time, stating that "limited, localized, and targeted ground raids" against Hezbollah targets and infrastructure had begun several hours earlier.[^toi][^lwj] Wikipedia dates the cross-border raids to October 1, characterizing September 30 as the preparatory phase (the US was notified; Lebanese forces withdrew from the border).[^wiki]
 
-Axios also reported that two Israeli officials said the security-cabinet decision emphasized the operation was targeted and limited in time and scope, and was not intended to occupy southern Lebanon.[^axios]
+On intent, the operation was consistently described as limited and targeted, not as a campaign to hold or govern Lebanese territory. Two Israeli officials told Axios the security-cabinet decision was limited in time and scope and was **not intended to occupy southern Lebanon**, and Israel publicly stated it had "no intentions for long-term occupation."[^axios][^wiki] The raids focused on Hezbollah infrastructure in border villages "only hundreds of meters across the border."[^wiki]
 
-PredictionNews reported that major media outlets used invasion or incursion language and that Yes shares surged as traders reacted to those descriptions and to statements from Israeli officials suggesting escalation.[^predictionnews]
-
-Those facts explain why the dispute existed. They do not satisfy the market's stated intent-to-control requirement.
-
-## What happened on Polymarket
-
-The market moved sharply around the deadline. PredictionNews reported that Yes shares had been priced near 8 cents on the morning of September 30, then jumped after Israeli defense minister Yoav Gallant suggested the next phase against Hezbollah would begin soon. As media outlets described the ground operation, Yes prices rose further.[^predictionnews]
-
-The market did not simply resolve on whether Israeli troops entered Lebanon. Polymarket's rule required a military offensive intended to establish control over part of Lebanon.[^polymarket]
-
-The Polymarket page now shows the resolution path: a Yes outcome was proposed and disputed, a No outcome was proposed and disputed, and the final outcome was No.[^polymarket]
+Those facts explain why a dispute existed — ground troops crossed and outlets used invasion language — but they do not satisfy the market's stated intent-to-establish-control requirement.
 
 ## The allegation against Polymarket
 
-The user-facing complaint was understandable: Israeli troops entered Lebanon and many outlets used invasion/incursion language.[^predictionnews][^axios] A trader reading only the short title could have expected Yes.
+The user-facing complaint was understandable: Israeli troops entered Lebanon and many outlets used invasion/incursion language, so a trader reading only the short title could have expected Yes.[^toi][^wiki] But the detailed rule controlled, and it required a military offensive intended to establish control over part of Lebanon. Titles are short labels; they do not repeat every condition in the rules.[^gamma]
 
-But that is not enough to establish a platform failure. The detailed rule controlled, and it required intent to establish control. Titles are short labels; they do not need to repeat every condition in the rules.
+The strongest Yes argument would need to show that one of the specified official sources — or a credible-reporting consensus — confirmed that Israel intended to establish control over part of Lebanon within the window. The reviewed record does not show that.
 
-The strongest Yes argument would need to show that one of the specified official sources, or a credible-reporting consensus, confirmed that Israel intended to establish control over part of Lebanon. The reviewed record does not show that.
+## Polymarket's basis for No
 
-## Polymarket's defense
+The defense is the written rule and the source record:
 
-Polymarket's defense is the written rule and the source record:
+1. **The rule required intent to establish control, not mere entry.** Yes resolution was conditioned on Israel commencing "a military offensive intended to establish control over any portion of Lebanon," not on ground troops crossing the border.[^gamma]
 
-- The rule required intent to establish control over part of Lebanon, not merely entry by ground troops.[^polymarket]
-- Axios reported that Israeli officials described the operation as targeted, limited, and not intended to occupy southern Lebanon.[^axios]
-- The IDF framed the operation as limited raids against Hezbollah targets near the border, not as a campaign to govern or hold Lebanese territory.[^axios]
-- PredictionNews recognized that the official Israeli position conflicted with a Yes resolution under Polymarket's control-intent criterion.[^predictionnews]
-
-Under that rule, No was a fair result.
+2. **Official Israeli framing was the opposite of control-intent.** The IDF framed the operation as limited, localized, targeted raids against Hezbollah targets near the border, and Israeli officials said it was not intended to occupy southern Lebanon and had no intention of long-term occupation.[^toi][^axios][^wiki][^lwj] None of the four enumerated official sources confirmed an intent to establish control, and the credible-reporting characterization matched the limited-raids framing.
 
 ## Assessment
 
-### Did Israeli ground forces enter Lebanon before the market deadline?
+### Did Israeli ground forces enter Lebanon around the market deadline?
 
-**Yes.**
-
-Axios reported that Israel launched a ground operation into southern Lebanon early Tuesday local time, corresponding to late September 30 in the United States.[^axios]
+**Yes.** Israel began ground operations into southern Lebanon the evening of September 30 / into October 1, 2024, confirmed by the IDF on October 1 local time.[^toi][^lwj][^wiki]
 
 ### Did credible reporting use invasion/incursion language?
 
-**Yes.**
+**Yes.** Major outlets described the operation as a ground invasion or incursion.[^toi][^wiki]
 
-PredictionNews reported that major outlets used invasion or incursion descriptions, and Axios itself referred to the operation as a ground invasion in the context of explaining the escalation.[^predictionnews][^axios]
+### Did the written rule require more than entry?
 
-### Did the written market require more than entry?
+**Yes.** The binding rule required a military offensive **intended to establish control** over any portion of Lebanon.[^gamma]
 
-**Yes.**
+### Was the control-intent condition satisfied on the official or credible-reporting record?
 
-The Polymarket rule required a military offensive intended to establish control over any portion of Lebanon.[^polymarket]
+**No.** The IDF and Israeli officials described the operation as limited and targeted and explicitly not intended to occupy southern Lebanon; no enumerated official source confirmed intent to establish control.[^toi][^axios][^wiki][^lwj]
 
-### Was that control-intent requirement satisfied?
+### Does the No resolution depend on the timing question?
 
-**No, not on the reviewed evidence.**
+**No — and this is decisive.** Even if the ground entry fell inside the September 17–30, 11:59 PM ET window, the binding intent-to-establish-control condition failed on the official and reported record. The No holds independent of whether entry was inside or outside the window.
 
-The reviewed sources show a ground operation, but official and sourced reporting described it as limited, targeted, and not intended to occupy southern Lebanon.[^axios][^predictionnews]
+### So was this a resolution failure?
 
-### Was Polymarket's final No fair?
-
-**Yes.**
-
-No was a fair application of the detailed rule because the necessary intent to establish control was not confirmed.
-
-### Was this a real failure for the tracker?
-
-**No.**
-
-This was a disputed geopolitical market, but not a demonstrated resolution or rule-writing failure. The rule's intent-to-control condition was clear enough and outcome-determinative.
+**No — it was a rule applied as written.** The intent-to-control condition was a clear, outcome-determinative narrowing of the title, and it was not met. The gamma record confirms the market resolved No with UMA status resolved.[^gamma]
 
 ### Overall classification
 
-- **Resolution failure:** No
-- **Rule ambiguity:** Low to moderate, but not enough to make the settlement unfair
+- **Settlement consistent with the governing written rule:** Yes
+- **Misapplication of the rules:** No
+- **Title-vs-rule ambiguity:** Low to moderate — the title alone could mislead, but the detailed rule is clear and was applied
 - **Ground entry:** Yes
 - **Intent to establish control:** Not established
-- **Final No outcome:** Fair under the rule
 - **Best public verdict:** No failure
 
 ## Precise blocker to a stronger contrary finding
 
-To prove Polymarket made a resolution error, the evidence would need to show that Israel's September 2024 operation was intended to establish control over part of Lebanon within the market window, despite official and reported statements that it was limited and not intended as an occupation. The reviewed sources do not establish that.
+To prove a resolution error, the evidence would need to show that one of the enumerated official sources — or a credible-reporting consensus — confirmed Israel's September 2024 operation was intended to establish control over part of Lebanon within the market window, despite official and reported statements that it was limited and not intended as an occupation. The reviewed primary record does not establish that. A secondary residual: the multi-round propose/dispute history (Yes proposed and disputed, No proposed and disputed) is sourced to the archived Polymarket page and contemporaneous reporting; gamma's current snapshot shows only the final resolved-No state with an empty `umaResolutionStatuses` array, so that propose/dispute sequence is not independently re-confirmed on-chain here.
 
 ## Sources
 
-[^polymarket]: Polymarket, ["Will Israel invade Lebanon in September?"][polymarket]. Current archived market page showing the rule, volume, disputed Yes and No proposals, and final No outcome.
+[^gamma]: Polymarket Gamma API, event/market `will-israel-invade-lebanon-in-september` (event id 12681; market id 507417; conditionId `0xab66a7d5…e4df5`). Description (binding rule): "This market will resolve to 'Yes' if Israel commences a military offensive intended to establish control over any portion of Lebanon between September 17, 2024 and September 30, 2024, 11:59 PM ET. Otherwise… 'No'." Resolution source: official confirmation by Lebanon, Israel, the UN, or a UNSC permanent member, or a consensus of credible reporting. `outcomePrices` `["0","1"]` (No), `umaResolutionStatus` `resolved`, `umaResolutionStatuses` `[]`, volume ~$13.8M, closed/UMA-finalized 2024-10-08. [Gamma][gamma]
 
-[^predictionnews]: Kristen Wen, PredictionNews, ["Polymarket's Quandary: Defining an Invasion"][predictionnews], October 3, 2024. Describes the live dispute, price movement, rule language, media terminology, IDF framing, and the difficulty of proving intent.
+[^toi]: The Times of Israel, "IDF announces launch of limited ground raids of Hezbollah sites across Lebanon border," October 1, 2024. IDF confirmed in the early hours of October 1 (Israel time) that "limited, localized, and targeted ground raids" against Hezbollah targets and infrastructure had begun several hours earlier; outlets described the operation as an invasion/incursion. [Article][toi]
 
-[^axios]: Barak Ravid, Axios, ["Israel begins ground operation in southern Lebanon"][axios], updated September 30, 2024. Reports the ground operation, the IDF's limited-raids framing, and Israeli officials' statement that the operation was not intended to occupy southern Lebanon.
+[^axios]: Barak Ravid, Axios, "Israel begins ground operation in southern Lebanon," updated September 30, 2024. Reports the IDF's limited-raids framing and that two Israeli officials said the security-cabinet decision emphasized the operation was limited in time and scope and was not intended to occupy southern Lebanon. (Direct fetch returned 403/451; substance corroborated by Times of Israel, Long War Journal, and Wikipedia.) [Article][axios]
 
-[polymarket]: https://polymarket.com/event/will-israel-invade-lebanon-in-september
-[predictionnews]: https://predictionnews.com/politics/polymarkets-quandary-defining-an-invasion
+[^lwj]: FDD's Long War Journal, "IDF begins Lebanon ground operation, Iran launches 180 ballistic missiles at Israel," October 1, 2024. Operation began the evening of September 30 into October 1; IDF described "localized and targeted ground raids based on precise intelligence against Hezbollah… targets and infrastructure in southern Lebanon," confirmed via Telegram on October 1. [Article][lwj]
+
+[^wiki]: Wikipedia, "2024 Israeli invasion of Lebanon." Dates the cross-border raids to October 1, 2024 (September 30 = preparatory phase); records Israel "preparing for a limited ground operation, with no intentions for long-term occupation," with troops operating in border villages "only hundreds of meters across the border." [Article][wiki]
+
+[gamma]: https://gamma-api.polymarket.com/events?slug=will-israel-invade-lebanon-in-september
+[toi]: https://www.timesofisrael.com/idf-announces-launch-of-limited-ground-raids-of-hezbollah-sites-across-lebanon-border/
 [axios]: https://www.axios.com/2024/09/30/israel-ground-invasion-lebanon
+[lwj]: https://www.longwarjournal.org/archives/2024/10/idf-begins-lebanon-ground-operation-iran-launches-180-ballistic-missiles-at-israel.php
+[wiki]: https://en.wikipedia.org/wiki/2024_Israeli_invasion_of_Lebanon

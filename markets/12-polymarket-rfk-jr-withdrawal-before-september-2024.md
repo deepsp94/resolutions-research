@@ -2,93 +2,92 @@
 
 ## Bottom line
 
-**Finding: This should not be classified as a Polymarket resolution failure. Confidence: high.**
+**Finding: No failure. The governing Polymarket rule resolved Yes if Robert F. Kennedy Jr. "officially announces his withdrawal or is confirmed to have withdrawn" from the 2024 race by August 31, 2024, with a backup clause for extenuating circumstances preventing him from continuing — and the primary source was official information from Kennedy or his representatives. On August 23, 2024 Kennedy officially announced he was suspending his campaign, endorsed Donald Trump, and filed paperwork to withdraw from battleground-state ballots. The UMA optimistic oracle resolved the market Yes the same day, with no dispute logged. The suspension-versus-termination objection was a trader definitional debate that the rule's plain text and the undisputed resolution foreclose. Confidence: high.**
 
-The located Polymarket market page changes the analysis. The market was titled `Will RFK Jr. drop out before September?`, not merely "withdraws." Its rule resolved Yes if Robert F. Kennedy Jr. officially announced his withdrawal or was confirmed to have withdrawn from the 2024 U.S. presidential race by August 31, 2024, 11:59 PM ET. It also said that if extenuating circumstances prevented Kennedy from continuing the race, the market would resolve Yes.[^polymarket]
+The market was titled "Will RFK Jr. drop out before September?" and its rule (verified verbatim from the Polymarket gamma API) resolved Yes on an official announcement or confirmation of withdrawal, or on extenuating circumstances preventing Kennedy from continuing — using official information from Kennedy or his official/legal representatives as the primary source.[^gamma] Kennedy's August 23, 2024 announcement that he was suspending his campaign, endorsing Trump, and withdrawing from battleground ballots satisfied that test directly.[^wapo][^cbs][^abc]
 
-Kennedy announced on August 23, 2024 that he was suspending his campaign, supporting Donald Trump, and seeking to remove his name from ballots in battleground states.[^coindesk][^newsweek] That was enough for a "drop out" market, especially one whose rule allowed official information from RFK Jr. or his representatives and credible-reporting consensus.[^polymarket]
-
-The page shows the resolution path as: Yes proposed, no dispute, final outcome Yes.[^polymarket] The earlier controversy was real in the sense that traders debated suspension-versus-withdrawal, but the final Yes outcome was correct under the actual market title, rule, and public facts.
+The settlement record is unambiguous in primary data: outcome prices `["1", "0"]` (Yes = 1.00), automatically resolved through the UMA oracle on August 23, 2024 — the announcement day, eight days before the August 31 deadline — with the UMA dispute list empty.[^gamma] The suspension-versus-withdrawal controversy was real as a trader debate, but it never became a formal dispute, and the Yes outcome was correct under the actual market title, rule, and public facts.
 
 ## Market details
 
 - **Venue:** Polymarket
-- **Question:** `Will RFK Jr. drop out before September?`
-- **Market page:** [Polymarket market page][polymarket]
-- **Deadline:** August 31, 2024, 11:59 PM ET.
-- **Rule:** Yes if Kennedy officially announced his withdrawal or was confirmed to have withdrawn from the 2024 U.S. presidential race before the deadline.
-- **Extenuating-circumstances clause:** Yes if circumstances prevented Kennedy from continuing the race.
-- **Primary source:** official information from RFK Jr. or his official/legal representatives; credible-reporting consensus could also be used.
-- **Final result shown on Polymarket:** Yes, with no dispute.[^polymarket]
+- **Question:** "Will RFK Jr. drop out before September?"[^gamma]
+- **Event / market:** gamma event id 11651, market id 503991, conditionId `0x4d3315503bed60f1358ef6809c1e2a7bb2aa8b362025b3bb40a78ac3df58ec76`.[^gamma]
+- **Deadline:** August 31, 2024, 11:59 PM ET.[^gamma]
+- **Governing rule (verbatim):** Yes if Kennedy "officially announces his withdrawal or is confirmed to have withdrawn from the 2024 US presidential race" by the deadline; Yes also "in the event of any extenuating circumstances that prevent Kennedy from continuing the race"; otherwise No.[^gamma]
+- **Primary source standard:** "official information from RFK Jr. or his official/legal representatives, however a consensus of credible reporting will also be used."[^gamma]
+- **Settlement:** outcome prices `["1", "0"]` (Yes); `automaticallyResolved: true`; resolved via the UMA optimistic oracle; `umaResolutionStatus: "resolved"`; `umaResolutionStatuses: "[]"` (no dispute logged); `closedTime` 2024-08-23T23:35:23Z.[^gamma]
 
 ## What happened
 
-Kennedy announced on August 23, 2024 that he was suspending his presidential campaign and supporting Trump.[^coindesk][^newsweek]
+On August 23, 2024 Kennedy publicly announced he was suspending his presidential campaign and endorsing Donald Trump, appearing with Trump at a rally in Arizona.[^wapo][^cbs][^npr][^abc] He said he would remove himself from the ballot in battleground states where he could act as a "spoiler," while encouraging voters in safely red or blue states to still vote for him.[^wapo]
 
-Newsweek reported that Kennedy said he had made the decision to suspend his campaign and support Trump. It also reported that he would seek to remove himself or withdraw from ballots in roughly ten battleground states, while remaining set to appear on ballots in many other states.[^newsweek]
+Consistent with that, he took official steps to withdraw: he disclosed ending his candidacy in a court filing in Pennsylvania and sought to withdraw his petition there, and he filed paperwork to withdraw in Arizona.[^abc] He nonetheless remained on the ballot in some battleground states — for example Michigan, where the secretary of state's office said he could not withdraw at that point and his name would remain.[^abc]
 
-CoinDesk reported that Polymarket users debated whether Kennedy's announcement counted as withdrawal, because campaigns can technically suspend rather than legally terminate and can remain on some ballots.[^coindesk]
+The Polymarket market closed and resolved Yes the same day, August 23, 2024, through the UMA optimistic oracle, with no dispute recorded.[^gamma]
 
 ## The allegation against Polymarket
 
-The No-side argument was that Kennedy suspended rather than legally terminated his campaign and remained on ballots in multiple states. Under a narrow legal/status reading, he had not fully withdrawn from the presidential race.[^coindesk][^newsweek]
+The No-side argument was that Kennedy "suspended" rather than legally terminated his campaign and remained on ballots in multiple states, so under a narrow legal/status reading he had not fully withdrawn from the presidential race.[^coindesk][^abc]
 
-That argument is too narrow for the located market. The market title used "drop out," and the rule accepted official announcement or confirmation of withdrawal, plus extenuating circumstances preventing him from continuing the race.[^polymarket] Kennedy's public suspension, Trump endorsement, and battleground ballot-withdrawal plan fit the ordinary and market-specific meaning of dropping out before September.
+That argument is too narrow for the located market. The market title used "drop out," and the rule accepted an official announcement or confirmation of withdrawal, plus an extenuating-circumstances clause for anything preventing him from continuing the race.[^gamma] The rule did not require FEC termination, formal campaign closure, or removal from every state ballot. Kennedy's official announcement, Trump endorsement, and battleground ballot-withdrawal filings fit both the ordinary and the market-specific meaning of dropping out before September.
 
-## Polymarket's defense
+## Polymarket's basis for Yes
 
-Polymarket's defense is the rule and the undisputed resolution path:
+The Yes resolution rests on the rule's plain text and the undisputed settlement record:
 
-- Kennedy publicly suspended active campaigning before the deadline.[^coindesk][^newsweek]
-- He endorsed Trump and said he would remove himself from battleground ballots.[^newsweek]
-- The market used "drop out" in the title and did not require FEC termination, removal from every ballot, or inability to receive campaign donations.[^polymarket]
-- The outcome was proposed Yes, not disputed, and finalized Yes.[^polymarket]
+- Kennedy officially announced he was suspending his campaign and endorsing Trump on August 23, 2024 — official information from the candidate himself, the rule's primary source.[^wapo][^cbs][^gamma]
+- He filed paperwork to withdraw from battleground-state ballots (Pennsylvania, Arizona), confirming the withdrawal in official actions.[^abc]
+- The rule required neither FEC termination nor removal from every ballot, so his continued presence on some ballots (e.g. Michigan) does not defeat Yes.[^gamma][^abc]
+- The UMA oracle resolved the market Yes (`["1", "0"]`) on the announcement day with `umaResolutionStatuses: "[]"` — no dispute was logged.[^gamma]
 
 ## Assessment
 
-### Did Kennedy suspend active campaigning and endorse Trump before September?
+### Did Kennedy officially announce his withdrawal before September?
 
-**Yes.**
-
-That is well supported by CoinDesk and Newsweek.[^coindesk][^newsweek]
+**Yes.** On August 23, 2024 he announced he was suspending his campaign, endorsed Trump, and filed to withdraw from battleground ballots — verified from contemporaneous primary reporting.[^wapo][^cbs][^npr][^abc]
 
 ### Did the market require full legal termination or removal from every ballot?
 
-**No.**
+**No.** The governing rule resolved Yes on an official announcement or confirmation of withdrawal, or extenuating circumstances preventing continuation, with official information from Kennedy as the primary source. It did not require FEC termination, formal campaign closure, or removal from every state ballot.[^gamma]
 
-The located rule did not require FEC termination, formal campaign closure, or removal from every state ballot.[^polymarket]
+### Does his continued presence on some ballots (e.g. Michigan) undercut Yes?
 
-### Was the Yes resolution correct?
+**No.** Michigan's secretary of state said his name would remain on the ballot, but the rule did not condition Yes on ballot removal in every state; the official announcement and battleground withdrawal filings already satisfied the test.[^gamma][^abc]
 
-**Yes.**
+### Was the suspension-versus-termination objection a platform failure?
 
-The market asked whether Kennedy would drop out before September. His August 23 suspension, endorsement of another candidate, and plan to withdraw from battleground ballots satisfied that ordinary and rule-based test.
-
-### Was this a real failure for the tracker?
-
-**No.**
-
-This was a trader controversy, not a platform failure. The rule and final outcome are now recoverable, and they support Yes.
+**No.** It was a trader definitional debate over whether "suspend" equals "withdraw."[^coindesk] The rule's plain text resolves it: an official announcement of withdrawal suffices. The UMA record confirms the objection never became a formal dispute — the dispute list is empty and the market resolved Yes automatically.[^gamma]
 
 ### Overall classification
 
-- **Resolution failure:** No
-- **Rule ambiguity:** Low once the market page is considered
+- **Settlement consistent with the governing written rule:** Yes
+- **Misapplication of the rules:** No
+- **Semantic ambiguity:** Low once the market title, rule, and source standard are read
 - **Final Yes outcome:** Correct under the rule
-- **Best public verdict:** No failure; Kennedy dropped out in the relevant market sense before September
+- **Best public verdict:** No failure
 
 ## Precise blocker to a stronger finding
 
-No material blocker remains for the final-resolution question. A timestamped archive of the page as it appeared at settlement would be useful, but the current Polymarket page preserves the rule, source standard, final Yes outcome, and no-dispute resolution path.
+None material. The decisive facts are verified from primary sources: the gamma API preserves the verbatim rule, the source standard, the Yes outcome prices `["1", "0"]`, the UMA resolution with an empty dispute list, and the August 23, 2024 same-day resolution; contemporaneous reporting from the Washington Post, CBS, NPR, and ABC confirms the suspension, Trump endorsement, and battleground ballot-withdrawal filings. A timestamped archive of the page as it appeared at settlement would be nice to have but is immaterial, since gamma is the canonical settlement record.
 
 ## Sources
 
-[^polymarket]: Polymarket, ["Will RFK Jr. drop out before September?"][polymarket]. Shows the market title, rule, source standard, deadline, Yes proposal, no dispute, and final Yes outcome.
+[^gamma]: Polymarket gamma API, event `will-rfk-jr-drop-out-before-september` (event id 11651, market id 503991). Preserves the question title, the verbatim rule ("officially announces his withdrawal or is confirmed to have withdrawn… by 11:59 PM ET on August 31, 2024," plus the extenuating-circumstances clause), the primary source standard ("official information from RFK Jr. or his official/legal representatives, however a consensus of credible reporting will also be used"), outcome prices `["1", "0"]` (Yes), `automaticallyResolved: true`, `umaResolutionStatus: "resolved"`, `umaResolutionStatuses: "[]"` (no dispute logged), and `closedTime` 2024-08-23T23:35:23Z. [API][gamma]
 
-[^coindesk]: Sam Reynolds, CoinDesk, ["Did RFK Jr. Really 'Drop Out'? Polymarket Bettors Argue Over Contract Resolution"][coindesk], August 26, 2024. Describes the Polymarket dispute, the suspension-versus-withdrawal distinction, continued ballot access, and campaign-finance implications.
+[^wapo]: Washington Post, "Robert F. Kennedy Jr. says he is suspending his campaign and endorsing Trump," August 23, 2024. Reports the suspension, the Trump endorsement, and the plan to withdraw from battleground-state ballots while urging voters in safe states to still vote for him. [Article][wapo]
 
-[^newsweek]: Aila Slisco, Newsweek, ["Robert F. Kennedy Jr. May Still Be on the Ballot in 23 States"][newsweek], August 23, 2024. Reports Kennedy's suspension, support for Trump, planned ballot withdrawals in some states, and continued ballot presence in many states.
+[^cbs]: CBS News, "RFK Jr. endorses Trump and suspends presidential campaign," August 23, 2024. Reports Kennedy ending his presidential bid and endorsing Trump. [Article][cbs]
 
-[polymarket]: https://polymarket.com/event/will-rfk-jr-drop-out-before-september
+[^npr]: NPR, "RFK suspends his presidential campaign and backs Trump," August 23, 2024. Reports the suspension and endorsement. [Article][npr]
+
+[^abc]: ABC News, "RFK Jr. says he's suspending 2024 campaign, joins Donald Trump at Arizona rally," August 23, 2024. Reports the Arizona and Pennsylvania ballot-withdrawal filings and that Kennedy would remain on Michigan's ballot per the secretary of state's office. [Article][abc]
+
+[^coindesk]: Sam Reynolds, CoinDesk, "Did RFK Jr. Really 'Drop Out'? Polymarket Bettors Argue Over Contract Resolution," August 26, 2024. Describes the trader debate over suspension versus withdrawal and continued ballot access. [Article][coindesk]
+
+[gamma]: https://gamma-api.polymarket.com/events?slug=will-rfk-jr-drop-out-before-september
+[wapo]: https://www.washingtonpost.com/politics/2024/08/23/rfk-jr-trump/
+[cbs]: https://www.cbsnews.com/news/rfk-jr-ends-presidential-bid/
+[npr]: https://www.npr.org/2024/08/23/nx-s1-5086838/robert-kennedy-future-plans-trump
+[abc]: https://abcnews.go.com/Politics/rfk-jr-new-court-filing-endorse-donald-trump/story?id=113070478
 [coindesk]: https://www.coindesk.com/markets/2024/08/26/did-rfk-jr-really-drop-out-polymarket-bettors-argue-over-contract-resolution
-[newsweek]: https://www.newsweek.com/robert-f-kennedy-jr-may-still-ballot-23-states-1943742

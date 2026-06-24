@@ -1,70 +1,65 @@
-# Kalshi: Ali Khamenei out as Supreme Leader
+# Kalshi: Ali Khamenei out as Supreme Leader (death carveout)
 
 ## Bottom line
 
-**Finding: On the accessible rule record, this should not be classified as a Kalshi resolution failure. Confidence: high that the current/attached rules exclude death as an ordinary $1 Yes; medium on the full historical display record.**
+**Finding: No failure. The governing `WLEADEROUT` contract carved death out of ordinary $1 binary settlement before Khamenei was killed, and that carveout is provable from primary sources predating the death: the May 15, 2025 CFTC product certification (contract listed May 16, 2025) and Wayback CDX records showing the terms PDF byte-identical across the February 28, 2026 death. When Khamenei was killed, Kalshi paused the market and settled on the last traded price before death under that rule — a correct application of the written contract — and reimbursed confused traders (~$2.2M). The live class action's own theory concedes the carveout existed and attacks UI disclosure and last-price methodology, not the contract. Failure-resolved: N/A. Confidence: high on the contract and its timing; medium on the pre-death UI display and the last-price methodology.**
 
-Kalshi offered markets on whether Ali Khamenei would be out as Supreme Leader of Iran before several dates. After Khamenei was killed, traders who expected ordinary Yes payouts did not receive $1 per contract. Kalshi paused the market and applied a death carveout, settling based on the last traded price before death or a fair value determined under its review process.[^kalshi-market][^wleaderout][^verge]
+After Khamenei was killed on February 28, 2026, traders who held "Yes" on "Ali Khamenei out as Supreme Leader?" expected $1 payouts and did not get them. Kalshi paused the market under Rule 13.1 and applied a death carveout, settling on the last traded price before death rather than as an ordinary binary "Yes."[^api-event][^terms][^reporting]
 
-The key question is whether the rules actually excluded death from normal Yes treatment. The accessible official materials say they did. Kalshi's public market page states that if Khamenei dies, the market resolves based on the last traded price before death, with the Outcome Review Committee determining fair value if needed.[^kalshi-market] The `WLEADEROUT` contract terms say the same category of thing: where the natural person central to the contract dies before expiration, Kalshi may settle at the last traded price before death, or before death-related circumstances became known or reasonably anticipated.[^wleaderout]
+The decisive question is whether the rule excluded death from normal "Yes" treatment **and was in force before the death** — the crux given the "rule changed after the fact" allegation. Both are verified from primary sources. The `WLEADEROUT` death carveout appears verbatim in the **original CFTC product certification dated May 15, 2025**, with the contract listed May 16, 2025 — roughly nine months before the death.[^cert] And Wayback's CDX index shows the published `WLEADEROUT.pdf` was **byte-identical** (content digest `G2PYV6QVLU7P4DBNBNWWT6IQSRU55JGJ`) across snapshots from January 11 through March 19, 2026, straddling the February 28 death; the digest only changes at the May 6, 2026 snapshot.[^cdx] The carveout was not added or "clarified into existence" after the death.
 
-Business Insider also reported Kalshi's position that the market was resolved according to the `WLEADEROUT` rules attached to the market, while noting that users may not have understood those rules because of the website/app design.[^business-insider]
-
-That means the short title, `Ali Khamenei out as Supreme Leader?`, is not enough to call the settlement a failure. A title cannot include every carveout. If the written rules attached to the market clearly handled death, then the rule controls and Kalshi's last-price treatment was a defensible application of the contract.
-
-The remaining unresolved issue is historical, not substantive: a lawsuit-style allegation says Kalshi implemented or clarified the death carveout only after Khamenei's death. The accessible current page, contract terms, Business Insider reporting, and later CFTC filing support Kalshi's rule-based defense, but a timestamped pre-death archive of the exact displayed rule set would be needed to close that timing allegation completely.[^business-insider][^cftc-amendment]
+That makes the short title — "Ali Khamenei out as Supreme Leader?" — insufficient to call this a failure. A title cannot repeat every carveout; the binding contract handled death, the carveout predated the death, and Kalshi's last-price settlement was a defensible application of that contract.
 
 ## Market details
 
 - **Venue:** Kalshi
-- **Market family:** `Ali Khamenei out as Supreme Leader?`
-- **Series:** `KXKHAMENEIOUT`
-- **Event shown on page:** `KXKHAMENEIOUT-AKHA`
-- **Market opened:** January 8, 2026, according to Kalshi's page.
-- **Displayed volume:** about **$54.5 million** on Kalshi's page.[^kalshi-market]
-- **Relevant dates shown on page:** at least before February 1, March 1, and April 1, 2026.[^kalshi-market]
-- **Primary platform page:** [Kalshi market page][kalshi-market]
-- **Contract terms:** [Kalshi `WLEADEROUT` terms][wleaderout]
+- **Series:** `KXKHAMENEIOUT` ("Ali Khamenei out?"), governed by the `WLEADEROUT` rulebook.[^api-series]
+- **Event shown on page:** `KXKHAMENEIOUT-AKHA`, "Ali Khamenei out as Supreme Leader?", sub-title "Before 2027." Dated strikes at issue included "Before March 1, 2026" and "Before April 1, 2026."[^api-event][^complaint]
+- **Governing contract:** the `WLEADEROUT` terms, CFTC-certified **May 15, 2025**, listed **May 16, 2025** — predating the February 28, 2026 death.[^cert]
+- **Payout Criterion:** Yes if the leader "has resigned or otherwise left their specified position" (or announces leaving within the year), with a separate death carveout (below).[^terms][^cert]
+- **Death:** Khamenei killed February 28, 2026 in U.S./Israeli strikes.[^reporting][^complaint]
+- **Settlement:** market paused under Rule 13.1; long/short payouts based on last traded price prior to death, with Outcome Review Committee fair-value backstop.[^api-event][^terms]
+- **Reimbursement:** ~$2.2 million in refunded fees and net losses.[^reporting]
 
 ## The rule
 
-Kalshi's market page states that the market resolves Yes if Khamenei leaves office before the relevant date, but then gives a specific death carveout: if Khamenei leaves solely because he dies, Kalshi determines long and short payouts based on the last traded price before death. If that price is unclear or unfair, the Outcome Review Committee determines fair allocation.[^kalshi-market]
+The `WLEADEROUT` Payout Criterion is leaving office by resignation or otherwise. A separate clause carves out death. The original May 15, 2025 certification (Appendix A, as-listed terms) states:[^cert]
 
-The `WLEADEROUT` terms independently support that reading. They define the payout criterion as the leader resigning or otherwise leaving the specified position, but separately state that if the natural person who is the primary subject dies before expiration, Kalshi may use a last-traded-price or fair-settlement mechanism rather than ordinary binary settlement.[^wleaderout]
+> "If `<leader>` leaves solely because they have died, the associated market will resolve and the Exchange will determine the payouts to the holders of long and short positions based upon the last traded price (prior to the death). If a last traded price is not available or is not logically consistent, or if the Exchange determines at its sole discretion that the last traded prices prior to death do not represent a fair settlement value, the Outcome Review Committee will be responsible for making a binding determination of fair allocation. For the avoidance of doubt, the Exchange will distribute $1.00 for each Contract."
 
-That rule does not make death a normal Yes event. It makes death a special settlement event.
+The currently published `WLEADEROUT` terms carry an expanded version of the same carveout — adding that if "trading activity was materially affected by the circumstances giving rise to the death," Kalshi may instead use the last traded price before those circumstances became "known or reasonably anticipated," plus an explicit halt/pause right and a finality clause.[^terms] The core mechanism — death triggers last-price / ORC fair-value settlement rather than an ordinary "Yes" — is present in both the original certification and the current terms.
+
+That rule does not make death a normal "Yes" event. It makes death a special settlement event.
 
 ## What happened
 
-After Khamenei's death, Kalshi did not pay all Yes contracts at $1. The Verge reported that Kalshi CEO Tarek Mansour said positions would be paid at the last trading price before Khamenei's death, and that Kalshi was refunding fees and reimbursing people who bought shares after death.[^verge]
+Khamenei was killed February 28, 2026. Kalshi did not pay "Yes" at $1. It paused the market under Rule 13.1 and announced it would settle on the last traded price before death; if that price was unclear, the Outcome Review Committee would set fair value.[^api-event] Kalshi's position, reported contemporaneously, is that the policy exists to avoid markets settling directly on death, and that it refunded fees and reimbursed post-death purchases.[^reporting]
 
-Kalshi's current market page also notes a grammatically ambiguous prior clarification and says Kalshi would reimburse lost value for trades made between clarifications.[^kalshi-market]
+Kalshi's own on-platform clarification acknowledges one earlier version was "grammatically ambiguous" and commits to reimburse lost value on trades made between the clarifications.[^api-event] Reporting puts total remediation at about **$2.2 million** in refunded fees and net losses.[^reporting]
 
-Business Insider reported that Kalshi paid about **$2.2 million** to resolve complaints, and that Kalshi said it had resolved the market according to the `WLEADEROUT` rules attached to the market.[^business-insider]
-
-Kalshi later filed a CFTC rulebook amendment adding a general death-caveat rule. The filing described the amendment as memorializing the exchange's practice for markets centered on a natural person who dies during trading.[^cftc-amendment]
+Separately, on **March 2, 2026**, Kalshi filed a CFTC rulebook amendment (effective March 17, 2026) adding general **Rule 6.3(e)** for the death of a natural person central to a contract. The filing states the amendment "further codifies and memorializes the exchange's practice" — i.e., it frames the rule as memorializing a pre-existing practice, not creating a new one.[^cftc-amendment]
 
 ## The allegation against Kalshi
 
-The strongest allegation is not simply that death made Khamenei "out." Under the accessible written rules, death was specifically carved out from ordinary binary settlement. The better allegation is about timing and disclosure:
+A class action — **Risch v. KalshiEX LLC** (C.D. Cal., filed March 5, 2026) — alleges Kalshi should have paid "Yes." Notably, its theory is **disclosure and methodology, not absence of the rule**:[^complaint]
 
-- some users say the death carveout was not clear enough in the product experience;
-- Kalshi's own page acknowledges one clarification was grammatically ambiguous; and
-- later litigation/reporting alleged that the death carveout was implemented after the event.[^kalshi-market][^business-insider]
+- The page's rules summary stated "if Ali Khamenei leaves office before March 1, 2026, then the market resolves Yes," and the death carveout — "to the extent any version of the death carveout appeared" — was allegedly not in the **user-facing rules summary** consumers relied on, and not presented to inform a reasonable consumer of its existence.
+- Kalshi itself called a prior disclosure "grammatically ambiguous."
+- The "last traded price (prior to the death)" is alleged to be **undefined** in any user-facing material; the precise timestamp, selection criteria, and whether the same methodology applied uniformly across expirations are "opaque."
 
-Those are real issues to track as background, but they do not establish a resolution failure unless the carveout was absent from the governing rules when users traded or Kalshi misapplied the last-price/fair-value mechanism.
+The complaint quotes the `WLEADEROUT` death carveout verbatim and concedes a version of it appeared in the contract's formal terms. Its grievance is that the carveout was not surfaced in the product UI and that the last-price calculation was not transparent.[^complaint]
 
 ## Kalshi's defense
 
-Kalshi's defense is strong on the accessible record:
+Kalshi's defense is strong on the verified record:
 
-1. The market page expressly says death triggers last-price/fair-value settlement, not ordinary Yes settlement.[^kalshi-market]
-2. The `WLEADEROUT` terms contain a general death provision for natural-person contracts.[^wleaderout]
-3. Business Insider reported Kalshi's statement that those `WLEADEROUT` rules were attached to the Khamenei market.[^business-insider]
-4. The Verge reported Kalshi's explanation that the policy is meant to avoid markets directly settling on death.[^verge]
-5. Kalshi reimbursed fees, post-death purchases, or lost value in at least some categories.[^kalshi-market][^verge][^business-insider]
+1. The `WLEADEROUT` terms contain a death carveout triggering last-price / ORC fair-value settlement rather than ordinary "Yes."[^terms][^cert]
+2. That carveout predated the death: it is in the **May 15, 2025 certification** (listed May 16, 2025), and the published terms PDF was byte-identical across the February 28, 2026 death per Wayback CDX (digest `G2PYV6QVLU7P4DBNBNWWT6IQSRU55JGJ`, January 11–March 19, 2026).[^cert][^cdx]
+3. Kalshi paused under Rule 13.1 and settled on the last traded price before death — the mechanism the contract specifies.[^api-event][^terms]
+4. Kalshi reimbursed fees, post-death purchases, and ambiguity-window losses (~$2.2M).[^api-event][^reporting]
+5. The March 2, 2026 CFTC Rule 6.3(e) amendment "memorializes" the practice, consistent with the carveout already being in `WLEADEROUT`.[^cftc-amendment]
 
-The title being shorter than the rule is not a serious rebuttal. Prediction-market titles are summaries; the detailed market rules define edge cases.
+A title shorter than the rule is not a serious rebuttal. Prediction-market titles are summaries; the contract defines edge cases.
 
 ## Assessment
 
@@ -72,52 +67,64 @@ The title being shorter than the rule is not a serious rebuttal. Prediction-mark
 
 **Yes.** A dead leader is plainly out of office in ordinary language.
 
-### Did Kalshi's accessible written rules make death a normal $1 Yes event?
+### Did Kalshi's written rules make death a normal $1 "Yes" event?
 
-**No.** The market page and `WLEADEROUT` terms both support last-price or fair-value settlement when the relevant person dies.[^kalshi-market][^wleaderout]
+**No.** The `WLEADEROUT` terms carve death out, settling on last traded price with an ORC fair-value backstop.[^terms][^cert]
+
+### Did the death carveout predate the February 28, 2026 death?
+
+**Yes — verified.** It appears in the May 15, 2025 certification (contract listed May 16, 2025), and Wayback CDX shows the terms PDF byte-identical (digest `G2PYV6QVLU7P4DBNBNWWT6IQSRU55JGJ`) from January 11 through March 19, 2026, across the death.[^cert][^cdx] The "rule added after the fact" allegation fails at the contract level.
 
 ### Does the title/rule difference itself prove a failure?
 
-**No.** A short title cannot include every condition. If the rules clearly included the death carveout, it is not a platform failure that the title did not repeat it.
+**No.** A short title cannot include every condition. With the carveout in the governing contract before the event, it is not a platform failure that the title did not repeat it.
 
 ### Did Kalshi violate the contract?
 
-**Not proven.** The accessible official materials and Business Insider's reporting support Kalshi's position that the market was governed by `WLEADEROUT` terms. The unresolved question is whether the same death rule was clearly attached and visible before the death-triggering event.
+**Not on the verified record.** The contract specified last-price / ORC settlement on death; Kalshi paused and settled that way and reimbursed confused traders. The live disputes are about UI disclosure and the opacity of the specific last-price methodology — transparency and consumer-disclosure questions — not a misapplication of the written settlement rule.
 
-### Was this a resolution failure?
+### Overall classification
 
-**No, not on the accessible record.**
+- **Settlement consistent with the governing written rule:** Yes
+- **Carveout predated the death:** Yes — verified from the dated certification and Wayback CDX
+- **Misapplication of the rules:** Not established
+- **User confusion / UI disclosure:** Real, and the basis of live litigation, but not a contract misresolution
+- **Last-price methodology transparency:** A genuine open dispute, not a settled rule violation
+- **Best public verdict:** No failure
 
-The earlier classification as a title/rules failure was too aggressive. The better conclusion is:
+## Precise blocker to a stronger finding
 
-- **Resolution failure:** Not established
-- **Rule-following defense:** Strong
-- **User confusion:** Real, but not enough by itself
-- **Remaining issue:** Timestamped proof of the pre-death rule display
-- **Best public verdict:** No failure unless evidence shows the death carveout was absent, changed after the event, or misapplied in the last-price/fair-value calculation
+The prior blocker — needing a timestamped pre-death archive to rebut the "rule changed after the death" allegation — is **resolved**. The May 15, 2025 CFTC certification places the carveout in the as-listed terms nine months before the death, and the Wayback CDX hash-identity (`G2PYV6QVLU7P4DBNBNWWT6IQSRU55JGJ`, January 11–March 19, 2026) shows the published terms PDF was byte-identical across the death.[^cert][^cdx]
 
-## Precise blocker to a fully closed finding
-
-The only serious blocker is a timestamped pre-death archive of the exact market page, clarification text, and attached `WLEADEROUT` terms. Without that archive, the lawsuit-style allegation that the carveout was added only after Khamenei's death cannot be independently eliminated. But the currently accessible official rules and reporting support Kalshi's defense rather than a failure finding.
+Two honest residuals remain, but neither is a contract misresolution: (1) the exact **pre-death market-page rules-summary text** shown in the product UI is not independently archived here, and the complaint alleges the carveout was not surfaced there; and (2) the **last-traded-price methodology** (precise timestamp, selection criteria, uniformity across expirations) is undisclosed and is the strongest live dispute. Both are disclosure/transparency issues now being litigated in *Risch v. Kalshi*, not evidence that Kalshi misresolved the written contract.[^complaint]
 
 ## Sources
 
 ### Platform / primary
 
-[^kalshi-market]: Kalshi, [`Ali Khamenei out as Supreme Leader?` market page][kalshi-market]. Shows market title, volume, listed date outcomes, death-carveout clarification, pause notice, source list, and displayed rule language.
+[^api-series]: Kalshi trade API, `series/KXKHAMENEIOUT` ("Ali Khamenei out?"). Lists `WLEADEROUT` as the contract rulebook and links the contract-terms and product-certification PDFs. [API][api-series]
 
-[^wleaderout]: Kalshi, [`WLEADEROUT` contract terms][wleaderout]. Defines world-leader-out markets and the death-related last-price / fair-value settlement mechanism.
+[^api-event]: Kalshi trade API, `events/KXKHAMENEIOUT-AKHA` ("Ali Khamenei out as Supreme Leader?", "Before 2027"). Carries the death clarification ("if Ali Khamenei dies, the market will resolve... based on the last traded price prior to death... the Outcome Review Committee will determine a fair market value"), the grammatically-ambiguous-clarification reimbursement note, and the Rule 13.1 pause notice. [API][api-event]
 
-[^cftc-amendment]: KalshiEX LLC, ["Draft Death Caveat Rulebook Amendment"][cftc-amendment], filed with the CFTC on March 2, 2026. Adds Rule 6.3(e) for death of a natural person central to a contract and describes the amendment as memorializing Kalshi's practice.
+[^terms]: Kalshi, `WLEADEROUT` contract terms (current). Payout Criterion is the leader resigning or otherwise leaving office; a separate clause settles death at the last traded price prior to death (or before death-related circumstances became known/reasonably anticipated if trading was materially affected), with Outcome Review Committee fair-value backstop and a halt/pause right. [PDF][terms]
+
+[^cert]: KalshiEX LLC, CFTC Regulation 40.2(a) product certification for the "Will `<leader>` leave office before `<date>`?" (`WLEADEROUT`) contract, dated **May 15, 2025**; contract "initially listed May 16, 2025" (signed Xavier Sottile, Head of Markets). Appendix A (as-listed terms) already contains the verbatim death carveout: "If `<leader>` leaves solely because they have died... based upon the last traded price (prior to the death)... the Outcome Review Committee will be responsible for making a binding determination of fair allocation. For the avoidance of doubt, the Exchange will distribute $1.00 for each Contract." [Cert][cert]
+
+[^cdx]: Internet Archive Wayback CDX index for `kalshi-public-docs.s3.amazonaws.com/contract_terms/WLEADEROUT.pdf`. The published terms PDF shows content digest `G2PYV6QVLU7P4DBNBNWWT6IQSRU55JGJ` on snapshots 2026-01-11, 2026-01-19, 2026-01-22, 2026-03-01, and 2026-03-19 — byte-identical across the February 28, 2026 death — with the digest first changing at the 2026-05-06 snapshot. [CDX][cdx]
+
+[^cftc-amendment]: KalshiEX LLC, CFTC rulebook amendment filed **March 2, 2026**, effective March 17, 2026, adding Rule 6.3(e) for the death of a natural person central to a Contract's Underlying or Payout Criterion. The filing states the amendment "further codifies and memorializes the exchange's practice" for such markets. [PDF][cftc-amendment]
+
+[^complaint]: *Risch v. KalshiEX LLC*, class action complaint, U.S. District Court for the Central District of California, filed **March 5, 2026** (plaintiffs Adam Risch and Yonatan Gliksman). Alleges the page's rules summary said the market "resolves Yes if Khamenei leaves office before March 1, 2026," that the death carveout — "to the extent any version... appeared" — was not in the user-facing rules summary, and that the "last traded price (prior to the death)" was undefined and the methodology opaque. Causes of action: breach of contract / implied covenant, fraud and intentional misrepresentation, plus California UCL (§17200) and CLRA claims. Quotes the `WLEADEROUT` death carveout verbatim. [Complaint PDF][complaint]
 
 ### Reporting
 
-[^verge]: The Verge, ["Kalshi voids some bets on Khamenei's ouster because it's 'directly tied to death'"][verge], March 1, 2026. Reports Mansour's statement, last-price treatment, fee refunds, post-death reimbursements, and user criticism.
+[^reporting]: Contemporaneous reporting (March 2026; Fox Business, Bloomberg Law, CNN, Decrypt and others) on the Khamenei market: Khamenei killed February 28, 2026; Kalshi invoked the death carveout and settled on last traded price rather than paying "Yes"; Kalshi said its policy avoids markets settling directly on death; and Kalshi refunded fees and net losses, reported at roughly $2.2 million, on the "Ali Khamenei out as Supreme Leader?" market. [Fox Business][reporting-fox]
 
-[^business-insider]: Business Insider, ["Kalshi's $2.2 million Iran mess exposes prediction markets' fine-print problem"][business-insider], March 5, 2026. Reports the complaint-resolution cost, later CFTC filing, and Kalshi's position that it used `WLEADEROUT` rules attached to the market.
-
-[kalshi-market]: https://kalshi.com/markets/kxkhameneiout/ali-khamenei-out/kxkhameneiout-akha
-[wleaderout]: https://kalshi-public-docs.s3.amazonaws.com/contract_terms/WLEADEROUT.pdf
+[api-series]: https://api.elections.kalshi.com/trade-api/v2/series/KXKHAMENEIOUT
+[api-event]: https://api.elections.kalshi.com/trade-api/v2/events/KXKHAMENEIOUT-AKHA?with_nested_markets=true
+[terms]: https://kalshi-public-docs.s3.amazonaws.com/contract_terms/WLEADEROUT.pdf
+[cert]: https://kalshi-public-docs.s3.us-east-1.amazonaws.com/regulatory/product-certifications/WLEADEROUT.pdf
+[cdx]: http://web.archive.org/cdx/search/cdx?url=kalshi-public-docs.s3.amazonaws.com/contract_terms/WLEADEROUT.pdf&output=json
 [cftc-amendment]: https://www.cftc.gov/sites/default/files/filings/orgrules/26/03/rules03022640155.pdf
-[verge]: https://www.theverge.com/tech/887210/kalshi-void-bets-khamenei-death
-[business-insider]: https://www.businessinsider.com/kalshi-iran-prediction-market-death-rule-fine-print-2026-3
+[complaint]: https://storage.courtlistener.com/recap/gov.uscourts.cacd.1009602/gov.uscourts.cacd.1009602.1.0.pdf
+[reporting-fox]: https://www.foxbusiness.com/technology/prediction-market-kalshi-sued-54m-iran-leader-bets-death-carveout-invoked

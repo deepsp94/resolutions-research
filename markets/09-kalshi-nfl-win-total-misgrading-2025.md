@@ -2,116 +2,113 @@
 
 ## Bottom line
 
-**Finding: This was a real operational settlement error that Kalshi later corrected. Confidence: high that at least some markets were misgraded; medium on the full scope.**
+**Finding: Failure, resolved. Kalshi settled NFL regular-season win-total markets on December 22, 2025 — before the regular season ended on January 4, 2026, with games still to be played — and graded them incorrectly, paying objective winners as losers. The governing `WINTOTAL` contract sets expiration "one week after the end of the regular season" and permits earlier expiration only when the outcome can no longer change, so the premature settlement was a direct contract violation. Kalshi initially reimbursed only original trade cost rather than the full $1, then corrected the error and paid correct Yes holders in full, including winnings. Confidence: high on the failure-and-remediation sequence; medium on full scope.**
 
-Kalshi reportedly misgraded multiple 2025 NFL regular-season win-total markets. The clearest public example was a San Francisco 49ers over 10.5 wins position: the 49ers finished the regular season **12-5**, so over 10.5 should have paid Yes.[^event-horizon][^sfchronicle]
+The clearest public example is a San Francisco 49ers over 10.5 wins position. The 49ers finished the 2025 regular season **12-5**, so over 10.5 was an objective Yes, but the holder was initially not paid winnings.[^event-horizon][^pfr] This is not a semantic ambiguity or a rules-versus-spirit dispute: the markets were settled before the season ended, the outcome was mechanically knowable once it did, the initial treatment was wrong, and Kalshi later fixed it.
 
-Instead, affected users were initially reimbursed only their original position cost rather than receiving the full $1 settlement value for winning contracts. After public criticism, Kalshi reversed course and paid correct Yes holders the difference up to the full contract settlement value.[^event-horizon][^ingame]
-
-This is not a semantic ambiguity or a rules-versus-spirit dispute. It is a straightforward operational failure: the market outcome was mechanically knowable, the initial treatment was wrong, and Kalshi later fixed it.
+The decisive contract fact is timing. The binding terms set the latest expiration at "one week after the end of the regular season" and allow early expiration **only** when "an event described in the Payout Criterion occurs (or can no longer occur)" — i.e., when the result is already mathematically locked.[^terms] On December 22, 2025, with Week 18 still to play (the 49ers' regular-season finale against Seattle fell on January 4, 2026), most win totals were not locked.[^ingame][^nfl-week18] Settling them then violated the written rule.
 
 ## Market details
 
 - **Venue:** Kalshi
-- **Market type:** 2025 NFL regular-season team win totals
-- **Clearest reported example:** San Francisco 49ers over 10.5 wins
-- **Real-world result:** 49ers finished the 2025 regular season 12-5.[^sfchronicle]
-- **Initial issue:** some winning positions were reportedly reimbursed at cost rather than paid at $1.
-- **Final correction:** Kalshi paid affected correct positions the full $1 contract settlement value, net of prior reimbursement.[^event-horizon][^ingame]
-
-I could not recover the specific Kalshi market page or ticker for the 49ers over 10.5 contract from Kalshi's public site. The case is therefore based on contemporaneous industry reporting that reproduced or described Kalshi communications and on external reporting of the 49ers' final record.
+- **Series / ticker:** `KXNFLWINS`, "Pro Football Wins" (Win Totals), rulebook `WINTOTAL`.[^api]
+- **Market type:** 2025 NFL regular-season team win totals.
+- **Governing contract:** the `WINTOTAL` terms, CFTC-certified **May 14, 2025** and initially listed May 15, 2025 — the version in force for the 2025 season.[^cert]
+- **Underlying:** "the number of regular season game wins by `<team>` in the `<year>` season"; postseason and exhibition games excluded.[^terms]
+- **Expiration timing (governing rule):** "The latest Expiration Date of the Contract shall be one week after the end of the regular season for `<team>`," with earlier expiration only when an outcome "occurs (or can no longer occur)" under Rule 7.2.[^terms]
+- **Settlement sources:** the Governing League (NFL) and ESPN.[^api]
+- **Settlement Value:** $1.00.[^terms]
+- **Clearest reported example:** San Francisco 49ers over 10.5 wins; the 49ers finished 12-5.[^pfr]
 
 ## What happened
 
-Event Horizon reported that Kalshi Discord users complained on January 6-7, 2026 about NFL win-total markets being graded incorrectly. The clearest example described was a user who held 49ers over 10.5 wins and did not receive winnings even though San Francisco had won 12 regular-season games.[^event-horizon]
+InGame reported that NFL win-total markets appeared to have been settled on **December 22, 2025**, even though the regular season did not end until **January 4, 2026** and teams still had games remaining, with "many — if not most NFL totals markets" settled incorrectly.[^ingame] The independent record confirms the timing: the 2025 NFL regular season concluded with Week 18 on January 4, 2026, and the 49ers played their regular-season finale against Seattle that day.[^nfl-week18]
 
-Event Horizon further reported that Kalshi's initial fix was to reimburse the original trade amount but not pay out winnings. The report says Kalshi later emailed affected users explaining that an NFL win-total market had been determined in error and that correct Yes holders at expiration would be credited up to the full $1 settlement value.[^event-horizon]
+Event Horizon reported that Kalshi Discord users complained on January 6-7, 2026 about NFL win-total markets being graded incorrectly. The clearest example was a holder of 49ers over 10.5 wins who did not receive winnings even though San Francisco won 12 regular-season games. Event Horizon also reported that the grade was inverted — "the people who technically lost these bets/trades were paid out as winners."[^event-horizon] The 49ers' 12-5 finish is independently verified.[^pfr]
 
-InGame separately reported that many or most NFL totals markets appeared to have been settled on December 22, before the regular season ended on January 4, and that many markets were therefore settled incorrectly. It reported that by January 7 the issue appeared resolved and quoted a Kalshi spokesperson saying people were paid in full, including winnings.[^ingame]
+Event Horizon reported that Kalshi's initial fix was to refund the original trade amount without paying winnings. Kalshi later emailed affected users, in language reproduced by Event Horizon: "You are receiving this email because you have traded on a NFL Win total market that was determined in error. Upon review, we have decided that users who held correct 'Yes' positions at the time of Expiration shall be paid out their full contract settlement value of $1."[^event-horizon]
 
-Event Horizon also reported that Kalshi confirmed on X that people who held winning positions in markets that resolved incorrectly were paid their winnings.[^event-horizon]
+After the issue went viral on X (more than one million views), Kalshi reversed course in the early hours of January 7 and paid winners in full. Kalshi confirmed on X that "all people who had winning positions that resolved incorrectly got paid their winnings."[^event-horizon] A Kalshi spokesperson told InGame: "It was quickly resolved, people were paid out in full, including winnings."[^ingame]
 
 ## The allegation against Kalshi
 
-### 1. The markets resolved before the relevant season was over
+### 1. The markets resolved before the season was over
 
-InGame reported that the win-total markets appeared to have been mostly settled on December 22, even though the NFL regular season did not end until January 4 and teams still had games remaining.[^ingame]
+The win-total markets appeared to have been settled December 22, 2025, even though the NFL regular season did not end until January 4, 2026 and teams still had games remaining.[^ingame][^nfl-week18] The governing contract sets the latest expiration at "one week after the end of the regular season" and permits early expiration only when the outcome can no longer change.[^terms] On December 22 most totals — including the 49ers' — were not yet locked, so the early settlement broke the written rule before any arithmetic was even at issue.
 
-If that account is correct, the initial grading process failed before even reaching the final arithmetic.
+### 2. The grade was wrong, and winners were initially not paid winnings
 
-### 2. Winning users were initially not paid winnings
-
-Event Horizon reported that Kalshi's initial remedy was cost reimbursement rather than full winning settlement. That matters because a correct contract holder is not made whole by receiving only the purchase cost if the contract should have paid $1.[^event-horizon]
+Event Horizon reported that the grade was inverted (losers paid as winners) and that Kalshi's initial remedy was cost reimbursement rather than full winning settlement.[^event-horizon] A correct contract holder is not made whole by receiving only the purchase cost when the contract should have paid $1.
 
 ### 3. The example was not close
 
-The 49ers over 10.5 example was not a statistical correction or judgment call. San Francisco finished 12-5, which is over 10.5.[^sfchronicle]
-
-This makes the case much cleaner than source-timing or natural-language disputes. Once the regular season ended, the correct settlement direction was obvious.
+The 49ers over 10.5 example was not a statistical correction or judgment call. San Francisco finished 12-5, which is over 10.5.[^pfr] Once the regular season ended, the correct settlement direction was obvious.
 
 ## Kalshi's defense
 
-Kalshi's own defense is mostly implicit in the correction.
-
-The email reproduced by Event Horizon, and the spokesperson statement reported by InGame, indicate that Kalshi treated the issue as an erroneous determination and credited affected correct positions to the full settlement value.[^event-horizon][^ingame]
-
-That is an important distinction. Kalshi did not defend the initial grading as a valid interpretation of the rule. It corrected the outcome.
+Kalshi's defense is mostly implicit in the correction. The email reproduced by Event Horizon and the spokesperson statement reported by InGame both treat the issue as an erroneous determination and credit affected correct positions to the full $1 settlement value.[^event-horizon][^ingame] Kalshi did not defend the initial grading as a valid interpretation of the rule; it corrected the outcome.
 
 The strongest defense is therefore limited but real:
 
 - operational errors can occur on exchanges and sportsbooks;
-- Kalshi eventually identified the erroneous determinations;
-- affected correct holders were reportedly paid the full $1 contract value; and
+- Kalshi identified the erroneous determinations within roughly one to two days;
+- affected correct holders were paid the full $1 contract value, net of prior reimbursement; and
 - the public record does not show that Kalshi intentionally refused payment after the correction.
 
-The defense does not erase the failure. The failure includes both the initial misgrading and the apparent initial decision to treat cost reimbursement as final.
+The defense does not erase the failure. The failure includes the premature settlement, the inverted grading, and the initial decision to treat cost reimbursement as final.
 
 ## Assessment
 
-### Did Kalshi initially resolve at least some NFL win-total markets incorrectly?
+### Did the markets settle before the governing contract allowed?
 
-**Yes, on the available reporting.**
-
-Event Horizon and InGame both report incorrect NFL win-total grading. Event Horizon cites Kalshi's later email to affected users saying a market had been determined in error, and InGame quotes a Kalshi spokesperson confirming full payment after the issue.[^event-horizon][^ingame]
+**Yes.** The contract sets the latest expiration at "one week after the end of the regular season" and allows earlier expiration only when the outcome "occurs (or can no longer occur)" under Rule 7.2.[^terms] The December 22, 2025 settlement preceded the January 4, 2026 season end with games still to play, and the 49ers' total was not mathematically locked, so the early settlement was a contract violation.[^ingame][^nfl-week18]
 
 ### Was the 49ers over 10.5 example objectively a winning Yes?
 
-**Yes.**
-
-The 49ers finished 12-5, which is over 10.5 wins.[^sfchronicle]
+**Yes.** The 49ers finished 12-5, which is over 10.5 wins.[^pfr]
 
 ### Did Kalshi eventually correct the mistake?
 
-**Yes, according to the available reporting.**
-
-Affected correct holders were reportedly credited the difference between their initial reimbursement and the full $1 payout.[^event-horizon][^ingame]
+**Yes.** Affected correct holders were credited the difference between their initial reimbursement and the full $1 payout; Kalshi confirmed on X and to InGame that winners were paid in full, including winnings.[^event-horizon][^ingame]
 
 ### Was this a real failure for the tracker?
 
-**Yes.**
-
-This is one of the clearest operational failures in the seed list. It does not depend on fuzzy words, legal interpretation, or oracle governance. It was a settlement execution problem in markets whose facts were easy to verify.
+**Yes.** This is one of the clearest operational failures in the seed list. It does not depend on fuzzy words, legal interpretation, or oracle governance. It was a premature settlement and grading-execution problem in markets whose facts were easy to verify.
 
 ### Overall classification
 
-- **Operational settlement error:** Yes
+- **Premature settlement against the written rule:** Yes
+- **Operational settlement / grading error:** Yes
 - **Rule ambiguity:** No
 - **Corrected by venue:** Yes
+- **Winners ultimately made whole:** Yes (resolved)
 - **Scope fully known:** No
 - **Best public verdict:** Real misgrading, later remediated
 
 ## Precise blocker to a stronger finding
 
-The unresolved issue is scope. The public record identifies the 49ers over 10.5 market as the clearest example and says more than one NFL win-total market was affected, but it does not establish the full list of misgraded markets, the number of affected users, total dollars initially withheld, or total remediation cost.
+The unresolved issue is scope. The public record identifies the 49ers over 10.5 market as the clearest example and indicates that many or most NFL win-total markets were affected, but Kalshi never published the full list of misgraded markets, the number of affected users, the total dollars initially withheld, or the total remediation cost. The governing contract, the premature-settlement timing, the inverted grade, the initial cost-only reimbursement, and the final full payment are all verified; only the precise scope numbers remain unpublished.
 
 ## Sources
 
-[^event-horizon]: Dustin Gouker, Event Horizon, ["Why Wasn't Kalshi Paying Traders That Won NFL Futures Bets?"][event-horizon], January 8, 2026. Reports Discord complaints, the 49ers over 10.5 example, initial cost reimbursement, Kalshi's corrective email, and Kalshi's later confirmation that winners were paid.
+[^api]: Kalshi public API, series endpoint for `KXNFLWINS`. Confirms series ticker `KXNFLWINS`, rulebook `WINTOTAL`, scope "Win Totals," settlement sources the Governing League (NFL) and ESPN, and links to the contract terms and product certification. [API][api]
 
-[^ingame]: Jeff Edelstein, InGame, ["The Prediction Market That Couldn't Count Straight"][ingame], January 7, 2026. Reports premature NFL win-total settlement, user complaints, later full payment, and a Kalshi spokesperson's confirmation.
+[^terms]: Kalshi, `WINTOTAL` contract terms (binding rules). Underlying is "the number of regular season game wins by `<team>` in the `<year>` season"; "The latest Expiration Date of the Contract shall be one week after the end of the regular season for `<team>`," with earlier expiration only when an outcome "occurs (or can no longer occur)" under Rule 7.2; Settlement Value $1.00; "Revisions to the Underlying made after Expiration will not be accounted for." [PDF][terms]
 
-[^sfchronicle]: San Francisco Chronicle, ["49ers net favorable 2026 schedule with third-place finish in NFC West"][sfchronicle], January 4, 2026. Reports that the 49ers finished the 2025 regular season 12-5.
+[^cert]: KalshiEX LLC, CFTC Regulation 40.2(a) product certification, "Will `<team>` have `<above/below/between/exactly/at least>` `<count>` wins in the `<year>` season?" Contract, dated May 14, 2025, initially listed May 15, 2025 — the governing version for the 2025 season. [Cert][cert]
 
+[^event-horizon]: Dustin Gouker, Event Horizon, "Why Wasn't Kalshi Paying Traders That Won NFL Futures Bets?", January 8, 2026. Reports Discord complaints, the 49ers over 10.5 example, the inverted grade (losers paid as winners), initial cost-only reimbursement, Kalshi's corrective email ("determined in error… full contract settlement value of $1"), and Kalshi's X confirmation that winners were paid. [Event Horizon][event-horizon]
+
+[^ingame]: Jeff Edelstein, InGame, "The Prediction Market That Couldn't Count Straight," January 7, 2026. Reports settlement on December 22, 2025 before the January 4, 2026 season end, that many or most NFL totals markets were settled incorrectly, that winners were initially reimbursed cost without winnings, and a Kalshi spokesperson's confirmation: "It was quickly resolved, people were paid out in full, including winnings." [InGame][ingame]
+
+[^pfr]: Pro-Football-Reference, 2025 San Francisco 49ers season. Reports that the 49ers finished the 2025 regular season 12-5, second in the NFC West. [PFR][pfr]
+
+[^nfl-week18]: 2025 NFL season, Week 18 schedule. The regular season concluded with Week 18 on January 4, 2026; the San Francisco 49ers played their regular-season finale against the Seattle Seahawks that day. [Wikipedia][nfl-week18]
+
+[api]: https://api.elections.kalshi.com/trade-api/v2/series/KXNFLWINS
+[terms]: https://kalshi-public-docs.s3.amazonaws.com/contract_terms/NFLWINS.pdf
+[cert]: https://kalshi-public-docs.s3.us-east-1.amazonaws.com/regulatory/product-certifications/NFLWINS.pdf
 [event-horizon]: https://nexteventhorizon.substack.com/p/why-wasnt-kalshi-paying-traders-that-won-nfl-futures
 [ingame]: https://www.ingame.com/the-prediction-market-that-couldnt-count-straight/
-[sfchronicle]: https://www.sfchronicle.com/sports/49ers/article/49ers-net-favorable-2026-schedule-third-place-21276434.php
+[pfr]: https://www.pro-football-reference.com/teams/sfo/2025.htm
+[nfl-week18]: https://en.wikipedia.org/wiki/2025_NFL_season

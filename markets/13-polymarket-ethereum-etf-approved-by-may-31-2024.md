@@ -2,125 +2,104 @@
 
 ## Bottom line
 
-**Finding: This should be classified as a Polymarket resolution/rule failure. Confidence: medium-high.**
+**Finding: Failure — a rule-drafting failure that produced a defensible-but-contested resolution. The binding rule asked whether a spot Ethereum ETF would "receive approval from the SEC" by May 31, 2024 but never defined "approval," and the SEC's two-step process made that ambiguity outcome-determinative. The market resolved Yes on the May 23 19b-4 listing approval — one of two required SEC steps — while the products remained barred from trading pending S-1 effectiveness, which did not occur until July. Confidence: medium.**
 
-Polymarket asked whether any spot Ethereum ETF would receive SEC approval by May 31, 2024. The market resolved **Yes** after the SEC approved exchange rule changes on May 23 that allowed exchanges to list and trade shares of spot ether exchange-traded products.[^polymarket][^sec-order]
+Polymarket asked whether any spot Ethereum ETF would receive SEC approval by May 31, 2024. The gamma-verified rule resolves Yes "if any spot Ethereum ETF receives approval from the SEC by May 31, 2024, 11:59:59 PM ET," with SEC information as the primary source and "a consensus of credible reporting" as a backup.[^gamma] It does **not** define "approval" — it never names Rule 19b-4 approval, S-1 registration-statement effectiveness, listing, launch, or first trading as the controlling milestone.[^gamma] The market resolved **Yes** (gamma `outcomePrices` = `["1","0"]`, `umaResolutionStatus: resolved`, closed 2024-05-24).[^gamma]
 
-That May 23 order was a real SEC approval, but it was not full SEC clearance for any spot ether ETF to launch or trade. The SEC order itself said the shares of any trust could not begin trading until the corresponding registration statement became effective.[^sec-order] Those registration statements were still pending after May 23, and spot ether ETFs did not begin trading until July.[^investopedia-may][^investopedia-july]
+The trigger was the SEC's May 23, 2024 order (Release No. 34-100224), titled "Order Granting Accelerated Approval of Proposed Rule Changes... to List and Trade Shares of Ether-Based Exchange-Traded Products."[^sec-order] That order approved only the **19b-4** exchange-listing step. The products were not cleared to trade: contemporaneous primary reporting confirmed the SEC still had to make each issuer's **S-1 registration statement** effective before investors could buy in, a separate review.[^coindesk][^mayerbrown] Spot ether ETFs did not begin trading until **July 23, 2024** — after the deadline.[^investopedia-july]
 
-The market's ordinary meaning and spirit were about whether spot Ethereum ETFs had been approved by the SEC, not whether one necessary exchange-listing step had been approved while another SEC-controlled approval/effectiveness step remained open. Polymarket should have specified that 19b-4 approval alone was sufficient if that was the intended trigger. Because it did not, resolving Yes on the partial May 23 approval treated a necessary intermediate step as full ETF approval.
+The failure is in the drafting, not in a clear misgrade. The rule used broad everyday "approval" language for a known two-step regulatory process, then resolved on the earlier, partial step. The ambiguity was foreseeable — DL News warned of a large dispute *before* the decision, and industry experts publicly held that an ETF is not "approved" until both the 19b-4 and the registration form are signed off.[^dlnews][^cointelegraph] Because the SEC did issue a literal "approval" order and major outlets used broad approval language, the Yes resolution was **not baseless**; this is best read as a drafting failure yielding a defensible-but-contested outcome, not a clean misresolution.
 
 ## Market details
 
 - **Venue:** Polymarket
-- **Question:** `Ethereum ETF approved by May 31?`
-- **Market page:** [Polymarket market page][polymarket]
-- **Market rule:** Yes if any spot Ethereum ETF received SEC approval by May 31, 2024, 11:59:59 PM ET; otherwise No.
-- **Resolution sources:** SEC information as primary source; credible-reporting consensus could also be used.
-- **Displayed volume:** about $13.2 million.[^polymarket]
-- **Final result:** Yes after two disputed Yes proposals.[^polymarket]
+- **Market:** "Ethereum ETF approved by May 31?" — gamma event id `903219`, market id `253750`, conditionId `0x4fdc8c72f3013001dccc152e318cb3fcb16da16c741816c3078a42947702ece5`.[^gamma]
+- **Governing rule (gamma, verbatim):** "This market will resolve to \"Yes\" if any spot Ethereum ETF receives approval from the SEC by May 31, 2024, 11:59:59 PM ET. Otherwise, this market will resolve to \"No\". The primary resolution source for this market will be information from the SEC, however a consensus of credible reporting may also be used."[^gamma]
+- **Definition of "approval":** **None.** The rule does not specify 19b-4 approval, S-1 effectiveness, listing, launch, or first trading.[^gamma]
+- **Outcome:** Yes — `outcomePrices` = `["1","0"]`; `umaResolutionStatus: resolved`; `closed: true`; closedTime / umaEndDate 2024-05-24T00:14:40Z; `resolvedBy` `0x6A9D222616C90FcA5754cd1333cFD9b7fb6a4F74`; `umaBond` 500, `umaReward` 5.[^gamma]
+- **Displayed volume:** about $13.2 million.[^gamma]
+- **Disputes:** The Yes resolution was disputed on UMA before settling Yes. Press confirms it "was briefly disputed but ultimately resolved with the same Yes outcome."[^cointelegraph] The often-cited "two disputed Yes proposals" sequence is **INFERRED from the Polymarket page UI**; the gamma response does not retain a dispute array, so the exact count is not independently verified here.
 
-## Regulatory background
+## What happened
 
-There were two SEC-controlled concepts in play.
+There were two distinct SEC-controlled milestones for a spot ether ETF, and the rule's word "approval" did not say which one counted.[^gamma][^dlnews]
 
-First, exchanges needed SEC approval of proposed rule changes under Rule 19b-4 so they could list and trade shares of spot ether products. On May 23, 2024, the SEC issued an order granting accelerated approval of proposed rule changes for NYSE Arca, Nasdaq, and Cboe BZX to list and trade shares of ether-based exchange-traded products.[^sec-order]
+First, exchanges needed SEC approval of proposed rule changes under Rule 19b-4 to list and trade the shares. On **May 23, 2024**, the SEC issued Release No. 34-100224 granting accelerated approval of the 19b-4 rule changes for NYSE Arca, Nasdaq, and Cboe BZX covering eight ether-based products.[^sec-order] The market resolved Yes on this order.[^gamma][^cointelegraph]
 
-Second, the ETF issuers still needed their registration statements to become effective before the products could actually be offered and traded. The SEC order expressly stated that the shares of any trust could not begin trading on its exchange unless and until the corresponding registration statement became effective.[^sec-order]
+Second, each issuer's registration statement (Form S-1) still had to become effective before the products could be offered or traded. As of May 23 those statements remained under SEC review. CoinDesk reported the same day that the ETFs were "not yet cleared to trade... the regulator must approve their S-1 filings before investors can buy them."[^coindesk] Mayer Brown's May 30 alert confirmed the registration statements "remain under review by the SEC... through a separate review process."[^mayerbrown] Spot ether ETFs began trading **July 23, 2024**.[^investopedia-july]
 
-Contemporaneous financial press made the same distinction. Investopedia reported on May 23 that the SEC approved applications for listing eight spot ether ETFs, but that further approvals were still required before trading could begin.[^investopedia-may] Spot ether ETFs began trading in July after the later registration-statement step.[^investopedia-july]
-
-## What happened on Polymarket
-
-DL News reported on May 23 that Polymarket users were already preparing for a large dispute because the market did not specify which SEC approval step counted.[^dlnews]
-
-After the May 23 SEC order, the market resolved Yes. The current Polymarket page shows the resolution path: Yes proposed, disputed; Yes proposed again, disputed; final outcome Yes.[^polymarket]
-
-CoinDesk later summarized the controversy by saying UMA resolved the Ethereum ETF contract Yes while some bettors questioned whether the ETF was approved or still moving through the SEC process.[^coindesk]
+Ahead of the decision, DL News reported that Polymarket users were already preparing for the largest dispute in the platform's history precisely because the rule did not specify which filing must be approved.[^dlnews] After the May 23 order, the Yes resolution drew backlash and a UMA dispute before settling Yes.[^cointelegraph]
 
 ## The allegation against Polymarket
 
-The core allegation is that Polymarket treated approval of one required SEC step as approval of the ETF itself.
+The core allegation is that Polymarket treated approval of one required SEC step as approval of the ETF itself. "No" holders argued a U.S. ETF needs both an approved 19b-4 filing and an effective Form S-1 to begin trading, so without the S-1 there should be no "Yes."[^cointelegraph] They pointed to contemporaneous expert consensus: VanEck's Matthew Sigel ("ETFs are not considered 'approved' until both the relevant registration form... & the 19b-4 filing have been signed off on by the SEC") and Bitwise's Matt Hougan describing it as a two-key scenario requiring both filings to "turn."[^cointelegraph]
 
-The Yes-side evidence was substantial: the SEC issued an approval order, the order concerned listing and trading spot ether products, and credible outlets described the event as SEC approval of spot ether ETFs.[^sec-order][^investopedia-may]
+The objection is not mere pedantry. The SEC's own order approved only the listing step, and the products could not trade until the separate S-1 process completed.[^sec-order][^coindesk] If the market asked whether a spot ether ETF had been "approved by the SEC," ordinary traders could reasonably expect full SEC clearance, not approval of only the exchange-rule component.
 
-But the No-side objection was not just pedantry. The SEC itself said trading could not begin until registration statements became effective.[^sec-order] That means the ETFs had not yet received full SEC clearance to launch or trade. If the market asked whether a spot Ethereum ETF had been approved by the SEC, ordinary traders could reasonably expect full SEC approval, not approval of only the exchange-rule component.
+## Polymarket's basis for Yes
 
-## Polymarket's defense
+Two grounds gave Yes a real basis, both verifiable from primary sources:
 
-Polymarket's strongest defense is that the rule did not say "begins trading," "registration statement becomes effective," or "final launch approval." It said "receives approval from the SEC," and the SEC's May 23 order was literally an approval order for proposed rule changes to list and trade ether-based products.[^polymarket][^sec-order]
+1. **A literal SEC approval order existed.** The rule said "receives approval from the SEC," and Release No. 34-100224 is, on its face, an SEC order "Granting Accelerated Approval" of rule changes "to List and Trade Shares of Ether-Based Exchange-Traded Products," dated May 23, 2024 — before the deadline.[^sec-order][^gamma]
+2. **Credible reporting used broad approval language.** The rule allowed "a consensus of credible reporting" as a source, and many outlets headlined the May 23 event as SEC approval of spot ether ETFs.[^gamma][^cointelegraph]
 
-Credible media reporting also used broad approval language after the May 23 order, and the market allowed credible-reporting consensus as a source.[^polymarket][^investopedia-may]
-
-That defense explains why Yes was plausible. It does not eliminate the failure. If 19b-4 approval alone was meant to count, the market should have said so. The rule used broad product-approval language for a multi-step SEC process and then resolved on the earlier, partial step.
+That basis explains why Yes was plausible. It does not eliminate the failure: the rule used broad product-approval language for a multi-step SEC process and then resolved on the earlier, partial step without ever telling traders that 19b-4 approval alone would count.
 
 ## Assessment
 
-### Did the SEC approve 19b-4 exchange-listing rule changes before May 31?
+### Did the SEC approve the 19b-4 listing rule changes before May 31?
 
-**Yes.**
+**Yes.** Release No. 34-100224, dated May 23, 2024, granted accelerated approval of the 19b-4 proposed rule changes to list and trade shares of multiple ether-based products.[^sec-order]
 
-The SEC order was dated May 23, 2024 and granted accelerated approval of proposed rule changes to list and trade shares of multiple ether-based exchange-traded products.[^sec-order]
+### Were the spot ether ETFs cleared by the SEC to trade before May 31?
 
-### Were the spot ether ETFs fully cleared by the SEC to begin trading before May 31?
+**No.** The products could not trade until each issuer's S-1 registration statement became effective — a separate SEC review still pending on May 23. Spot ether ETFs began trading July 23, 2024.[^coindesk][^mayerbrown][^investopedia-july]
 
-**No.**
+### Did the rule specify that 19b-4 approval alone was enough?
 
-The SEC order itself said trading could not begin until corresponding registration statements became effective, and later reporting says spot ether ETFs began trading in July.[^sec-order][^investopedia-july]
+**No.** The gamma-verified rule said only "receives approval from the SEC." It did not name 19b-4 approval, S-1 effectiveness, listing, launch, or first trading as the controlling milestone.[^gamma]
 
-### Did the market specify that 19b-4 approval alone was enough?
+### Was the Yes resolution baseless?
 
-**No.**
+**No.** The May 23 approval order and the contemporaneous broad "approval" media language gave Yes a genuine basis, and "consensus of credible reporting" was an allowed source.[^sec-order][^gamma][^cointelegraph]
 
-The rule said "receives approval from the SEC." It did not identify 19b-4 approval, S-1 effectiveness, launch, or first trading as the controlling milestone.[^polymarket]
+### Was this a failure?
 
-### Was Polymarket's Yes resolution clearly baseless?
-
-**No.**
-
-The May 23 approval order and contemporaneous media language gave Yes a real basis.
-
-### Was Polymarket's Yes resolution a failure under the market's ordinary meaning and spirit?
-
-**Yes.**
-
-The market appeared to ask whether a spot Ethereum ETF had been approved by the SEC. Because SEC-side registration effectiveness remained pending and trading could not begin, full SEC approval had not yet occurred. Resolving Yes treated a partial regulatory milestone as full product approval.
-
-### Was this a real failure for the tracker?
-
-**Yes.**
-
-This is a rule-drafting and likely resolution failure. The market used broad everyday approval language for a two-step SEC process and did not tell traders that 19b-4 approval alone would count.
+**Yes — a rule-drafting failure.** The market used everyday "approval" language for a two-step SEC process and did not tell traders that the earlier 19b-4 step alone would resolve Yes. The ambiguity was foreseeable (flagged before the decision) and outcome-determinative, and the resolution landed on the partial milestone.[^dlnews][^cointelegraph][^gamma]
 
 ### Overall classification
 
-- **Resolution failure:** Yes
-- **Rule-drafting failure:** Yes
-- **Yes-side basis:** Real, because the SEC issued a 19b-4 approval order
-- **No-side basis:** Stronger under full SEC approval / launch-clearance reading
-- **Best public verdict:** Failure; May 23 was partial SEC approval, not full ETF approval
+- **Rule-drafting failure:** Yes — "approval" undefined for a known two-step process
+- **Clear misresolution:** No — Yes had a literal SEC-order basis and broad media support
+- **Yes-side basis:** Real (an actual SEC approval order, plus broad reporting)
+- **No-side basis:** Stronger under a full-clearance / launch reading (S-1 pending, no trading until July)
+- **Best public verdict:** Failure (drafting failure producing a defensible-but-contested resolution)
 
 ## Precise blocker to a stronger finding
 
-The only remaining blocker is that the market did not define "approval." That ambiguity prevents saying the Yes resolution was baseless. It does not prevent classifying the case as a failure, because the ambiguity was foreseeable and outcome-determinative.
+Two blockers keep this short of a clean misresolution. First, the rule did not define "approval," so the Yes resolution cannot be called baseless — a literal SEC approval order existed before the deadline. Second, the exact UMA dispute sequence (the "two disputed Yes proposals" commonly cited) is inferred from the Polymarket page UI rather than verified from primary data; gamma confirms only that the question was disputed and ultimately resolved Yes. Neither blocker prevents classifying the case as a failure, because the ambiguity was foreseeable and outcome-determinative.
 
 ## Sources
 
-[^polymarket]: Polymarket, [`Ethereum ETF approved by May 31?`][polymarket]. Shows the market question, rule text, source language, volume, dispute sequence, and final Yes outcome.
+[^gamma]: Polymarket gamma API, `https://gamma-api.polymarket.com/events?slug=ethereum-etf-approved-by-may-31` (event id 903219; market id 253750). Verbatim rule: "This market will resolve to \"Yes\" if any spot Ethereum ETF receives approval from the SEC by May 31, 2024, 11:59:59 PM ET..."; `outcomePrices` `["1","0"]` (Yes); `umaResolutionStatus: resolved`; `closed: true`; closedTime/umaEndDate 2024-05-24T00:14:40Z; volume ~$13.23M. Primary source for rule text and settled outcome. [Gamma][gamma]
 
-[^sec-order]: U.S. Securities and Exchange Commission, [Release No. 34-100224][sec-order], May 23, 2024. Order granting accelerated approval of proposed rule changes to list and trade shares of ether-based exchange-traded products; also states that trading could not begin until corresponding registration statements became effective.
+[^sec-order]: U.S. Securities and Exchange Commission, Release No. 34-100224, May 23, 2024, "Order Granting Accelerated Approval of Proposed Rule Changes, as Modified by Amendments Thereto, to List and Trade Shares of Ether-Based Exchange-Traded Products" (File Nos. SR-NYSEARCA-2023-70 et al.). Approves the 19b-4 listing rule changes for NYSE Arca, Nasdaq, and Cboe BZX. Title and date confirmed via Federal Register (FR-2024-05-30) and the SEC PDF. [Order PDF][sec-order] · [Federal Register][fed-reg]
 
-[^dlnews]: Ryan Celaj, DL News, ["Ethereum ETF approval will cause an $11m dispute on Polymarket - here's why"][dlnews], May 23, 2024. Describes the expected dispute, the 19b-4/S-1 distinction, the market wording, and competing trader interpretations.
+[^coindesk]: Helene Braun, CoinDesk, "Ether ETFs Clear Major Hurdle, Though SEC Hasn't Cleared Them for Trading Yet," May 23, 2024. "They are not yet cleared to trade... the regulator must approve their S-1 filings before investors can buy them." [Article][coindesk]
 
-[^investopedia-may]: Taylor Tompkins, Investopedia, ["SEC Sets the Stage For the Launch of Spot Ether ETFs"][investopedia-may], updated May 23, 2024. Reports that SEC approved listing/trading rule changes but further approvals were needed before trading.
+[^mayerbrown]: Mayer Brown, "SEC Approves Listings of Spot Ether ETFs: Waiting is the Hardest Part," May 30, 2024. Confirms the SEC approved the 19b-4 rule changes but the registration statements "remain under review by the SEC... through a separate review process." [Alert][mayerbrown]
 
-[^investopedia-july]: Investopedia, ["SEC Approves Spot Ether ETFs"][investopedia-july], July 22-23, 2024. Reports that spot ether ETFs had final approval/effective prospectuses and were set to begin trading July 23, 2024.
+[^investopedia-july]: Investopedia, "SEC Approves Spot Ether ETFs," July 2024. Spot ether ETFs received final/effective registration and began trading July 23, 2024 — after the May 31 deadline. [Article][investopedia-july]
 
-[^coindesk]: Sam Reynolds, CoinDesk, ["UPDATE: Polymarket Says It's 'Conclusive' Barron Trump Was Involved in $DJT"][coindesk], June 27, 2024. Notes that UMA resolved the Ethereum ETF contract Yes while some bettors questioned whether the ETF was approved or still working through the SEC process.
+[^dlnews]: Ryan Celaj, DL News, "Ethereum ETF approval will cause an $11m dispute on Polymarket — here's why," May 23, 2024. Pre-decision: issuers must get approval for both 19b-4 and S-1 filings; "Thursday's decision is for only the 19b-4 filing"; warns of the largest dispute in Polymarket's history over what "approval" means. [Article][dlnews]
 
-[polymarket]: https://polymarket.com/event/ethereum-etf-approved-by-may-31
+[^cointelegraph]: Cointelegraph, "Polymarket gets backlash over 'approved' outcome on $13M Ethereum ETF bets," May 23–24, 2024 (via TradingView). Market "closed at a Yes result on May 23... briefly disputed but ultimately resolved with the same Yes outcome." Quotes VanEck's Matthew Sigel and Bitwise's Matt Hougan on the dual 19b-4 + registration-form requirement. [Article][cointelegraph]
+
+[gamma]: https://gamma-api.polymarket.com/events?slug=ethereum-etf-approved-by-may-31
 [sec-order]: https://www.sec.gov/files/rules/sro/nysearca/2024/34-100224.pdf
-[dlnews]: https://www.dlnews.com/articles/web3/ethereum-etf-ok-may-prompt-11-million-row-on-polymarket/
-[investopedia-may]: https://www.investopedia.com/sec-approves-spot-ether-etfs-8653412
+[fed-reg]: https://www.govinfo.gov/content/pkg/FR-2024-05-30/html/2024-11804.htm
+[coindesk]: https://www.coindesk.com/markets/2024/05/23/sec-approves-spot-ether-etf-listing-still-needs-to-approve-products
+[mayerbrown]: https://www.mayerbrown.com/en/insights/publications/2024/05/sec-approves-listings-of-spot-ether-etfs-waiting-is-the-hardest-part
 [investopedia-july]: https://www.investopedia.com/sec-approves-spot-ether-etfs-8678873
-[coindesk]: https://www.coindesk.com/markets/2024/06/27/polymarket-contradicts-its-oracle-service-in-rarity-for-prediction-market
+[dlnews]: https://www.dlnews.com/articles/web3/ethereum-etf-ok-may-prompt-11-million-row-on-polymarket/
+[cointelegraph]: https://cointelegraph.com/news/polymarket-gets-backlash-over-approved-outcome-13-million-ethereum-etf-bet

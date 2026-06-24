@@ -1,91 +1,97 @@
-# Polymarket: Israel-Hezbollah cease-fire market
+# Polymarket: Israel-Hezbollah cease-fire extension market
 
 ## Bottom line
 
-**Finding: This was a real high-profile UMA dispute and a credible party/confirmation-rule controversy. Confidence: medium-high that the failure mode is real; medium on whether the final Yes was wrong.**
+**Finding: Failure. Polymarket resolved the "Israel x Hezbollah ceasefire extended by April 26, 2026?" market Yes even though the only announced extension was an Israel-Lebanon ambassador-level deal that Hezbollah was excluded from and publicly rejected, contradicting the market's own rule naming Hezbollah as a required confirming party. The structurally identical, same-drafter "US x Iran ceasefire extended by" twin resolved No on the very same "named party didn't confirm" gap. Confidence: high that the resolution contradicts the rule and the US-Iran twin; medium that a Yes was indefensible (the media-consensus fallback gives a fig leaf).**
 
-The exact Polymarket market is now identifiable: `Israel x Hezbollah ceasefire by...?`.[^polymarket] The April 18 outcome resolved Yes on roughly $98.6 million of volume within a market family showing about $112.6 million total volume.[^polymarket] The rule required an official cease-fire agreement, defined as a publicly announced and mutually agreed halt in direct military engagement between Israel and Hezbollah, with resolution based on official statements from the Israeli Government and Hezbollah, while also allowing a wide consensus of credible media reporting.[^polymarket]
+This is the genuinely anomalous contract in the family. The ~$20.9M extension market resolved Yes after two UMA dispute cycles,[^gamma-ext] yet the real-world event it cited was negotiated between the Israeli and Lebanese *ambassadors* at the White House, with Hezbollah neither party to nor a confirmer of the deal.[^cnbc][^yalibnan] The near-twin US-Iran extension market, written with the same "clear public confirmation from both [governments]" rule, resolved No on an identical defect.[^gamma-iran]
 
-The allegation is serious because the real-world announcement was an Israel-Lebanon / government-level truce, not necessarily a direct Israel-Hezbollah agreement. WSJ-accessible reporting says trader Garrick Wilhelm lost after UMA voters decided 87% that Israel's cease-fire with Lebanon covered Hezbollah.[^wsj] That is a real oracle/rule-interpretation dispute, not a vague complaint.
+(Note: a prior version of this case file analyzed the wrong contract — the April 18 "Israel x Hezbollah ceasefire by" market, ~$98-112M, slug `israel-x-hezbollah-ceasefire-by`. That market also drew two UMA disputes and is differently and more weakly worded; it is not the anomalous result. The disputed contract here is the *extension* market.)
 
 ## Market details
 
 - **Venue:** Polymarket
-- **Market family:** `Israel x Hezbollah ceasefire by...?`
-- **Relevant outcome:** April 18, 2026.
-- **Market URL:** https://polymarket.com/event/israel-x-hezbollah-ceasefire-by
-- **Displayed outcome for April 18:** Yes.[^polymarket]
-- **Displayed volume for April 18:** about $98.6 million; total event volume about $112.6 million.[^polymarket]
-- **Core rule:** Yes required a publicly announced and mutually agreed halt in direct military engagement between Israel and Hezbollah by the listed date, with official statements from Israel and Hezbollah as the stated resolution source, but a wide consensus of credible media reporting could suffice.[^polymarket]
+- **Event:** `israel-x-hezbollah-ceasefire-extended-by`
+- **Sub-market:** "Israel x Hezbollah Ceasefire extended by April 26, 2026?" (slug `...-extended-by-april-26-2026`)
+- **Volume:** ~$20.9M (gamma reports $20,894,917.90).[^gamma-ext]
+- **Closed:** May 1, 2026.[^gamma-ext]
+- **Resolution:** Yes (gamma `outcomePrices` `["1","0"]`), after two UMA dispute cycles (`umaResolutionStatuses` `["proposed","disputed","proposed","disputed"]`).[^gamma-ext]
+- **Core rule:** Requires "clear public confirmation from both the Israeli government and Hezbollah" of a longer-than-10-day halt, or an official extension "confirmed by an overwhelming consensus of media reporting"; explicitly excludes informal understandings, backchannel communication, de-escalation, or unilateral pauses.[^gamma-ext]
 
 ## What happened
 
-Polymarket's market page says the April 18 outcome paid Yes and preserves the rule text.[^polymarket] The page's market context describes a U.S.-brokered 10-day cessation of hostilities between Israel and Lebanon targeting Hezbollah, taking effect on April 16 after direct talks in Washington.[^polymarket]
+The extension market's verbatim rule reads: "An extension of the ceasefire agreement requires clear public confirmation from both the Israeli government and Hezbollah that they have agreed to halt military hostilities against one another for longer than the initially agreed 10-day period, or for an official extension of the ceasefire agreement in place to be otherwise confirmed by an overwhelming consensus of media reporting." It adds that resolution "will be based on official statements from the Israeli government and Hezbollah," with overwhelming credible-media consensus of an "official ceasefire extension agreement" sufficing, and excludes "Any form of informal understanding, backchannel communication, de-escalation, or unilateral pause in hostilities without a confirmed agreement on a qualifying extension."[^gamma-ext]
 
-PolymarketIntel, an AI-generated market-summary site, described the same cease-fire as an Israel-Lebanon agreement reached through Israeli and Lebanese delegations, while noting that Hezbollah was not directly represented in the U.S.-mediated talks.[^pmintel_yes] That source is weaker than a primary news report, but it usefully illustrates the exact ambiguity: the cease-fire may have practically covered Hezbollah while not being a direct Hezbollah agreement.
-
-The Wall Street Journal's search-accessible article summary identifies the retail-trader dispute. Garrick Wilhelm bet against an Israel-Hezbollah cease-fire; after Israel reached a truce with the Lebanese government, traders debated whether that counted as a deal with Hezbollah; UMA token holders resolved against him, with 87% of UMA tokens voting that the Israel-Lebanon cease-fire covered Hezbollah.[^wsj]
-
-PolyPunter's summary of the WSJ dispute says Wilhelm argued that an Israel-Lebanon truce did not meet criteria directly involving Hezbollah, and that the dispute escalated to UMA arbitration.[^polypunter]
+The only announced extension came on April 23, 2026, when President Trump said on Truth Social that Israel and Lebanon had agreed to a three-week extension. It was negotiated at the White House by the Israeli and Lebanese ambassadors (with US ambassadors Huckabee and Issa present); Trump framed it as the US working "with Lebanon in order to help it protect itself from Hezbollah."[^cnbc] Hezbollah was not a party to the talks.[^cnbc][^yalibnan] Hezbollah publicly rejected it: MP Ali Fayyad, on Hezbollah's Al-Manar, called the truce "meaningless," said the group "firmly rejects" the extension because it was excluded from the negotiations, and asserted a right to respond to Israeli operations.[^yalibnan] On April 29, 2026, IDF Chief of Staff Lt. Gen. Eyal Zamir told troops in southern Lebanon "there is no ceasefire" as the two sides continued exchanging fire.[^toi-zamir]
 
 ## The allegation against Polymarket
 
-The allegation is that UMA treated a state-to-state or government-level Lebanon truce as an Israel-Hezbollah agreement even though the contract was specifically worded around Hezbollah.
+The contract names Hezbollah — by name — as a required confirming party. Hezbollah did the opposite of confirming: it was excluded from the deal and publicly called it meaningless.[^cnbc][^yalibnan] The deal that was struck was an Israel-Lebanon, ambassador-level government arrangement — precisely the kind of "informal understanding" / non-Hezbollah agreement the rule's exclusion clause targets, since Hezbollah neither signed nor confirmed it. Resolving Yes therefore reads Hezbollah's confirmation requirement out of the rule.
 
-That matters because the rule did not merely ask whether fighting in Lebanon paused. It required a publicly announced and mutually agreed halt in direct military engagement between Israel and Hezbollah, and it named official statements from the Israeli Government and Hezbollah as the source.[^polymarket] If Hezbollah did not officially agree or if the only agreement was with Lebanon's government, No holders had a strong textual argument.
+The strongest evidence of inconsistency is internal: the structurally identical "US x Iran ceasefire extended by" family, written with the same "clear public confirmation from both [governments]" standard, resolved **No** (gamma `outcomePrices` `["0","1"]`) on the same defect — a named party not confirming — with one April 22 sub-market grinding through six dispute cycles.[^gamma-iran] Two near-identical contracts resolved oppositely on the same structural gap.
 
-This is also an oracle-process failure candidate. The WSJ summary says UMA voters may have financial stakes in disputed Polymarket markets and that voting power is concentrated, while Polymarket defended the model as a transparent marketwide framework.[^wsj] Even if Yes was defensible on the merits, the process can still be a tracker-relevant failure if a high-stakes ambiguity was resolved by financially entangled voters without enough transparent reasoning.
+## Polymarket's / the resolver's defense
 
-## Polymarket's defense
+Two arguments cut for Yes, and should be stated fairly.
 
-The strongest merits defense is the rule's media-consensus fallback. The market did not require only direct official statements from both sides; it also said a wide consensus of credible media reporting confirming that an official cease-fire agreement had been reached would suffice.[^polymarket]
+First, the media-consensus fallback. Many credible outlets loosely headlined the event as extending the "Israel-Hezbollah ceasefire" — Euronews ran exactly that headline[^euronews] — because the original April 16 truce was itself an Israel-Lebanon arrangement *aimed at* Hezbollah. A UMA voter could argue an "overwhelming consensus of media reporting" labeled this an Israel-Hezbollah extension, satisfying the fallback prong.
 
-There is also a practical-substance defense. If the Israel-Lebanon truce targeted Hezbollah's armed activity, was welcomed or observed by Hezbollah, and was widely reported as an Israel-Hezbollah cease-fire, UMA voters could reasonably treat it as satisfying the market even if Hezbollah was not seated as a formal government delegation.
+Second, takes-effect-or-not is irrelevant by rule: the market triggered on an announced extension regardless of "whether the extension ultimately takes effect," so the later collapse of the truce (Zamir's "no ceasefire") does not, on its own, undermine a Yes.
 
-Polymarket's institutional defense is the UMA process. The WSJ summary says Polymarket argued only 0.2% of contracts trigger UMA votes and that UMA distributes resolution authority rather than vesting it in a single decision maker.[^wsj] That defense explains the platform design; it does not by itself prove the result was correct.
+These give Yes a fig leaf. But they sit against the fallback's own text, which requires consensus that an *official ceasefire extension agreement* — i.e., one between the named parties — was reached, while the underlying reporting itself stated Hezbollah was excluded.[^cnbc][^yalibnan]
 
 ## Assessment
 
-### Did a Hezbollah cease-fire dispute exist?
+### Did the rule require Hezbollah's confirmation, and did Hezbollah confirm?
 
-**Yes.** The Polymarket page verifies the market and outcome, and WSJ/PolyPunter identify the specific trader dispute.[^polymarket][^wsj][^polypunter]
+**Yes, it required it; no, Hezbollah did not.** The rule names Hezbollah as a confirming party.[^gamma-ext] Hezbollah was not party to the deal and publicly rejected it as "meaningless."[^cnbc][^yalibnan]
 
-### Is the exact rule now preserved?
+### Does the media-consensus fallback rescue a Yes?
 
-**Yes.** The rule required a mutually agreed halt between Israel and Hezbollah, stated official Israeli Government and Hezbollah statements as the resolution source, and allowed wide credible-media consensus as an alternative.[^polymarket]
+**Only weakly.** Outlets did headline an "Israel-Hezbollah ceasefire" extension,[^euronews] but the fallback requires consensus that an *official agreement between the named parties* was reached, and the same reporting documented Hezbollah's exclusion.[^cnbc][^yalibnan] It is a fig leaf, not a clean trigger.
 
-### Was the Yes resolution clearly wrong?
+### Is the result inconsistent with comparable Polymarket resolutions?
 
-**Not conclusively.** The No argument is strong if the only agreement was Israel-Lebanon and Hezbollah did not officially agree. The Yes argument is plausible if credible media consensus treated the truce as covering Hezbollah or if Hezbollah's practical conduct made the agreement substantively mutual.
+**Yes.** The same-drafter US-Iran extension family, with the identical both-parties rule, resolved No on the same "named party didn't confirm" gap.[^gamma-iran] That is strong evidence the Yes here is an inconsistency, not a principled reading.
 
 ### Was this a real failure for the tracker?
 
-**Yes.** This should be tracked as a high-stakes geopolitical semantics and UMA-governance case. The failure may be bad rule drafting, bad oracle reasoning, or both. The record does not yet support an unqualified "Polymarket paid the wrong side" conclusion.
+**Yes.** A Yes resolution contradicts the market's own both-parties rule and its near-twin's outcome. The defense is real but thin.
 
 ### Overall classification
 
-- **Exact market located:** Yes
-- **UMA dispute:** Yes
-- **Party/confirmation ambiguity:** Yes
-- **Potential bad resolution:** Credible but not conclusive
-- **Process/transparency failure:** Strong
-- **Best public verdict:** Real rules/oracle failure candidate; final merits remain blocked by missing UMA record and primary cease-fire-source packet
+- **Exact market located:** Yes (extension market, not the "ceasefire by" market)
+- **UMA dispute:** Yes (two cycles)
+- **Rule contradicted:** Yes — Hezbollah named as confirmer; Hezbollah excluded and rejected
+- **Internal inconsistency:** Strong — US-Iran twin resolved No on identical defect
+- **Media-consensus fig leaf:** Present but weak
+- **Remediation:** None — bad Yes stands on-chain; settled; not remedied (FAILURE_RESOLVED = Unresolved)
+- **Best public verdict:** Failure. The Yes resolution contradicts the market's own both-parties confirmation rule and the oppositely-decided US-Iran twin; the media-consensus fallback gives Yes a defensible-looking but thin justification.
 
-## Precise blocker to a conclusive finding
+## Precise blocker to a stronger finding
 
-The missing evidence is the UMA ancillary data, proposal/dispute transactions, voter rationale, and the exact official/media source packet UMA treated as dispositive. The website can state that the market exposed a real Polymarket/UMA failure mode and that No holders had a strong textual argument. It should not state that Yes was definitively wrong unless the missing source packet fails to show either Hezbollah agreement or wide credible-media consensus.
+None material to the failure finding. The rule text, both outcomes, the dispute counts, and the real-world facts (ambassador-level Israel-Lebanon deal, Hezbollah excluded and rejecting, fighting continuing) are all on the record. The only thing not captured is the exact UMA voter rationale and per-vote timestamps for the two dispute cycles — useful color, but not needed to establish that Yes contradicts the named-party rule and the US-Iran twin.
 
 ## Sources
 
-[^polymarket]: Polymarket, ["Israel x Hezbollah ceasefire by...?"][polymarket]. Shows the market family, April 18 Yes outcome, volume, rule text, source standard, and market context.
+[^gamma-ext]: Polymarket gamma API, ["israel-x-hezbollah-ceasefire-extended-by" event][gamma-ext]. Verbatim both-parties rule and exclusion clause; sub-market "Israel x Hezbollah Ceasefire extended by April 26, 2026?"; ~$20.9M volume; closed May 1, 2026; `outcomePrices` `["1","0"]` (Yes); `umaResolutionStatuses` `["proposed","disputed","proposed","disputed"]`.
 
-[^wsj]: Wall Street Journal, ["The Mysterious Crypto Judges Who Settle Polymarket Disputes"][wsj], May 2026. Search-accessible summary reports Wilhelm's Israel-Hezbollah cease-fire dispute, Polymarket's UMA defense, voter conflict concerns, and the 87% vote that the Israel-Lebanon cease-fire covered Hezbollah.
+[^gamma-iran]: Polymarket gamma API, ["us-x-iran-ceasefire-extended-by" event][gamma-iran]. Same "clear public confirmation from both [governments]" rule; sub-markets resolved No (`outcomePrices` `["0","1"]`); the April 22 sub-market went through six dispute cycles.
 
-[^polypunter]: PolyPunter, ["Mysterious Crypto Judges Settle Polymarket Disputes in Hezbollah Cease-Fire Market, Spark Trader Outrage"][polypunter], May 18, 2026. Summarizes the WSJ-reported dispute and Wilhelm's argument.
+[^cnbc]: CNBC, ["Trump says Israel-Lebanon ceasefire extended by three weeks"][cnbc], April 23, 2026. White House meeting with the Israeli and Lebanese ambassadors; Trump frames the US as helping Lebanon "protect itself from Hezbollah"; Hezbollah not party to the talks and rejecting any agreements made in them. (Washington Post and Axios corroborate the ambassador-level, Israel-Lebanon framing.[^wapo])
 
-[^pmintel_yes]: PolymarketIntel, ["Israel-Hezbollah Ceasefire Confirmed, Polymarket Odds Reflect Near Certainty of 'Yes' Resolution"][pmintel_yes], April 17, 2026. AI-generated market summary reporting the Israel-Lebanon truce, the Polymarket rule, and the fact that Hezbollah was not directly represented in the talks.
+[^wapo]: Washington Post, ["Israel and Lebanon extend ceasefire for three weeks, Trump says"][wapo], April 23, 2026. Corroborates the Israel-Lebanon, government-level extension and Hezbollah's exclusion.
 
-[polymarket]: https://polymarket.com/event/israel-x-hezbollah-ceasefire-by
-[wsj]: https://www.wsj.com/finance/polymarket-bet-disputes-fb1b8c6a
-[polypunter]: https://polypunter.com/mysterious-crypto-judges-settle-polymarket-disputes-in-hezbollah-cease-fire-market-spark-trader-outrage/
-[pmintel_yes]: https://polymarketintel.com/israel-hezbollah-ceasefire-confirmed-polymarket-odds-reflect-near-certainty-of-yes-resolution/
+[^yalibnan]: Ya Libnan, ["Defiant Hezbollah calls Israel-Lebanon ceasefire extension meaningless"][yalibnan], April 24, 2026. Hezbollah MP Ali Fayyad, on Al-Manar, calls the truce "meaningless" and says Hezbollah "firmly rejects" the extension because it was excluded from the negotiations.
+
+[^euronews]: Euronews, ["Israel-Hezbollah ceasefire extended by three weeks, Trump says"][euronews], April 24, 2026. Example of outlets loosely headlining the event as an "Israel-Hezbollah" ceasefire extension — the basis for the media-consensus defense.
+
+[^toi-zamir]: The Times of Israel, ["IDF chief says there's 'no ceasefire' in south Lebanon amid continued fighting with Hezbollah"][toi-zamir], April 29, 2026. Lt. Gen. Eyal Zamir: "there is no ceasefire" on the combat front as Israel and Hezbollah keep exchanging fire.
+
+[gamma-ext]: https://gamma-api.polymarket.com/events?slug=israel-x-hezbollah-ceasefire-extended-by
+[gamma-iran]: https://gamma-api.polymarket.com/events?slug=us-x-iran-ceasefire-extended-by
+[cnbc]: https://www.cnbc.com/2026/04/23/trump-israel-lebanon-ceasefire-iran-war.html
+[wapo]: https://www.washingtonpost.com/national-security/2026/04/23/us-israel-lebanon-ceasefire/
+[yalibnan]: https://yalibnan.com/2026/04/24/defiant-hezbollah-calls-israel-lebanon-ceasefire-extension-meaningless/
+[euronews]: https://www.euronews.com/2026/04/24/trump-says-israel-hezbollah-ceasefire-extended-by-three-weeks
+[toi-zamir]: https://www.timesofisrael.com/idf-chief-says-theres-no-ceasefire-in-south-lebanon-amid-continued-fighting-with-hezbollah/

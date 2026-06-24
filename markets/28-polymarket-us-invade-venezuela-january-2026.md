@@ -1,87 +1,83 @@
-# Polymarket: U.S. invades Venezuela by January 2026
+# Polymarket: U.S. invades Venezuela market
 
 ## Bottom line
 
-**Finding: This was a real title/rules semantic controversy, but Polymarket's No outcome appears defensible under the detailed rule. Confidence: medium-high.**
+**Finding: Failure (minor). Polymarket's "No" was substantively correct under a written rule that pre-existed the event and required a military offensive to *establish control* over Venezuelan territory — a leadership-extraction raid that seized no land does not qualify. But a consumer-facing market headlined "Will the U.S. invade Venezuela?" resolving No the same week U.S. forces captured the country's president predictably misled ordinary traders, a genuine title-vs-rule mismatch. Confidence: High.**
 
-After U.S. forces captured Nicolás Maduro in Venezuela in January 2026, Polymarket refused to treat the operation as an "invasion" for markets asking whether the U.S. would invade Venezuela. Reporting says Polymarket's rule required U.S. military operations intended to establish control over the country or territory, and Polymarket treated the operation as a limited snatch-and-extract raid rather than an invasion.[^guardian][^nypost][^ft]
-
-The criticism is also real: ordinary users saw U.S. forces enter Venezuela and capture its head of state, then watched a market titled around "invade Venezuela" resolve No.
+After Operation Absolute Resolve captured Nicolás Maduro on January 3, 2026, Polymarket resolved its "Will the U.S. invade Venezuela by...?" markets to No. The detailed resolution criterion — written months before the raid — asked specifically about an offensive "intended to establish control over any portion of Venezuela," and the snatch-and-extract mission held no territory.[^gamma][^defensescoop] The defensible-No is not in serious doubt; the failure is that the plain-language title invited a reading the rule did not deliver, leaving roughly $10.5M of Yes bets and the traders behind them feeling misled.[^quartz]
 
 ## Market details
 
 - **Venue:** Polymarket
-- **Market family:** `Will the U.S. invade Venezuela by...?`
-- **Reported relevant deadline:** January 31, 2026.
-- **Volume reported by Investopedia:** more than $10.5 million across the U.S. invade Venezuela question.[^investopedia]
-- **Reported final platform position:** No, because the operation did not meet the detailed invasion definition.[^guardian][^nypost][^ft]
+- **Event:** `will-the-us-invade-venezuela-in-2025` — "Will the U.S. invade Venezuela by...?"
+- **Sub-markets:** Dec 31 2025, Jan 31 2026, Mar 31 2026 (plus a still-open Dec 31 2026).[^gamma]
+- **Total volume:** ~$14M across the event.[^gamma]
+- **Outcome:** Dec 31 2025 = No (`["0","1"]`), Jan 31 2026 = No, Mar 31 2026 = No; each `umaResolutionStatus` "resolved", automatically resolved, no on-chain UMA dispute-overturn recorded.[^gamma]
+- **Contested stake:** ~$10.5M in Yes bets; contestation was public/journalistic, not an on-chain dispute.[^quartz]
 
 ## What happened
 
-U.S. forces captured Nicolás Maduro and his wife in Venezuela in early January 2026, according to contemporaneous reporting.[^guardian][^nypost]
+On January 3, 2026, the U.S. executed Operation Absolute Resolve, a targeted snatch-and-extract raid: 150-plus aircraft and drones, suppression airstrikes on Caracas-area air defenses, and a ground element that captured Nicolás Maduro (and his wife, Cilia Flores) to face U.S. narco-terrorism charges.[^defensescoop] The operation seized and held **no** Venezuelan territory; an interim Venezuelan government under Delcy Rodríguez took over, and U.S. policy shifted toward economic and oil pressure.[^defensescoop]
 
-Traders who bought Yes on Polymarket's invasion markets argued that the operation plainly involved U.S. military action inside Venezuela and the capture of the country's leader. Reporting describes substantial user anger and accusations that Polymarket had redefined "invasion" too narrowly.[^guardian][^nypost][^marketwatch]
+The verbatim resolution rule — identical across sub-markets — read: "This market will resolve to 'Yes' if the United States commences a military offensive intended to establish control over any portion of Venezuela between [range], 11:59 PM ET. Otherwise... 'No'. For the purposes of this market, land de facto controlled by Venezuela or the United States as of September 6, 2025, 12:00 PM ET, will be considered the sovereign territory of that country. The resolution source... will be a consensus of credible sources."[^gamma]
 
-Polymarket's defense, as reported by multiple outlets, was that the market required military operations intended to establish control. A limited extraction mission did not satisfy that criterion.[^guardian][^ft]
+Critically, this rule **pre-existed the raid**. The Dec 31 sub-market was created on 2025-09-06 and the later sub-markets in 2025 — months before the January 3, 2026 event. The "establish control" criterion was not changed after the fact.[^gamma]
+
+One day after the raid (~Jan 4, 2026), Polymarket added an Additional Context note: "This market refers to U.S. military operations intended to establish control. President Trump's statement that they will 'run' Venezuela while referencing ongoing talks with the Venezuelan government does not alone qualify the snatch-and-extract mission to capture Maduro as an invasion."[^event] This note *applies* the pre-existing "establish control" standard to the facts; it does not introduce a new criterion.
 
 ## The allegation against Polymarket
 
-The allegation is that Polymarket used a narrow, technical definition that contradicted the ordinary-language title.
-
-"U.S. invades Venezuela" can naturally be read by ordinary traders to include U.S. forces entering Venezuela for hostile military operations. Capturing the president makes the mismatch especially salient.
+Traders argued that U.S. forces invaded Venezuela — they entered the country with overwhelming force and seized its head of state — and that resolving a market titled "Will the U.S. invade Venezuela?" to No was a goalpost move that stiffed ~$10.5M of Yes bets.[^quartz] The ordinary-language title plainly reads as covering exactly what happened.
 
 ## Polymarket's defense
 
-The defense is the detailed rule.
-
-The Guardian reported that Polymarket argued Maduro's capture did not qualify because the relevant contract required an invasion-like military operation and not just the capture/extraction of a leader.[^guardian] The Financial Times similarly summarized the definition as a military offensive intended to establish territorial control.[^ft]
-
-Under that reading, a fast raid can be a dramatic use of force without being an invasion for market purposes.
+Polymarket's defense is the written rule: Yes required a military offensive "intended to establish control over any portion of Venezuela," and a leadership-extraction raid that held no land does not satisfy that standard.[^gamma][^quartz] The rule pre-existed the event, and the Jan 4 note merely restated it against the facts rather than introducing a new bar.[^gamma][^event] Internal consistency supports this: a separate Polymarket "US forces in Venezuela by...?" contract resolved Yes within hours of the raid — consistent with "forces present" (Yes) versus "offensive to establish territorial control" (No).[^gamblinginsider]
 
 ## Assessment
 
-### Did a U.S. military operation occur in Venezuela?
+### Was the "No" correct under the written rule?
 
-**Yes, according to the reviewed reporting.**[^guardian][^nypost]
+**Yes.** The raid captured a person and held no territory; under a rule keyed to a "military offensive intended to establish control over... Venezuela," that is a No.[^gamma][^defensescoop]
 
-### Did Polymarket treat it as not satisfying the invasion market?
+### Was this a goalpost move?
 
-**Yes.** Multiple reports describe Polymarket refusing to pay Yes on the invasion framing.[^guardian][^nypost][^ft]
+**No.** The "establish control" criterion was created months before the January 3 raid, and the Jan 4 Additional Context note applied the existing standard rather than changing it.[^gamma][^event]
 
-### Was Polymarket's No clearly wrong under the written rule?
+### Was the platform internally consistent?
 
-**No.** If the rule required intent to establish control over territory, a limited raid/extraction is plausibly outside the rule.
+**Yes.** The companion "US forces in Venezuela" market resolved Yes the same day, cleanly distinguishing "forces present" from "invade to establish control."[^gamblinginsider]
 
-### Was this a real failure for the tracker?
+### Did the title mislead ordinary traders?
 
-**Yes, as a title/rules mismatch and ordinary-language ambiguity case.**
+**Yes.** "Will the U.S. invade Venezuela?" resolving No the same week U.S. forces seized the country's president is a predictable, material mismatch between headline and rule for non-expert traders.[^quartz]
 
 ### Overall classification
 
-- **Title/rules mismatch:** Yes
-- **Geopolitical semantic ambiguity:** Yes
-- **Rule-based defense:** Strong
-- **Final misresolution:** Not established
-- **Best public verdict:** Polymarket's detailed rule likely supported No; the title invited a broader reading
+- **Resolution correct under the written rule:** Yes
+- **Goalpost move:** No (rule pre-existed; Jan 4 note applied it)
+- **Internal consistency:** Yes (companion "forces" market resolved Yes)
+- **Title-vs-rule mismatch:** Yes (consumer-facing headline misled)
+- **Severity:** Minor — outcome is rule-correct, but the framing harm is real
+- **Best public verdict: Failure (minor). The No is defensible and well-grounded in a pre-existing rule, but the misleading title is a genuine consumer-facing failure that was never remedied.**
 
 ## Precise blocker to a stronger finding
 
-The missing evidence is the archived Polymarket market page/API record for the exact contract and deadline. The reporting is strong enough to describe the controversy, but the primary rule text should be preserved before making a final website-grade verdict.
+None material to the verdict. The only gap is that the exact on-chain timestamp of the Jan 4, 2026 Additional Context edit is not independently captured (the addendum text itself is confirmed via the live event page). This does not change the minor-failure classification: the resolution is rule-correct regardless of the edit's precise timestamp, because the substantive "establish control" criterion pre-dated the raid.
 
 ## Sources
 
-[^guardian]: The Guardian, ["Gambling platform Polymarket not paying bets on US invasion of Venezuela"][guardian], January 7, 2026. Reports the No position and Polymarket's narrow invasion criterion.
+[^gamma]: Polymarket Gamma API — verbatim resolution rule, `outcomePrices`, creation/close dates, `umaResolutionStatus`, and ~$14M total volume across the sub-markets. ["will-the-us-invade-venezuela-in-2025" event][gamma]
 
-[^nypost]: New York Post, ["Polymarket refuses to pay bettors who wagered US would 'invade' Venezuela"][nypost], January 7, 2026. Reports user backlash, the Maduro capture, and Polymarket's decision.
+[^defensescoop]: DefenseScoop — Operation Absolute Resolve details: 150-plus aircraft/drones, air-defense suppression strikes, capture of Maduro and Flores, snatch-and-extract (no territory held). ["US deploys 150-plus military aircraft... raid to capture Maduro"][defensescoop]
 
-[^ft]: Financial Times, ["Polymarket refuses to pay bets that US would 'invade' Venezuela"][ft], January 2026. Summarizes Polymarket's territorial-control definition and the user controversy.
+[^quartz]: Quartz — Polymarket's position that the raid was not an invasion; ~$10.5M in disputed Yes bets and trader backlash. ["Polymarket says the U.S. raid wasn't an invasion"][quartz]
 
-[^marketwatch]: MarketWatch, ["Online fury as betting market Polymarket denies any Venezuelan invasion"][marketwatch], January 6, 2026. Reports user reaction and the narrow definition controversy.
+[^event]: Polymarket live event page — verbatim Additional Context note added ~Jan 4, 2026. ["Will the U.S. invade Venezuela?" event page][event]
 
-[^investopedia]: Investopedia, ["People Are Betting Millions of Dollars on Invasions, Regime Changes and More"][investopedia], January 7, 2026. Reports more than $10.5 million volume on the U.S. invade Venezuela question and describes the market as referring to operations intended to establish control.
+[^gamblinginsider]: Gambling Insider — related "US forces in Venezuela" market resolved Yes while the "invade" market stood unsettled/No. ["Polymarket Venezuela invasion market remains unsettled"][gamblinginsider]
 
-[guardian]: https://www.theguardian.com/world/2026/jan/07/wager-platform-polymarket-will-not-pay-out-on-bets-on-us-invasion-of-venezuela
-[nypost]: https://nypost.com/2026/01/07/business/polymarket-refuses-to-pay-bettors-who-wagered-us-would-invade-venezuela/
-[ft]: https://www.ft.com/content/985ae542-1ab4-491e-8e6e-b30f6a3ab666
-[marketwatch]: https://www.marketwatch.com/story/online-fury-as-betting-market-polymarket-denies-any-venezuelan-invasion-414af8a9
-[investopedia]: https://www.investopedia.com/people-are-betting-millions-of-dollars-on-invasions-regime-changes-and-more-11880321
+[gamma]: https://gamma-api.polymarket.com/events?slug=will-the-us-invade-venezuela-in-2025
+[defensescoop]: https://defensescoop.com/2026/01/03/us-military-operation-venezuela-absolute-resolve-details-gen-caine/
+[quartz]: https://qz.com/polymarket-says-us-raid-venezuela-not-invasion
+[event]: https://polymarket.com/event/will-the-us-invade-venezuela-in-2025
+[gamblinginsider]: https://www.gamblinginsider.com/news/101486/polymarket-venezuela-invasion-market-remains-unsettled

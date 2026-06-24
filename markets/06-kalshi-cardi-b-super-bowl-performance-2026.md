@@ -2,140 +2,126 @@
 
 ## Bottom line
 
-**Finding: This was a real resolution controversy and a rule-design failure, but not a proven Kalshi misgrade under the written rules. Confidence: high.**
+**Finding: Failure — a rule-design and contract-drafting failure, not an operational misgrade. The contract that actually governed on February 8, 2026 was internally self-contradictory about whether dancing counts as performing, so a ~$47.3M market could not produce a clean binary answer and was force-settled to the last traded price ($0.26 Yes / $0.74 No) under Rule 6.3(c). Kalshi later amended the contract to remove the ambiguity, effectively conceding the defect. Failure-resolved: Unresolved. Confidence: high.**
 
-Kalshi listed a 2026 Super Bowl halftime market asking who would perform at the Big Game. Cardi B appeared during Bad Bunny's halftime show with Karol G, Young Miko, Jessica Alba, and Pedro Pascal. Multiple reports described her as dancing and mouthing words, while noting that it was unclear whether she was actually singing.[^ap][^business-insider][^nypost]
+Kalshi listed a 2026 Super Bowl halftime market, `KXPERFORMSUPERBOWLB`, asking who would perform at the Big Game. Cardi B appeared during Bad Bunny's halftime show alongside Karol G, Young Miko, Jessica Alba, and Pedro Pascal. Reporting consistently describes her as dancing to the music and mouthing words, with no confirmed singing.[^cbs][^nbc] Kalshi did not settle her strike as a normal binary. It invoked its ambiguity process and settled to the last traded prices before trading was paused: **$0.26 for Yes holders and $0.74 for No holders.**[^kalshi-event][^cbs]
 
-Kalshi did not settle Cardi B as a normal binary Yes or No. It invoked its ambiguity process and settled the market at the last traded prices before trading was paused: **$0.26 for Yes holders and $0.74 for No holders**.[^kalshi-market][^ap][^business-insider]
+The decisive question is *which contract governed*. The version in force on February 8, 2026 — the `PERFORM` terms as archived January 11, 2026 — defined "performs" loosely and **contradicted itself**: its core criterion said a performer "Performs (including **dancing**, singing, DJ-ing, e.g.)," while its exclusion list said "**Dancing** or appearing on stage without singing/playing instruments" does NOT constitute a performance.[^terms-jan2026] A televised cameo of someone dancing and mouthing lyrics falls into the exact gap between those two clauses. The contract could not resolve itself, and Kalshi force-settled to market price.
 
-The strongest criticism is that the contract's definitions made a high-volume market effectively irresolvable. The strongest defense is that Kalshi publicly identified the ambiguity, used the last-price mechanism provided by its rules, and distributed the contract value according to that mechanism rather than pretending the evidence clearly proved one side.
-
-This should be tracked as a **rule-design and user-expectation failure**, not as a straightforward operational settlement error.
+Critically, the stricter language the prior version of this case file quoted — requiring the performer to "actively and perceptibly contribute to a musical performance by singing... rapping... DJ-ing, or conducting a live band" — is **not** the governing rule. It is the **post-event amendment**, certified to the CFTC on March 2, 2026, whose own cover letter lists "Change to Payout Criterion for clarity."[^terms-current][^cert-mar2026] Kalshi rewrote the definition *after* the Cardi B dispute. Settling a market under a self-contradictory rule, then amending the rule, is a drafting failure — not a defensible application of a clean written standard.
 
 ## Market details
 
 - **Venue:** Kalshi
-- **Market family:** `Who will perform at the Big Game?`
-- **Series:** `KXPERFORMSUPERBOWLB`
-- **Event:** 2026 Super Bowl halftime show, February 8, 2026
-- **Relevant strike:** Cardi B
-- **Market volume:** Kalshi's page shows approximately **$47.3 million** for the market family; AP also reported more than $47.3 million wagered on Kalshi's market.[^kalshi-market][^ap]
-- **Settlement used for Cardi B:** last traded price before trading was paused: $0.26 for Yes, $0.74 for No.[^kalshi-market]
-- **Platform page:** [Kalshi market page][kalshi-market]
-- **Full contract terms:** [Kalshi `PERFORM` contract terms][perform-terms]
+- **Series:** `KXPERFORMSUPERBOWLB`, "Who will perform at the Super Bowl"; event `KXPERFORMSUPERBOWLB-26`.[^kalshi-event]
+- **Event:** Super Bowl LX halftime show (Bad Bunny), February 8, 2026.
+- **Relevant strike:** Cardi B (individual market ticker since pruned from Kalshi's public API).
+- **Governing contract (Feb 2026):** `PERFORM` terms as archived January 11, 2026; the governing CFTC certification predates the event (the next certification is the March 2, 2026 amendment).[^terms-jan2026][^cert-mar2026]
+- **Settlement:** ambiguity force-settlement to last traded price under Rule 6.3(c): **$0.26 Yes, $0.74 No.**[^kalshi-event]
+- **Market family volume:** approximately **$47.3 million** on Kalshi (vs. ~$10M on Polymarket).[^cbs]
 
-## The rule
+## The rule that governed
 
-Kalshi's full `PERFORM` terms defined the underlying as whether the named performer performs at the specified event or whether it is announced that the performer will perform at the event.[^perform-terms]
+The `PERFORM` terms in force on February 8, 2026 defined the Payout Criterion as whether `<performer>` performs (or it is announced they will perform) at `<event>` during the official event timeframe.[^terms-jan2026]
 
-The full rules required more than presence. They required the performer to appear on stage or in the official broadcast, actively and perceptibly contribute to a musical performance by singing, rapping, playing an instrument, DJ-ing, or conducting a live band, and be either scheduled, a guest in another artist's set, or formally announced as a performer.[^perform-terms]
+For purposes of the contract, "performs" meant (verbatim):
+- "The performer appears on stage or in the official broadcast/stream AND
+- Performs (**including dancing**, singing, DJ-ing, e.g.) AND
+- Is either a scheduled performer OR makes a guest appearance during another artist's performance."[^terms-jan2026]
 
-The same terms said a guest appearance counts when the performer performs at least one full verse, chorus, or musical segment, but they also excluded appearances without musical performance.[^perform-terms]
+The same terms then listed what does NOT constitute a performance, including (verbatim): "**Dancing or appearing on stage without singing/playing instruments**" and "Performances that are cancelled or cut short before reaching 30 seconds."[^terms-jan2026]
 
-Kalshi's market page added an event-specific note that both Cardi B and Karol G strikes were suspended and that a February 5, 2026 clarification required the performer to appear on stage or in the official broadcast/stream and either be scheduled or make a guest appearance during another artist's performance.[^kalshi-market]
+Those two passages are in direct conflict. The affirmative clause folds dancing into the meaning of "performs"; the exclusion clause carves dancing-without-singing back out. The contract pointed to Rule 6.3(b) for determining payouts when an Expiration Value cannot be determined, and to Rule 6.3(d) for the Market Outcome Review Process.[^terms-jan2026]
 
-That combination created the problem. Cardi B clearly appeared in the show and appeared to participate physically, but the available public evidence did not clearly establish the active musical contribution that the full rules required.
+That combination created the problem. Cardi B plainly appeared in the broadcast and visibly danced, placing her squarely in the contradiction: the affirmative clause would count her, the exclusion clause would not, and no reading of the broadcast resolved which clause controlled.
 
 ## What happened
 
-Cardi B joined the halftime show during Bad Bunny's set. AP reported that she danced to the music, but it was unclear whether she was singing along.[^ap] Business Insider similarly reported that she had no singing role but could be seen dancing and mouthing words.[^business-insider]
+Cardi B joined Bad Bunny's set on a porch-style stage with Karol G, Young Miko, Jessica Alba, and Pedro Pascal. Reporting describes her dancing to the music and mouthing words; it was not established that she sang or otherwise made an audible musical contribution, and she did not take a microphone.[^cbs][^nbc] Kalshi's own characterization, via spokesperson Elisabeth Diana, was that she was "dancing and mouthing words to the song, but it was unclear if she was 'singing.'"[^cbs]
 
-Kalshi's public market notice stated that, due to ambiguity over whether Cardi B's attendance constituted a qualifying performance, it was invoking Rule 6.3(c) and settling to the last traded price before trading was paused.[^kalshi-market]
+Kalshi's public notice on the event stated (verbatim): "Due to ambiguity over whether or not Cardi B's attendance at the 2026 Super Bowl halftime show constituted a qualifying 'performance', Kalshi is invoking Rule 6.3(c) to settle this market to the last traded price before trading was paused. Those prices are $0.26 for Yes holders and $0.74 for No holders. Conversely, per Kalshi's full rules, celebrities that danced in the background during the halftime show but did not visibly sing or play an instrument did not 'perform' for purposes of the contract."[^kalshi-event]
 
-Kalshi spokeswoman Elisabeth Diana gave the platform's explicit defense to multiple outlets: under the full rules, singing and dancing counted, but just dancing in the background did not; Cardi B was dancing and mouthing words, but it was unclear whether she was singing.[^ap][^business-insider][^nypost]
+At least one Yes trader filed a complaint with the CFTC, alleging Kalshi violated the Commodity Exchange Act through unfair and deceptive conduct, and seeking **$3,700** (the trader received $1,300 versus an anticipated $5,000).[^cbs][^readwrite]
 
-At least one Yes trader filed a CFTC complaint over Kalshi's handling of the contract, seeking $3,700 in damages.[^ap][^nypost]
+The parallel Polymarket market reached the **opposite** outcome: it resolved **Yes** (Cardi B performed) via its UMA dispute process, paying Yes holders in full — though that resolution was itself disputed, with traders complaining that clarifying context was added only after the show.[^fortune][^nbc]
 
 ## The allegation against Kalshi
 
-### 1. The criteria pulled in opposite directions
+### 1. The governing rule contradicted itself
 
-Kalshi's terms included language that made a guest appearance during another artist's set count if the performer actively participated in a musical segment. But the terms also excluded dancing or appearing without singing or playing an instrument.[^perform-terms]
+The core "performs" clause included dancing; the exclusion list removed dancing-without-singing. A performer who is part of the official staging and visibly dances — exactly Cardi B's situation — satisfies one clause and fails the other. The contract supplied no tiebreaker, so the central question users were trading had no determinable answer under the written rule.[^terms-jan2026]
 
-For a televised halftime cameo, those boundaries were not robust. A performer can be part of the official staging, visibly dance, mouth lyrics, and still leave viewers unable to determine whether there was live vocal contribution.
+### 2. The market title was broader than even the operative rule intended
 
-### 2. The market title was broader than the operative rule
+The visible market asked "Who will perform at the Big Game?" An ordinary user would treat an on-stage halftime cameo as a performance. The rule's own exclusion list intended a narrower test, but the affirmative clause undercut it, so neither the headline nor the fine print produced a clean standard.
 
-The visible market was "Who will perform at the Big Game?" A normal user might treat an on-stage halftime cameo as a performance. Kalshi's detailed rule instead turned on a narrower question: whether Cardi B actively and perceptibly contributed musically in a qualifying way.
+### 3. The last-price settlement made neither side whole
 
-That mismatch was especially important because the relevant fact was not just whether she appeared, but whether she sang or otherwise contributed musically enough to satisfy the filed criteria.
-
-### 3. The last-price settlement did not make either side whole
-
-Kalshi's mechanism distributed $0.26 to Yes holders and $0.74 to No holders. That preserved the total contract value, but it did not refund every trader's principal. A Yes buyer who paid materially above $0.26 still lost money, and a No buyer who paid materially above $0.74 still lost money.
-
-That is not necessarily a rule violation. It is the practical consequence of using a market price as a settlement proxy when the contract proves ambiguous.
+The 6.3(c) mechanism distributed $0.26 to Yes and $0.74 to No. That preserved total contract value but refunded no trader's principal: a Yes buyer who paid above $0.26 still lost, and a No buyer who paid above $0.74 still lost. The CFTC complainant received $1,300 against a $5,000 expectation.[^cbs] That is the practical cost of using a market price as a settlement proxy when the contract is irresolvable.
 
 ## Kalshi's defense
 
-Kalshi's explicit defense was that the evidence did not determine whether Cardi B satisfied the full performance definition. Its spokesperson said the broadcast showed dancing and mouthing words, but did not make clear whether she was singing.[^ap][^business-insider]
+Kalshi's position was that the evidence did not establish whether Cardi B satisfied the performance definition — the broadcast showed dancing and mouthing words but did not make clear whether she was singing — and that its rules addressed exactly this kind of ambiguity, with the last-price split distributing value by market price rather than letting Kalshi retain the disputed amount.[^cbs]
 
-Kalshi also argued that its rules addressed this kind of ambiguity and that the last-price settlement split value according to the market price rather than letting Kalshi retain the disputed amount.[^nypost]
-
-The rule-based defense is substantial:
-
-- the full terms required active musical contribution, not merely presence;
-- public reporting did not establish live singing or another qualifying musical contribution;
-- the market page disclosed the ambiguity settlement and the exact Yes/No prices;
-- the outcome was not a normal No misgrade; and
-- the platform did not silently change the binary result after the fact.
+The defense has real force on the *mechanics*: Kalshi disclosed the ambiguity, named the rule, and did not silently flip a binary. But the defense does not rehabilitate the *contract*. The reason the evidence "could not determine" the outcome is that the governing rule itself pointed in two directions on dancing. And Kalshi's later amendment is hard to square with a claim that the original rule was clear.
 
 ## Assessment
 
-### Did Cardi B plainly perform under Kalshi's full rule?
+### Did Cardi B plainly perform under the governing rule?
 
-**Not established.**
+**Indeterminate by construction.** She plainly danced on the broadcast. The governing rule's affirmative clause counted dancing; its exclusion clause did not. The rule could not answer its own question.[^terms-jan2026][^cbs]
 
-She plainly appeared in the halftime show, but the full Kalshi rule required a qualifying musical contribution. The cited reports support ambiguity rather than a clean Yes.[^ap][^business-insider]
+### Did Kalshi follow a clean written rule?
 
-### Did Kalshi plainly violate its own rule?
-
-**Not established.**
-
-Kalshi identified the ambiguity and used a last-price settlement mechanism. The available public sources do not show that the contract required a normal Yes payout once ambiguity existed.
+**No — because there was no clean written rule.** The prior framing credited Kalshi with applying a definition that required "active musical contribution... singing, rapping, playing an instrument, DJ-ing, or conducting a live band." That language did not govern on February 8, 2026. It is the March 2, 2026 amendment.[^terms-current][^cert-mar2026] The rule actually in force was self-contradictory.
 
 ### Did Kalshi create a badly specified market?
 
-**Yes.**
-
-The rule tried to distinguish performance from cameo, but the distinction depended on facts that could be hard or impossible for viewers to verify from the broadcast. That is a design problem for a large consumer-facing market.
+**Yes — demonstrably.** A contract whose affirmative and exclusion clauses conflict on the precise fact in dispute is defective. Kalshi's own post-event amendment, certified "for clarity," is direct evidence of the defect.[^cert-mar2026]
 
 ### Was this a real failure for the tracker?
 
-**Yes, with careful classification.**
-
-This belongs in the tracker because the market failed to produce a clean binary answer to the question users were trading, generated a formal complaint and public backlash, and exposed a drafting problem in performance markets. It should not be described as Kalshi simply paying the objectively wrong side.
+**Yes.** A ~$47.3M consumer-facing market failed to produce the binary answer users were trading, force-settled to a price that made neither side whole, drew a federal complaint, and resolved opposite to Polymarket on identical facts — all traceable to a self-contradictory rule that Kalshi then rewrote. This is a rule-design failure, not Kalshi paying the objectively wrong side of a clean contract.
 
 ### Overall classification
 
 - **Operational settlement error:** Not established
-- **Rule followed as written:** Plausibly yes
-- **Rule-design failure:** Yes
+- **Rule applied as written:** No — the governing rule was internally contradictory
+- **Rule-design / contract-drafting failure:** Yes (confirmed by the post-event amendment)
 - **User-expectation failure:** Yes
-- **Conclusive platform mistake:** Yes, in market design; not proven in final settlement mechanics
+- **Best public verdict:** Failure; Failure-resolved: Unresolved
 
 ## Precise blocker to a stronger finding
 
-The main blocker is evidentiary. The public sources do not establish whether Cardi B was actually singing or otherwise making an audible musical contribution. Without broadcast audio, production audio, or an official performer statement resolving that fact, the strongest conclusion is that the contract was ambiguous in exactly the way Kalshi said it was.
+The residual blocker is evidentiary on the underlying fact: public sources do not establish whether Cardi B made any audible musical contribution, only that she danced and mouthed words.[^cbs][^nbc] But this blocker no longer affects the verdict. Whether or not she sang, the governing contract could not resolve the case — its affirmative and exclusion clauses conflicted — which is itself the failure. The individual Cardi B market has been pruned from Kalshi's public API, so the settlement is verified from the event's `important_info` metadata and contemporaneous reporting rather than a live market page; those agree on the $0.26/$0.74 split.
 
 ## Sources
 
 ### Platform / primary
 
-[^kalshi-market]: Kalshi, [`Who will perform at the Big Game?` market page][kalshi-market]. Records the Cardi B ambiguity notice, last-price settlement values, market volume, timeline, and source/rule summary.
+[^kalshi-event]: Kalshi, trade API event `KXPERFORMSUPERBOWLB-26` (`api.elections.kalshi.com/trade-api/v2/events/KXPERFORMSUPERBOWLB-26`). The `product_metadata.important_info` note records the Rule 6.3(c) ambiguity settlement and the exact last-traded prices ($0.26 Yes / $0.74 No). The individual Cardi B strike market has been pruned from the public markets endpoint. [API][kalshi-event]
 
-[^perform-terms]: Kalshi, [`PERFORM` contract terms][perform-terms]. Defines what qualifies and does not qualify as a performance for performer markets.
+[^terms-jan2026]: Kalshi, `PERFORM` contract terms as archived January 11, 2026 — the version governing the February 8, 2026 event. Defines "performs" as appearing on stage/broadcast AND "Performs (including dancing, singing, DJ-ing, e.g.)" AND being a scheduled or guest performer, while separately excluding "Dancing or appearing on stage without singing/playing instruments." Points to Rule 6.3(b) for payout determination and Rule 6.3(d) for the review process. [Wayback PDF][terms-jan2026]
+
+[^terms-current]: Kalshi, current `PERFORM` contract terms (post-event amendment). Replaces the loose "performs (including dancing... e.g.)" language with a requirement that the performer "actively and perceptibly contributes to a musical performance by singing (including audible lead or backing vocals), rapping, playing a musical instrument, DJ-ing, or conducting a live band," and that a guest must perform "at least one full verse, chorus, or musical segment." This stricter language did NOT govern on February 8, 2026. [PDF][terms-current]
+
+[^cert-mar2026]: KalshiEX LLC, CFTC Regulation 40.6 notification amending the "Will `<performer>` perform at `<event>`?" contract, dated March 2, 2026 — filed after the event. Cover letter lists the changes, including "Change to Payout Criterion for clarity," confirming Kalshi tightened the performance definition after the Cardi B dispute. [Cert PDF][cert-mar2026]
 
 ### Reporting
 
-[^ap]: Associated Press, ["Cardi B's cameo in Bad Bunny's Super Bowl halftime show leads to dispute on prediction markets"][ap], February 2026. Reports the appearance, volume, CFTC complaint, Kalshi's explanation, and Polymarket contrast.
+[^cbs]: CBS News, "Dispute over Cardi B's Super Bowl cameo roils prediction markets," February 2026. Reports the $0.26 Yes / $0.74 No split, ~$47.3M Kalshi volume vs ~$10M Polymarket, the CFTC complaint ($3,700 sought; $1,300 received vs $5,000 expected), spokesperson Elisabeth Diana's "dancing and mouthing words... unclear if she was 'singing'" characterization, and the Polymarket contrast. [CBS][cbs]
 
-[^business-insider]: Business Insider, ["Kalshi and Polymarket split over whether Cardi B 'performed' at the Super Bowl halftime show"][business-insider], February 9, 2026. Describes the appearance, Kalshi's rules, Kalshi's last-price settlement, and Polymarket's different outcome.
+[^nbc]: NBC News, "Cardi B's cameo in Bad Bunny's Super Bowl halftime show leads to dispute over prediction markets," February 2026. Describes Cardi B on the porch set with Karol G, Young Miko, Jessica Alba, and Pedro Pascal, dancing to the music with singing unclear, and the divergent Kalshi/Polymarket outcomes. [NBC][nbc]
 
-[^nypost]: New York Post, ["Kalshi's Cardi B. Super Bowl halftime show market draws millions - and is mired in controversy"][nypost], February 11, 2026. Quotes Kalshi's defense and describes the disputed payouts.
+[^fortune]: Fortune, "Prop bet chaos as Kalshi calls Cardi B's Super Bowl cameo ambiguous and Polymarket pays out on disputed wager," February 11, 2026. Reports Polymarket resolving Yes via UMA while Kalshi force-settled to last price. [Fortune][fortune]
 
-[kalshi-market]: https://kalshi.com/markets/kxperformsuperbowlb/who-will-perform-at-the-super-bowl/kxperformsuperbowlb-26
-[perform-terms]: https://kalshi-public-docs.s3.amazonaws.com/contract_terms/PERFORM.pdf
-[ap]: https://apnews.com/article/super-bowl-kalshi-cardi-b-bad-bunny-d3b51d8848934d69c39ff92fa2c51278
-[business-insider]: https://www.businessinsider.com/kalshi-polymarket-cardi-b-performance-super-bowl-2026-2
-[nypost]: https://nypost.com/2026/02/11/betting/kalshis-controversial-cardi-b-super-bowl-halftime-show-market-draws-millions/
+[^readwrite]: ReadWrite, "CFTC complaint filed over Kalshi Cardi B Super Bowl decision," February 2026. Reports the Yes holder's CFTC complaint alleging Commodity Exchange Act violation and the $3,700 in damages sought. [ReadWrite][readwrite]
+
+[kalshi-event]: https://api.elections.kalshi.com/trade-api/v2/events/KXPERFORMSUPERBOWLB-26
+[terms-jan2026]: https://web.archive.org/web/20260111210154id_/https://kalshi-public-docs.s3.amazonaws.com/contract_terms/PERFORM.pdf
+[terms-current]: https://kalshi-public-docs.s3.amazonaws.com/contract_terms/PERFORM.pdf
+[cert-mar2026]: https://kalshi-public-docs.s3.us-east-1.amazonaws.com/regulatory/product-certifications/PERFORM.pdf
+[cbs]: https://www.cbsnews.com/news/cardi-b-super-bowl-prediction-market-dispute/
+[nbc]: https://www.nbcnews.com/business/business-news/cardi-b-cameo-bad-bunnys-super-bowl-halftime-show-leads-dispute-predi-rcna258553
+[fortune]: https://fortune.com/2026/02/11/did-cardi-b-perform-at-super-bowl-prop-bet-kalshi-polymarket/
+[readwrite]: https://readwrite.com/cftc-complaint-filed-kalshi-cardi-b-super-bowl-event-decision/
