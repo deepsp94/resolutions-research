@@ -60,7 +60,7 @@ The seed's alleged CFTC complaint cannot be matched to any record — no ticker,
 [^rollcall]: U.S. Senate Roll Call Vote 519, Sept 15, 2025, 7:19 PM — 48 Yea, 47 Nay, 5 Not Voting; Stephen Miran of New York to the Federal Reserve Board of Governors; "Nomination Confirmed." [Senate Roll Call 519][rollcall]
 [^ab]: American Banker — Miran confirmed to Fed board 48-47; Murkowski voted no; expected to join the Fed rate-setting meeting the following Tuesday (~Sept 16, 2025). [American Banker][ab]
 
-[seed]: ../initial_research.md
+[seed]: ../archive/initial_research.md
 [series]: https://api.elections.kalshi.com/trade-api/v2/series/KXCONFFEDGOV
 [billvote]: https://kalshi-public-docs.s3.amazonaws.com/contract_terms/BILLVOTE.pdf
 [cert]: https://www.cftc.gov/filings/ptc/ptc05232522141.pdf
